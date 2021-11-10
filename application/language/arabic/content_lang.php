@@ -4,6 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $lang['home'] = 'الرئيسية';
 $lang['categories'] = 'الاقسام';
+$lang['properties'] = 'عقارات';
+$lang['agents'] = 'وسطاء';
+$lang['residential'] = 'سكني';
+$lang['commercial'] = 'تجاري';
 $lang['offers'] = 'العروض';
 $lang['contact_us'] = 'اتصل بنا';
 $lang['about_us'] = 'من نحن';

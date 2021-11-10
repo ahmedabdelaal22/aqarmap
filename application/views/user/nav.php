@@ -1,114 +1,190 @@
-<div class=" ">
 	<?php 
 				$regions = $this->admin_model->get_all_regions();
 			 ?>
+<!--=================================
+header -->
+<header class="header">
+  <div class="topbar">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-block d-md-flex align-items-center text-center">
+            <div class="me-3 d-inline-block">
+              <a href="tel:1-800-555-1234"><i class="fa fa-phone me-2 fa fa-flip-horizontal"></i>1-800-555-1234 </a>
+            </div>
+            <div class="me-auto d-inline-block">
+              <span class="me-2 text-white">Get App:</span>
+              <a class="pe-1" href="#"><i class="fab fa-android"></i></a>
+              <a href="#"><i class="fab fa-apple"></i></a>
+            </div>
+            <div class="dropdown d-inline-block ps-2 ps-md-0">
+              <a class="dropdown-toggle" href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose location<i class="fas fa-chevron-down ps-2"></i>
+              </a>
+              <div class="dropdown-menu mt-0" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Global</a>
+                <a class="dropdown-item" href="#">Arizona</a>
+                <a class="dropdown-item" href="#">British columbia</a>
+                <a class="dropdown-item" href="#">Commercial</a>
+              </div>
+            </div>
+            <div class="social d-inline-block">
+              <ul class="list-unstyled">
+                <li><a href="#"> <i class="fab fa-facebook-f"></i> </a></li>
+                <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
+                <li><a href="#"> <i class="fab fa-linkedin"></i> </a></li>
+                <li><a href="#"> <i class="fab fa-pinterest"></i> </a></li>
+                <li><a href="#"> <i class="fab fa-instagram"></i> </a></li>
+              </ul>
+            </div>
+            <div class="login d-inline-block">
+              <a data-bs-toggle="modal" data-bs-target="#loginModal" href="#">Hello sign in<i class="fa fa-user ps-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <nav class="navbar navbar-light bg-white navbar-static-top navbar-expand-lg header-sticky">
+        <div class="container-fluid">
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"><i class="fas fa-align-left"></i></button>
+		<a href="<?=base_url('/')?>" class="navbar-brand">
+			<img class="img-fluid" src="<?=base_url('website')?>/images/logo/logofinal.png" alt="logo">
+		</a>
+		<?php $locale=$this->session->userdata('locale');?>
+          <div class="navbar-collapse collapse justify-content-center">
+	<ul class="nav navbar-nav">
+		<li class="nav-item <?php if($this->uri->segment(1)==""){echo "active";} ?>" >
+			<a class="nav-link" href="<?=base_url('/')?>"><?php echo $this->lang->line('home') ?></a>
+		</li>
+		<li class="nav-item dropdown <?php if($this->uri->segment(1)=="categories-all"){echo "active";}?>">
+			<a class="nav-link dropdown-toggle"
+				href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('properties') ?> <i class="fas fa-chevron-down fa-xs"></i></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#"><?php echo $this->lang->line('residential') ?></a></li>
+            <li><a class="dropdown-item" href="#"><?php echo $this->lang->line('commercial') ?></a></li>
+          </ul>
+		</li>
+		<li class="nav-item <?php if($this->uri->segment(1)=="offers"){echo "active";}?>">
+			<a class="nav-link" href="#"><?php echo $this->lang->line('agents') ?></a>
+		</li>
+		<li class="nav-item <?php if($this->uri->segment(1)=="about"){echo "active";}?>">
+			<a class="nav-link" href="<?=base_url('/about')?>"><?php echo $this->lang->line('about_us') ?></a>
+		</li>
+		<li class="nav-item <?php if($this->uri->segment(1)=="contact"){echo "active";}?>">
+			<a class="nav-link" href="<?=base_url('/contact')?>"><?php echo $this->lang->line('contact_us') ?></a>
+		</li>
+		<!--<li>
+			<a href="<?=base_url('categories-all')?>">categories</a>
+			<ul>
+				<?php
+
+      $category = $this->admin_model->get_all_category();
+            ?>
+				<?php if(isset($category)){ $cnt=1; ?>
+				<?php foreach($category as $row) { ?>
+				<li>
+					<a href="<?php echo base_url('categories/').$row->id?>">
+						<?php echo $row->c_name; ?> </a>
+				</li>
+
+				<?php }
+                              }
+                     ?>
+			</ul>
+		</li>-->
+		<!-- blog -->
+
+		<!-- gallery -->
+		<!--<li>
+			<?php 
+		$userid=	$this->session->userdata('UserId');
+		if(!empty($userid)){
+			?>
+
+			<a href="#"><?=$this->session->userdata('aname')?></a>
+			<ul>
+		        	<li>
+			            <a href="<?=base_url('profile')?>">profile</a>
+	             	</li>
+					 <li>
+			            <a href="<?=base_url('logout')?>">logout</a>
+	             	</li>
+			</ul>
+	
+			<?php } else{?>
+				<a href="#">login</a>
+				<ul>
+		        	<li>
+			            <a href="<?=base_url('login')?>">Login</a>
+	             	</li>
+					 <li>
+			            <a href="<?=base_url('register')?>">Register</a>
+	             	</li>
+			</ul>
+
+				<?php }?>
+		</li>-->
+
+		<!-- eof blog -->
+
+
+		<!--<li>
+			<a href="<?=base_url('contact')?>">Contacts</a>
+			<ul>
+		        	<li>
+			            <a href="<?=base_url('contact')?>">Contacts</a>
+	             	</li>
+					 <li>
+			            <a href="<?=base_url('subscribe')?>">Subscribe Resturant</a>
+	             	</li>
+			</ul>
+		</li>
+		<li>
+			<a href="<?=base_url('/offers')?>">Offers</a>
+		</li>-->
+	</ul>    
+    </div>
+    <div class="add-listing d-none d-sm-block">
+      <a class="btn btn-primary btn-md" href="submit-property.html"> <i class="fa fa-plus-circle"></i>Add listing </a>
+    </div>
+    </div>
+  </nav>
+</header>
+
+<?php 
+// breadcrumbs
+if($this->uri->segment(1)==""){ ?>
+
+<?php }else{ ?>
+<!--=================================
+breadcrumb -->
+<div class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html"> <i class="fas fa-home"></i> </a></li>
+          <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="#">Library</a></li>
+          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> Property grid </span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!--=================================
+breadcrumb -->
+<?php } ?>
+
+
+<!--=================================
+ header -->
+ <!--
+<div class=" ">
 	<header class="page_header ds">
 		<div class="container">
 			<div class="row align-items-center tophead">
-				<div class="logo_con full_logo col-md-2">
-					<a href="<?=base_url('/')?>" class="logo text-center">
-						<img src="<?=base_url('website')?>/images/logo/logofinal.png" alt="">
-					</a>
-				</div>
-				<?php $locale=$this->session->userdata('locale');?>
-				<div class="logo_con logo_respo col-md-2">
-					<a href="index.html" class="logo text-center">
-						<img src="<?=base_url('website')?>/images/logo/logo_v.png" alt="">
-					</a>
-				</div>
-				<div class="col-md-4 main_menu">
 
-					<nav class="top-nav">
-						<ul class="nav sf-menu">
-							<li class=<?php if($this->uri->segment(1)==""){echo "active";}?>>
-								<a href="<?=base_url('/')?>"><?php echo $this->lang->line('home') ?></a>
-							</li>
-							<li class=<?php if($this->uri->segment(1)=="categories-all"){echo "active";}?>>
-								<a
-									href="<?=base_url('/categories-all')?>"><?php echo $this->lang->line('categories') ?></a>
-							</li>
-							<li class=<?php if($this->uri->segment(1)=="offers"){echo "active";}?>>
-								<a href="<?=base_url('/offers')?>"><?php echo $this->lang->line('offers') ?></a>
-							</li>
-							<li class=<?php if($this->uri->segment(1)=="about"){echo "active";}?>>
-								<a href="<?=base_url('/about')?>"><?php echo $this->lang->line('about_us') ?></a>
-							</li>
-							<li class=<?php if($this->uri->segment(1)=="contact"){echo "active";}?>>
-								<a href="<?=base_url('/contact')?>"><?php echo $this->lang->line('contact_us') ?></a>
-							</li>
-							<!--<li>
-								<a href="<?=base_url('categories-all')?>">categories</a>
-								<ul>
-									<?php
-
-                                    $category = $this->admin_model->get_all_category();
-                                          ?>
-									<?php if(isset($category)){ $cnt=1; ?>
-									<?php foreach($category as $row) { ?>
-									<li>
-										<a href="<?php echo base_url('categories/').$row->id?>">
-											<?php echo $row->c_name; ?> </a>
-									</li>
-
-									<?php }
-                                                            }
-                                                   ?>
-								</ul>
-							</li>-->
-							<!-- blog -->
-
-							<!-- gallery -->
-							<!--<li>
-								<?php 
-							$userid=	$this->session->userdata('UserId');
-							if(!empty($userid)){
-								?>
-
-								<a href="#"><?=$this->session->userdata('aname')?></a>
-								<ul>
-							        	<li>
-								            <a href="<?=base_url('profile')?>">profile</a>
-						             	</li>
-										 <li>
-								            <a href="<?=base_url('logout')?>">logout</a>
-						             	</li>
-								</ul>
-						
-								<?php } else{?>
-									<a href="#">login</a>
-									<ul>
-							        	<li>
-								            <a href="<?=base_url('login')?>">Login</a>
-						             	</li>
-										 <li>
-								            <a href="<?=base_url('register')?>">Register</a>
-						             	</li>
-								</ul>
-
-									<?php }?>
-							</li>-->
-
-							<!-- eof blog -->
-
-
-							<!--<li>
-								<a href="<?=base_url('contact')?>">Contacts</a>
-								<ul>
-							        	<li>
-								            <a href="<?=base_url('contact')?>">Contacts</a>
-						             	</li>
-										 <li>
-								            <a href="<?=base_url('subscribe')?>">Subscribe Resturant</a>
-						             	</li>
-								</ul>
-							</li>
-							<li>
-								<a href="<?=base_url('/offers')?>">Offers</a>
-							</li>-->
-						</ul>
-					</nav>
-
-				</div>
 				<div class="tophead_search_form col-md-6">
 					<div class="container">
 						<div class="row">
@@ -183,13 +259,10 @@
 			</div>
 
 		</div>
-		<!-- header toggler -->
+		 
 
 	</header>
-</div>
-<span class="toggle_menu_side header-slide">
-	<span></span>
-</span>
+</div>-->
 
 <!-- Modal -->
 <div class="modal hide fade add_project_modal" id="exampleModal" tabindex="-1" role="dialog"
