@@ -20,7 +20,7 @@ class SettingController extends CI_Controller
 		if ($siteLang) {
 			$ci->lang->load('content',$siteLang);
 		} else {
-			$ci->lang->load('content','arabic');
+			$ci->lang->load('content','english');
 		}
 
     }
