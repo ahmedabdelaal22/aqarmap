@@ -2,8 +2,18 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$lang['home'] = 'Home';
+$lang['categories'] = 'Categories';
+$lang['agents'] = 'Agents';
+$lang['properties'] = 'Properties';
+$lang['offers'] = 'Offers';
+$lang['contact_us'] = 'Contact Us';
+$lang['about_us'] = 'About Us';
+$lang['residential'] = 'Residential';
+$lang['commercial'] = 'Commercial';
+
 $lang['welcome'] = 'Welcome to our website';
-$lang['home'] = 'ttttttt';
+
 $lang['name_en'] = 'Name (EN)';
 $lang['logo'] = 'LOGO';
 $lang['email'] = 'Email';
@@ -26,7 +36,7 @@ $lang['pinterest'] = 'Pinterest';
 $lang['map'] = 'Map';
 $lang['we_love_what'] = 'We Love what We Do And We Love Helping Others Succeed At What They Love To Do';
 $lang['about'] = 'About';
-$lang['home'] = 'Homefffffff';
+
 $lang['contact_us'] = 'Contact Us';
 $lang['contacts'] = 'Contacts';
 $lang['full_name'] = 'Full Name';

@@ -1,13 +1,63 @@
-<section class="page_cover">
+
+   <?php
+
+  $category = $this->admin_model->get_all_category();
+
+?>
+<!--=================================
+Browse properties Categories -->
+<section class="space-ptb">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-title text-center">
+          <h2>Browse by category</h2>
+          <p>To browse and buy in your areas of interest, look for properties by category.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="category">
+          <ul class="list-unstyled mb-0">
+         <?php if(isset($category)){ $cnt=1; ?>  
+	         <?php foreach($category as $row) { ?>
+	            <li class="category-item">
+	              <a href="property-list.html">
+	                <div class="category-icon">
+	                  <i class="flaticon-building-2"></i>
+	                </div>
+	                <h6 class="mb-0">Residential</h6>
+	                <span>(457)</span>
+	              </a>
+	            </li>
+		    <?php } ?>
+         <?php } ?>
+            <li class="category-item">
+              <a href="property-list.html">
+                <div class="category-icon">
+                  <i class="flaticon-skyline"></i>
+                </div>
+                <h6 class="mb-0">Commercial</h6>
+                <span>(659)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--<section class="page_cover">
      <img class="img-responsive" src="<?=base_url('website')?>/images/pagecover.png">
 </section>
 <section class="">
-	<div class="container">
+	<div class="container">-->
 		<!--<div class="row">
 			<div class="col-lg-8 mx-auto text-center mb-5">
 				<h2 style="color:red">Elements &amp; Categories</h2>
 			</div>
-		</div>-->
+		</div>--><!--
     <?php
 
   $category = $this->admin_model->get_all_category();
@@ -42,8 +92,8 @@
 				</a>
         </div> 
         <?php } ?>    
-        <?php } ?>
-		</div> <!-- Row End --></div>
+        <?php } ?>-->
+		<!--</div>--> <!-- Row End --><!--</div>
 
 	</div>
-</section>
+</section>-->

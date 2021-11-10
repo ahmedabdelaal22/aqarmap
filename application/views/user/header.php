@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!-->
 
 <?php $locale=$this->session->userdata('locale') ?>
-<html dir="rtl" class="">
+
+<html class="">
 <!--<![endif]-->
 <head>
 	<?php //$locale=$this->session->userdata('locale');?>
@@ -26,21 +27,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link rel="shortcut icon" type="image/x-icon" href="<?=base_url('website')?>/images/logo/favicon.png" />
-	<link rel="stylesheet" href="<?=base_url('website')?>/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?=base_url('website')?>/css/bootstrap.rtl.min.css">
-	<link rel="stylesheet" href="<?=base_url('website')?>/css/animations.css">
-	<link rel="stylesheet" href="<?=base_url('website')?>/css/font-awesome.css">
+	
+	    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300,500,600,700%7CRoboto:300,400,500,700">
 
-	<link rel="stylesheet" href="<?=base_url('website')?>/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="<?=base_url('website')?>/css/owl.theme.default.min.css">
+    <!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" href="<?=base_url('website')?>/css/font-awesome/all.min.css" />
+    <link rel="stylesheet" href="<?=base_url('website')?>/css/flaticon/flaticon.css" />
 
-	<link rel="stylesheet" type="text/css" href="<?=base_url('website')?>/css/main.css">
-	<link rel="stylesheet" type="text/css" href="<?=base_url('website')?>/css/vip.css">
+    <link rel="stylesheet" href="<?=base_url('website')?>/css/bootstrap/bootstrap.min.css" />
+
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+    <link rel="stylesheet" href="<?=base_url('website')?>/css/select2/select2.css" />
+    <link rel="stylesheet" href="<?=base_url('website')?>/css/range-slider/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="<?=base_url('website')?>/css/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="<?=base_url('website')?>/css/magnific-popup/magnific-popup.css" />
+
+    <!-- Template Style -->
+    <link rel="stylesheet" href="<?=base_url('website')?>/css/style.css" />
+
+
 	<?php if($locale == 'ar'){?>
 	<!--<link rel="stylesheet" type="text/css" href="<?=base_url('website')?>/css/main_ar.css">-->
 	<!--<link rel="stylesheet" type="text/css" href="<?=base_url('website')?>/css/vip_ar.css">-->
 	<?php } ?>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
 
