@@ -19,7 +19,9 @@ class UserController extends CI_Controller
 		 if ($siteLang) {
 			 $ci->lang->load('content',$siteLang);
 		 } else {
-			 $ci->lang->load('content','english');
+
+			$ci->lang->load('content','english');
+
 		 }
      	$this->load->helper('form');
 		$this->load->library('form_validation');
