@@ -61,8 +61,8 @@ header -->
 			<a class="nav-link dropdown-toggle"
 				href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('properties') ?> <i class="fas fa-chevron-down fa-xs"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#"><?php echo $this->lang->line('residential') ?></a></li>
-            <li><a class="dropdown-item" href="#"><?php echo $this->lang->line('commercial') ?></a></li>
+            <li><a class="dropdown-item" href="<?=base_url('/categories')?>/7"><?php echo $this->lang->line('residential') ?></a></li>
+            <li><a class="dropdown-item" href="<?=base_url('/categories')?>/8"><?php echo $this->lang->line('commercial') ?></a></li>
           </ul>
 		</li>
 		<li class="nav-item <?php if($this->uri->segment(1)=="offers"){echo "active";}?>">

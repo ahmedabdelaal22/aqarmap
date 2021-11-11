@@ -37,6 +37,8 @@
 
     <link rel="stylesheet" href="<?=base_url('website')?>/css/bootstrap/bootstrap.min.css" />
 
+		<link rel="stylesheet" href="<?=base_url('website')?>/css/datetimepicker/datetimepicker.min.css" />
+
     <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
     <link rel="stylesheet" href="<?=base_url('website')?>/css/select2/select2.css" />
     <link rel="stylesheet" href="<?=base_url('website')?>/css/range-slider/ion.rangeSlider.css" />

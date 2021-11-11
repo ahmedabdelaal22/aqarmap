@@ -2,7 +2,7 @@
 
 	<?php $this->load->view('user/banners');?>
 
-	<?php $this->load->view('user/categories');?>
+	<?php $this->load->view('user/categories-all');?>
 	
 	<!-- Marketing messaging and featurettes
   ================================================== -->

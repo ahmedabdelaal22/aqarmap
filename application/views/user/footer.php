@@ -261,6 +261,9 @@ $keywords = $this->admin_model->get_best_keywords();
   <script src="<?=base_url('website')?>/js/popper/popper.min.js"></script>
   <script src="<?=base_url('website')?>/js/bootstrap/bootstrap.min.js"></script>
 
+  <script src="<?=base_url('website')?>/js/datetimepicker/moment.min.js"></script>
+  <script src="<?=base_url('website')?>/js/datetimepicker/datetimepicker.min.js"></script>
+
   <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
   <script src="<?=base_url('website')?>/js/jquery.appear.js"></script>
   <script src="<?=base_url('website')?>/js/counter/jquery.countTo.js"></script>
