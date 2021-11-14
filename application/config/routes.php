@@ -189,8 +189,6 @@ $route['user/update-user'] = 'UserController/update_user';
 
 $route['favourite'] = 'CategoryController/favourite';
 
-$route['properties'] = 'CategoryController/properties';
-
 $route['lang'] = 'CategoryController/lang';
 $route['about'] = 'SettingController/about';
 $route['contact'] = 'SettingController/contact';
