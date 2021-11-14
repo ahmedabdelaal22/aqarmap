@@ -23,25 +23,17 @@ Browse properties Categories -->
          <?php if(isset($category)){ $cnt=1; ?>  
 	         <?php foreach($category as $row) { ?>
 	            <li class="category-item">
-	              <a href="property-list.html">
+	              <a href="<?php echo base_url('categories/').$row->id?>">
 	                <div class="category-icon">
 	                  <i class="flaticon-building-2"></i>
 	                </div>
-	                <h6 class="mb-0">Residential</h6>
-	                <span>(457)</span>
+	                <h6 class="mb-0"><?=$row->c_name?></h6>
+	                <span>(<?=count_category($row->id)?>)</span>
 	              </a>
 	            </li>
 		    <?php } ?>
          <?php } ?>
-            <li class="category-item">
-              <a href="property-list.html">
-                <div class="category-icon">
-                  <i class="flaticon-skyline"></i>
-                </div>
-                <h6 class="mb-0">Commercial</h6>
-                <span>(659)</span>
-              </a>
-            </li>
+         
           </ul>
         </div>
       </div>

@@ -213,4 +213,11 @@ $route['subscriebe_mail'] = 'SettingController/subscriebe_mail';
 
 $route['categories-all'] = 'CategoryController/index';
 $route['categories/(:any)'] = 'CategoryController/show/$1';
+
+
+$route['agents'] = 'AgentsController/index';
+$route['agent/(:any)'] = 'AgentsController/show/$1';
+
+
+
 $route['store/(:any)'] = 'CategoryController/store/$1';

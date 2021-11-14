@@ -24,6 +24,38 @@ function types(){
    return $type;
   }
 }
+if (!function_exists('rooms'))
+{
+
+function rooms(){
+
+  $room[1]='01';
+  $room[2]='02';
+  $room[3]='03';
+  $room[4]='04';
+  $room[5]='05';
+  $room[6]='06';
+  $room[7]='07';
+  $room[8]='08';
+  $room[9]='09';
+  $room[10]='10';
+  $room[11]='11';
+   return $room;
+  }
+}
+if (!function_exists('count_category'))
+{
+
+function count_category($category_id){
+  $CI =&get_instance();
+
+  $query = $CI->db->get_where('restaurants', array('cat_id' => $category_id));
+		 return count($query->result());
+  
+  }
+}
+
+
 
 if (!function_exists('advertiser_type'))
 {

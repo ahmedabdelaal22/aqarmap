@@ -285,13 +285,15 @@ POTENZA.isSticky = function () {
   POTENZA.rangesliders = function () {
     if ($('.property-price-slider').exists()) {
       var rangeslider = jQuery(".rangeslider-wrapper");
+      let from_price=$("#from_price").val();
+      let to_price=$("#to_price").val();
       $("#property-price-slider").ionRangeSlider({
         type: "double",
         min: 0,
         max: 10000,
-        from: 1000,
-        to: 8000,
-        prefix: "$",
+        from: from_price,
+        to: to_price,
+        prefix: "EGP",
         hide_min_max: true,
         hide_from_to: false
       });
