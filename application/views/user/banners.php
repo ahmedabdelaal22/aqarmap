@@ -15,31 +15,47 @@ banner -->
         <p class="lead text-center text-white mb-4 fw-normal">Take a step to realizing your dream. #TimeToMove</p>
         <div class="property-search-field bg-white">
           <div class="property-search-item">
-            <form class="row basic-select-wrapper">
-              <div class="form-group col-lg-3 col-md-6">
+            <form class="row basic-select-wrapper" method="GET" name="searchaction" action="<?=base_url('/search')?>">
+              <div class="form-group col-lg-3 col-md-6" >
                 <label class="form-label">Property type</label>
-                <select class="form-control basic-select">
+                <select class="form-control basic-select"  name="cat_id">
                   <option>All Type</option>
-                  <option>Villa</option>
-                  <option>Apartment Building</option>
-                  <option>Commercial</option>
-                  <option>Office</option>
-                  <option>Residential</option>
-                  <option>Shop</option>
-                  <option>Apartment</option>
+                  <?php $category = $this->admin_model->get_category();
+                   $category_id=$this->input->get('cat_id');
+                   $type=$this->input->get('type');
+                   $region_id=$this->input->get('region_id');
+                   $rooms=$this->input->get('rooms');
+                   $floor=$this->input->get('floor');
+
+                   
+                  ?>
+                  <?php foreach ($category as $listing) : ?>
+                    <option value="<?php echo $listing['id']; ?>" <?php if ($listing['id'] == $category_id) echo "selected='selected'"; ?>><?php echo $listing['c_name']; ?></option>
+                    <?php endforeach; ?>
+  
                 </select>
               </div>
               <div class="form-group col-lg-3 col-md-6">
                 <label class="form-label">Status</label>
-                <select class="form-control basic-select">
-                  <option>For Rent</option>
-                  <option>For Sale</option>
+                <select class="form-control basic-select"  name="type" >
+
+                <?php foreach (types() as $key => $value) : ?>
+                  <option value="<?php echo $key; ?>"   <?php if ($key == $type) echo "selected='selected'"; ?> ><?php echo $value ?></option>
+											<?php endforeach; ?>
+            
                 </select>
               </div>
               <div class="form-group d-flex col-lg-4">
                 <div class="form-group-search">
                   <label class="form-label">Location</label>
-                  <div class="d-flex align-items-center"><i class="far fa-compass me-1"></i><input class="form-control" type="search" placeholder="Search Location"></div>
+                  <select class="form-control basic-select"  name="region_id" >
+                  <?php 
+				$regions = $this->admin_model->get_all_regions();
+              foreach ($regions as $row) : ?> 
+          <option value="<?php echo $row->id; ?>" <?php if ($row->id == $region_id) echo "selected='selected'"; ?>><?php echo $row->name_en; ?></option>
+        <?php endforeach; ?>
+
+                 </select>
                 </div>
                 <span class="align-items-center ms-3 d-none d-lg-block"><button class="btn btn-primary d-flex align-items-center" type="submit"><i class="fas fa-search me-1"></i><span>Search</span></button></span>
               </div>
@@ -52,58 +68,42 @@ banner -->
               <div class="collapse advanced-search p-0" id="advanced-search">
                 <div class="card card-body">
                   <div class="row">
-                    <div class="form-group col-md-3">
-                      <label class="form-label">Distance from location</label>
-                      <select class="form-control basic-select">
-                        <option>This area only</option>
-                        <option>Within 1 mile</option>
-                        <option>Within 3 miles</option>
-                        <option>Within 5 miles</option>
-                        <option>Within 10 miles</option>
-                        <option>Within 15 miles</option>
-                        <option>Within 30 miles</option>
-                      </select>
-                    </div>
+             <input type="hidden" id="from_price" name="from" value="1000"/>
+              <input type="hidden"  id="to_price" name="to" value="9000"/>
+
                     <div class="form-group col-md-3">
                       <label class="form-label">Bedrooms</label>
-                      <select class="form-control basic-select">
+                      <select class="form-control basic-select" name="rooms">
                         <option>No max</option>
-                        <option>01</option>
-                        <option>02</option>
-                        <option>03</option>
+                   
+                <?php foreach (rooms() as $key => $value) : ?>
+                  <option value="<?php echo $key; ?>"   <?php if ($key == $rooms) echo "selected='selected'"; ?> ><?php echo $value ?></option>
+											<?php endforeach; ?>
                       </select>
                     </div>
-                    <div class="form-group col-md-3">
-                      <label class="form-label">Sort by</label>
-                      <select class="form-control basic-select">
-                        <option>Most popular</option>
-                        <option>Highest price</option>
-                        <option>Lowest price</option>
-                        <option>Most reduced</option>
-                      </select>
-                    </div>
+               
                     <div class="form-group col-md-3">
                       <label class="form-label">Floor</label>
-                      <select class="form-control basic-select">
+                      <select class="form-control basic-select" name="floor">
                         <option>Select Floor</option>
-                        <option>01</option>
-                        <option>02</option>
-                        <option>03</option>
+                        <?php foreach (rooms() as $key => $value) : ?>
+                  <option value="<?php echo $key; ?>"   <?php if ($key == $floor) echo "selected='selected'"; ?> ><?php echo $value ?></option>
+											<?php endforeach; ?>
                       </select>
                     </div>
                   </div>
                   <div class="row">
                     <div class="form-group col-md-3">
                       <label class="form-label">Min Area (sq ft)</label>
-                      <input class="form-control" placeholder="Type (sq ft)">
+                      <input class="form-control" name="min_space" placeholder="Type (sq ft)">
                     </div>
                     <div class="form-group col-md-3">
                       <label class="form-label">Max Area (sq ft)</label>
-                      <input class="form-control" placeholder="Type (sq ft)">
+                      <input class="form-control"name="max_space" placeholder="Type (sq ft)">
                     </div>
                     <div class="form-group col-md-6 property-price-slider ">
                       <label class="form-label">Select Price Range</label>
-                      <input type="text" id="property-price-slider" name="example_name" value="" />
+                      <input type="text" id="property-price-slider" name="price_range" value="" />
                     </div>
                   </div>
                 </div>

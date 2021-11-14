@@ -10,31 +10,30 @@ header -->
         <div class="col-12">
           <div class="d-block d-md-flex align-items-center text-center">
             <div class="me-3 d-inline-block">
-              <a href="tel:1-800-555-1234"><i class="fa fa-phone me-2 fa fa-flip-horizontal"></i>1-800-555-1234 </a>
+              <a href="tel:<?=appSettings('Whatsapp')?>"><i class="fa fa-phone me-2 fa fa-flip-horizontal"></i><?=appSettings('Whatsapp')?> </a>
             </div>
             <div class="me-auto d-inline-block">
               <span class="me-2 text-white">Get App:</span>
-              <a class="pe-1" href="#"><i class="fab fa-android"></i></a>
-              <a href="#"><i class="fab fa-apple"></i></a>
+              <a class="pe-1" href="<?=appSettings('googleplay')?>"><i class="fab fa-android"></i></a>
+              <a href="<?=appSettings('appstore')?>"><i class="fab fa-apple"></i></a>
             </div>
             <div class="dropdown d-inline-block ps-2 ps-md-0">
               <a class="dropdown-toggle" href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Choose location<i class="fas fa-chevron-down ps-2"></i>
               </a>
               <div class="dropdown-menu mt-0" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Global</a>
-                <a class="dropdown-item" href="#">Arizona</a>
-                <a class="dropdown-item" href="#">British columbia</a>
-                <a class="dropdown-item" href="#">Commercial</a>
+	    	<?php 	  foreach ($regions as $row) {?>
+                <a class="dropdown-item" href="<?php echo $row->id; ?>"><?php echo $row->name_en; ?></a>
+         <?php } ?>
               </div>
             </div>
             <div class="social d-inline-block">
               <ul class="list-unstyled">
-                <li><a href="#"> <i class="fab fa-facebook-f"></i> </a></li>
-                <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
-                <li><a href="#"> <i class="fab fa-linkedin"></i> </a></li>
-                <li><a href="#"> <i class="fab fa-pinterest"></i> </a></li>
-                <li><a href="#"> <i class="fab fa-instagram"></i> </a></li>
+                <li><a href="<?=appSettings('facebook')?>"> <i class="fab fa-facebook-f"></i> </a></li>
+                <li><a href="<?=appSettings('twitter')?>"> <i class="fab fa-twitter"></i> </a></li>
+                <li><a href="<?=appSettings('linkedin')?>"> <i class="fab fa-linkedin"></i> </a></li>
+                <li><a href="<?=appSettings('pinterest')?>"> <i class="fab fa-pinterest"></i> </a></li>
+                <li><a href="<?=appSettings('instagram')?>"> <i class="fab fa-instagram"></i> </a></li>
               </ul>
             </div>
             <div class="login d-inline-block">
