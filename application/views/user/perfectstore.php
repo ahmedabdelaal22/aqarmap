@@ -43,7 +43,7 @@
                 <a class="property-agent-name" href="#"><?=@$vendor->uname?></a>
                 <span class="d-block"><?=@$vendor->email?></span>
                 <ul class="property-agent-contact list-unstyled">
-                  <li><a href="tel:<?=$vendor->phone?>"><i class="fas fa-mobile-alt"></i> </a></li>
+                  <li><a href="tel:<?=@$vendor->phone?>"><i class="fas fa-mobile-alt"></i> </a></li>
       
                 </ul>
               </div>
@@ -69,9 +69,9 @@
             <div class="property-btn">
               <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>">See Details</a>
               <ul class="property-listing-actions list-unstyled mb-0">
-                <!-- <li class="property-compare">
+                <li class="property-compare">
                   <a data-bs-toggle="tooltip" data-bs-placement="top" title="Compare" href="#"><i class="fas fa-exchange-alt"></i></a>
-                </li> -->
+                </li>
                 <li class="property-favourites">
                   <a data-bs-toggle="tooltip" data-bs-placement="top" title="Favourite" href="#"><i class="far fa-heart"></i></a>
                 </li>
@@ -80,6 +80,8 @@
           </div>
         </div>
       </div>
+
+    
       <?php }} ?>
 
       <div class="col-12 text-center">
