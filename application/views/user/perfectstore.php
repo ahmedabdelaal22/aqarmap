@@ -54,7 +54,7 @@
           <div class="property-details">
             <div class="property-details-inner">
               <h5 class="property-title"><a href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?=$listing['res_name']?></a></h5>
-              <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i><?= word_limiter($listing['res_desc'],4);?></span>
+              <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i><?= word_limiter($listing['res_desc'],3);?></span>
               <span class="property-agent-date">
                 <i class="far fa-clock fa-md"></i><?php
               echo date('d/M/Y', $listing['res_create_date']);

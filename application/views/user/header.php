@@ -89,3 +89,12 @@ let generate=	 Math.floor(Math.random() * 26) + Date.now();
 </script>
 
 </head>
+<?php 
+// breadcrumbs
+if($this->uri->segment(1)==""){ 
+	$pageClass = 'home';
+}else{
+	$pageClass = '';
+} ?>
+
+<body class="<?php echo $pageClass; ?>">

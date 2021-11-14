@@ -3396,8 +3396,28 @@ button {
 .property-item {
   margin-bottom: 30px; }
 
-.property-image {
-  position: relative; }
+.col-sm-6 .property-image {position: relative;
+    height: 250px;
+    overflow: hidden;
+    text-align: center; }
+
+.col-sm-6 .property-image img {
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+}
+
+.col-sm-6.col-md-4 .property-image {position: relative;
+    height: 215px;
+    overflow: hidden;
+    text-align: center; }
+
+.col-sm-6.col-md-4 .property-image img {
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+}
+
   .property-image .property-agent {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3409,7 +3429,7 @@ button {
     bottom: 0;
     margin: 20px; }
     .property-image .property-agent .property-agent-image {
-      width: 38px;
+      width: 38px;height: 38px;
       margin-right: 10px;
       border: 2px solid #ffffff;
       border-radius: 100%;
