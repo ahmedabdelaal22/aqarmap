@@ -55,7 +55,24 @@ function count_category($category_id){
   }
 }
 
+if (!function_exists('count_types'))
+{
+function count_types($type){
+  $CI =&get_instance();
+  $query = $CI->db->get_where('restaurants', array('type' => $type));
+  return count($query->result());
+  }
+}
 
+
+if (!function_exists('key_type'))
+{
+function key_type($key){
+  $type[1]='for sale';
+  $type[2]='For rent';
+   return $type[$key];
+  }
+}
 
 if (!function_exists('advertiser_type'))
 {
