@@ -74,7 +74,7 @@ about -->
 
 <!--=================================
 testimonial -->
-<section class="testimonial-main bg-holder" style="background-image: url(images/bg/02.jpg);">
+<section class="testimonial-main bg-holder" style="background-image: url(<?=base_url('website')?>/images/bg/02.jpg);">
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
@@ -111,7 +111,7 @@ testimonial -->
 
 <!--=================================
 counter -->
-<section class="space">
+<section class="space-pt">
   <div class="container">
     <div class="border p-4">
       <div class="row">

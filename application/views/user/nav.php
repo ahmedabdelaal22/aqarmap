@@ -64,8 +64,8 @@ header -->
             <li><a class="dropdown-item" href="<?=base_url('/categories')?>/8"><?php echo $this->lang->line('commercial') ?></a></li>
           </ul>
 		</li>
-		<li class="nav-item <?php if($this->uri->segment(1)=="offers"){echo "active";}?>">
-			<a class="nav-link" href="#"><?php echo $this->lang->line('agents') ?></a>
+		<li class="nav-item <?php if($this->uri->segment(1)=="agents"){echo "active";}?>">
+			<a class="nav-link" href="<?=base_url('/agents')?>"><?php echo $this->lang->line('agents') ?></a>
 		</li>
 		<li class="nav-item <?php if($this->uri->segment(1)=="about"){echo "active";}?>">
 			<a class="nav-link" href="<?=base_url('/about')?>"><?php echo $this->lang->line('about_us') ?></a>
@@ -163,7 +163,7 @@ breadcrumb -->
     <div class="row">
       <div class="col-12">
         <ol class="breadcrumb mb-0">
-          <li class="breadcrumb-item"><a href="index.html"> <i class="fas fa-home"></i> </a></li>
+          <li class="breadcrumb-item"><a href="<?=base_url('/')?>"> <i class="fas fa-home"></i> </a></li>
           <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="#">Library</a></li>
           <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> Property grid </span></li>
         </ol>
@@ -441,3 +441,35 @@ breadcrumb -->
 		}
 	});
 </script>
+
+            <!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form class="row mt-4 align-items-center">
+            <div class="mb-3 col-sm-12">
+              <label class="form-label">Email Address:</label>
+              <input type="email" class="form-control" placeholder="">
+            </div>
+            <div class="mb-3 col-sm-12">
+              <label class="form-label">Password:</label>
+              <input type="Password" class="form-control" placeholder="">
+            </div>
+            <div class="col-sm-6 d-grid">
+              <button type="submit" class="btn btn-primary">Sign In</button>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-unstyled d-flex mb-1 mt-sm-0 mt-3">
+                <li class="me-1"><a href="<?=base_url('/register')?>">Don't have an account yet? Register Now</a></li>
+              </ul>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,82 +1,33 @@
-
-<div class="login-box">
-
-  <div class="login-logo">
-    <a href="<?php echo base_url();?>user/login"><img style="height:100px;width: 100px;" src="<?php echo base_url(); ?>uploads/nlytical_n copy.jpg"></a>
-  </div>
-
-  <!-- /.login-logo -->
-  <div class="card card-outline card-primary">
-    <div class="card-header text-center">
-      <a href="#" class="h1"><b>Nylitical</b> APP</a>
+<!--=================================
+Login -->
+<section class="space-ptb login">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-sm-10">
+        <div class="section-title">
+          <h2 class="text-center">Login</h2>
+        </div>
+            <form class="row mt-4 align-items-center">
+              <div class="mb-3 col-sm-12">
+                <label class="form-label">Email Address:</label>
+                <input type="email" class="form-control" placeholder="">
+              </div>
+              <div class="mb-3 col-sm-12">
+                <label class="form-label">Password:</label>
+                <input type="Password" class="form-control" placeholder="">
+              </div>
+              <div class="col-sm-6 d-grid">
+                <button type="submit" class="btn btn-primary">Sign In</button>
+              </div>
+              <div class="col-sm-6">
+                <ul class="list-unstyled d-flex mb-1 mt-sm-0 mt-3">
+                  <li class="me-1"><a href="<?=base_url('/register')?>">Don't have an account yet? Register Now</a></li>
+                </ul>
+              </div>
+            </form>
+          </div>
     </div>
-    <div class="card-body">
-      <!-- <p class="login-box-msg">Sign in to start your session</p> -->
-      <?php if(!empty($this->session->flashdata('success'))): ?>
-          <div class="alert alert-success alert-dismissible fade show">
-          <a href="javascript:void()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <span> <?php echo $this->session->flashdata('success'); ?> </span>
-          </div>
-      <?php endif ?>
-      <?php if($this->session->flashdata('error')): ?>
-          <div class="alert alert-danger alert-dismissible fade show">
-         <a href="javascript:void()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <span><?php echo $this->session->flashdata('error') ?></span>
-          </div>
-      <?php endif ?>
-      <!-- <form action="#" method="post"> -->
-      <form role="form" method="post" action="<?php echo base_url('user/login-user'); ?>">
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email" name="email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" name="password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <!-- <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div> -->
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div>
-          <div class="col-4">
-          <a href="<?php echo base_url('forgetpassword'); ?>" class="btn btn-primary btn-block"> Forget password </a>
-
-          </div>
-          <div class="col-4">
-            <a href="<?php echo base_url('register'); ?>" class="btn btn-primary btn-block">Sign Up</a>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
-      <!-- /.social-auth-links -->
-
-      <!-- <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
-      </p> -->
-     <!--  <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
-      </p> -->
-    </div>
-    <!-- /.card-body -->
   </div>
-  <!-- /.card -->
-</div>
-<!-- /.login-box -->
-
+</section>
+<!--=================================
+Login -->
