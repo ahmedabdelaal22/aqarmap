@@ -5160,3 +5160,7 @@ ul li:last-child {
     max-height: 100%;
     margin: 0 auto;
 }
+.sidebar .widget .recent-list-item img {
+    width: 80px;
+    height: 80px;
+}

@@ -69,9 +69,6 @@
             <div class="property-btn">
               <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>">See Details</a>
               <ul class="property-listing-actions list-unstyled mb-0">
-                <li class="property-compare">
-                  <a data-bs-toggle="tooltip" data-bs-placement="top" title="Compare" href="#"><i class="fas fa-exchange-alt"></i></a>
-                </li>
                 <li class="property-favourites">
                   <a data-bs-toggle="tooltip" data-bs-placement="top" title="Favourite" href="#"><i class="far fa-heart"></i></a>
                 </li>
