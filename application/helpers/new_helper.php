@@ -54,6 +54,15 @@ function count_category($category_id){
   
   }
 }
+if (!function_exists('countby_agent'))
+{
+function countby_agent($vid){
+  $CI =&get_instance();
+  $query = $CI->db->get_where('restaurants', array('vid' => $vid));
+  return count($query->result());
+  }
+}
+
 
 if (!function_exists('count_types'))
 {
@@ -70,7 +79,19 @@ if (!function_exists('key_type'))
 function key_type($key){
   $type[1]='for sale';
   $type[2]='For rent';
+  $type[0]='sale or rent';
    return $type[$key];
+  }
+}
+
+if (!function_exists('vendore_type'))
+{
+function vendore_type($type){
+  $vendore_type[0]='Private Owner';//مالك عقار
+  $vendore_type[1]='Freelancer';//مسوق عقاري
+  $vendore_type[2]='Compound Developer';//مطور كمبوند
+  $vendore_type[3]='Exclusive';//شركات التسويق العقارى
+   return $vendore_type[$type];
   }
 }
 
