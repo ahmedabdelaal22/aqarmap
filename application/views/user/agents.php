@@ -21,14 +21,14 @@ Listing – list view -->
                   <?php foreach ($agents as $row) {?>
         <div class="agent agent-03 mt-4">
           <div class="row g-0">
-            <div class="col-lg-4 text-center border-end">
+            <div class="col-lg-3 text-center border-end">
               <div class="d-flex flex-column h-100">
                 <div class="agent-avatar p-3 my-auto">
 
                 <?php  if(!empty($row->profile_image)){
                 $profile_image = explode('::::',$row->profile_image)[0];
               ?>
-                 <img class="img-fluid rounded-circle" src="<?php echo base_url(); ?>uploads/<?php echo $profile_image; ?>" alt="">
+                 <img class="img-fluid   " src="<?php echo base_url(); ?>uploads/<?php echo $profile_image; ?>" alt="">
 
                   <?php } ?>
                 </div>
@@ -37,7 +37,7 @@ Listing – list view -->
                 </div>
               </div>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-9">
               <div class="d-flex h-100 flex-column">
                 <div class="agent-detail">
                   <div class="d-sm-flex">

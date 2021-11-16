@@ -5151,3 +5151,12 @@ ul li:last-child {
     margin-top: 5px; } }
 
 /*# sourceMappingURL=../css/style.css.map */
+
+.property-detail-img a.portfolio-img {
+    display: block;
+    overflow: hidden;
+    height: 350px;
+}.property-detail-img a.portfolio-img img {
+    max-height: 100%;
+    margin: 0 auto;
+}

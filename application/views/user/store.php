@@ -24,8 +24,7 @@
                   </ul>
                 </li>
                 <li><a href="#"> <i class="fas fa-heart"></i> </a></li>
-                <li><a href="#"> <i class="fas fa-exchange-alt"></i> </a></li>
-                <li><a href="#"> <i class="fas fa-print"></i> </a></li>
+
               </ul>
             </div>
             <?php
@@ -49,7 +48,7 @@
               </div>
               <div class="d-flex">
                 <a href="#" class="btn btn-dark col b-radius-none">View listings</a>
-                <a href="#" class="btn btn-primary col ms-0 b-radius-none">Request info</a>
+                <a data-bs-toggle="modal" data-bs-target="#requestInfoModal" href="#" class="btn btn-primary col ms-0 b-radius-none">Request info</a>
               </div>
             </div>
           </div>
@@ -388,4 +387,37 @@ Review -->
 </section>
 <!--=================================
 Review -->
+</div>
+
+
+<!-- Modal -->
+<div class="modal hide fade request_info_modal" id="requestInfoModal" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Request Info</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+                    <form class="row mt-4 align-items-center">
+              <div class="mb-3 col-sm-12">
+                <label class="form-label">Username:</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+              <div class="mb-3 col-sm-12">
+                <label class="form-label">Email Address:</label>
+                <input type="email" class="form-control" placeholder="">
+              </div>
+              <div class="mb-3 col-sm-12">
+                <label class="form-label">Phone Number:</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+              <div class="mb-3 col-sm-12 d-grid">
+                <button type="submit" class="btn btn-primary">Request Info</button>
+              </div>
+            </form>
+      </div>
+    </div>
+  </div>
 </div>
