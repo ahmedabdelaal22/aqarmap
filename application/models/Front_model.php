@@ -180,7 +180,21 @@ class Front_model extends CI_Model
 		$test=count($query->result());
 	return $test;
 	}
+	public function get_count_agents(){
+		$query = $this->db->query('SELECT * FROM vendor');
+		
+	return $query->num_rows();
+	}
 
+
+	public function get_agents($limit, $start){
+
+			$this->db->limit($limit, $start);
+			$query = $this->db->get('vendor');
+	
+			return $query->result();
+		
+	}
 	public function get_rev_by_id_user($id)
 	{
 		$query = $this->db->get_where('user', array('id' => $id), 1);
