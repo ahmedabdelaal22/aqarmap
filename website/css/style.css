@@ -3407,12 +3407,12 @@ button {
     margin: 0 auto;
 }
 
-.col-sm-6.col-md-4 .property-image {position: relative;
+.col-md-4 .property-image {position: relative;
     height: 215px;
     overflow: hidden;
     text-align: center; }
 
-.col-sm-6.col-md-4 .property-image img {
+.col-md-4 .property-image img {
     height: 100%;
     width: auto;
     margin: 0 auto;
