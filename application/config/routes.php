@@ -186,6 +186,7 @@ $route['user/user-list'] = 'UserController/list_user';
 // $route['user/add-user'] = 'userController/add_user';
 $route['user/edit-user/(:any)'] = 'UserController/edit_user/$1';
 $route['user/update-user'] = 'UserController/update_user';
+$route['user/update-vendor'] = 'UserController/update_vendor';
 
 $route['favourite'] = 'CategoryController/favourite';
 
