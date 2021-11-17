@@ -5164,3 +5164,7 @@ ul li:last-child {
     width: 80px;
     height: 80px;
 }
+
+.property-details .property-btn .property-listing-actions li.property-favourites a:hover {
+    color: #dc3545;
+}

@@ -1,84 +1,80 @@
+<!--=================================
+  Featured properties-->
+<section class="space-ptb">
+  <div class="container">
+    <div class="row">
+    <?php      $restaurants = $this->db->query("SELECT * FROM restaurants WHERE approved = '1'   ORDER BY res_ratings DESC LIMIT 0, 15")->result_array();?>
 
-	
-<section class="">
-	<!--<div class="d-none d-lg-block divider-20"></div>-->
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<!--<div class="row ">
-					<div class="col-md-11 col-xl-12">
-						<div class="filters gallery-filters small-text text-lg-center">
-                        <h2 style="color:red">Perfect   &amp; <?=$category->c_name?></h2>
-						</div>
-					</div>
-				</div>-->
-				<div class="row justify-content-center">
-				<?php if (!empty($restaurants)) {$cnt = 1;
-					
+<?php if (isset($restaurants)) {
+                  $cnt = 1; ?>
+                  <?php foreach ($restaurants as $listing) {
+            $user_id=     $listing['vid'];
+       $vendor= $this->db->query("SELECT * FROM vendor WHERE id = $user_id ")->row()
 
-					
-					?>
-					<div class="listing_grid row">
-			
-							
-					<?php foreach ($restaurants as $listing) {
-		$like=  $this->front_model->likeCheckfront(@$_COOKIE['user_id_cookie'], $listing['res_id']);
-
-						?>
-					<div class="listing_item col-lg-3 col-md-6 col-sm-6">
-					<a href="javascript:sendRes(<?=$listing['res_id']?>);" class="add_to_fav  <?php if($like==1){echo 'added';}?>" id="<?=$listing['res_id']?>"><i class="fa fa-heart-o" ></i></a>
-						<a href="<?php echo base_url('Real Estates/' . $listing['res_id']); ?>" class="bg-gradient shadow-hover line-draw-animation w-100 h-100 text-light d-inline-block text-primary-hover">
-							<div class="img_holder">
-                            <?php if ($listing['res_image'] != " ") { ?>
-                                <?php $image = explode('::::', $listing['res_image'])[0]; ?>
-								<img class="img-responsive" src="<?php echo base_url(); ?>uploads/<?php echo $image; ?>" >
-                                <?php }?>								
-							</div>
-							<div class="item-content">
-								<div class="content_holder">
-									<span class="colored">
-										<?php echo $listing['res_name']; ?>
-									</span>
-									<input type="hidden" id="<?=$listing['res_id']?>like" value="<?=$like?>">
-                                    <?php
-									$str = $listing['res_desc'];
-									if (strlen($listing['res_desc']) > 15) {
-										$str = explode("\n", wordwrap($listing['res_desc'], 15));
-										$str = $str[0] . '...';
-									}
-									?>
-									<span class="desc"><?php echo $str; ?></span>
-									<span class="rating">
-										<i class="far fa-star-o"></i>
-										<span class="rating_valu"><?=$listing['res_ratings']?></span>
-									</span>
-								</div>
-							</div>
-						</a>
-
-					</div>
-				
-					
-				<?php }?>
-				</div>
-               <?php }else{
-		
-                ?>
-					<div class="faverror listing_item col-lg-6 col-md-6 col-sm-6">
-				<div class="alert alert-danger" role="alert">
-				لا يوجد مطاعم  في قائمة المفضلة
-
+?>
+      <div class="col-sm-6 col-md-4">
+        <div class="property-item">
+ 
+          <div class="property-image bg-overlay-gradient-04">
+          <?php $image = explode('::::', $listing['res_image'])[0]; ?>
+            <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $image; ?>" alt="">
+            <div class="property-lable">
+              <span class="badge badge-md bg-primary">Bungalow</span>
+              <span class="badge badge-md bg-info">Sale </span>
+            </div>
+            <span class="property-trending" title="trending"><i class="fas fa-bolt"></i></span>
+            <div class="property-agent">
+              <div class="property-agent-image"><?php
+              if(!empty($vendor->profile_image)){
+                $profile_image = explode('::::',$vendor->profile_image)[0];
+              ?>
+                <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $profile_image; ?>" alt="">
+                <?php } ?>
               </div>
-			  </div>
-			<?php } ?>
-			
-					
+              <div class="property-agent-info">
+                <a class="property-agent-name" href="#"><?=@$vendor->uname?></a>
+                <span class="d-block"><?=@$vendor->email?></span>
+                <ul class="property-agent-contact list-unstyled">
+                  <li><a href="tel:<?=@$vendor->phone?>"><i class="fas fa-mobile-alt"></i> </a></li>
+      
+                </ul>
+              </div>
+            </div>
+    
+          </div>
+        <?php $this->load->helper('text');?>
+          <div class="property-details">
+            <div class="property-details-inner">
+              <h5 class="property-title"><a href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?=$listing['res_name']?></a></h5>
+              <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i><?= word_limiter($listing['res_desc'],3);?></span>
+              <span class="property-agent-date">
+                <i class="far fa-clock fa-md"></i><?php
+              echo date('d/M/Y', $listing['res_create_date']);
+              ?></span>
+              <div class="property-price"><?=$listing['discount']?><span> / month</span> </div>
+              <ul class="property-info list-unstyled d-flex">
+                <li class="flex-fill property-bed"><i class="fas fa-bed"></i>rooms<span><?=$listing['rooms']?></span></li>
+                <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span><?=$listing['baths']?></span></li>
+                <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span><?=$listing['space']?>m</span></li>
+              </ul>
+            </div>
+            <div class="property-btn">
+              <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>">See Details</a>
+              <ul class="property-listing-actions list-unstyled mb-0">
+                <li class="property-favourites">
+                  <a data-bs-toggle="tooltip" data-bs-placement="top" title="Favourite" href="#"><i class="fa fa-heart text-danger"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
-				</div>
-				<!-- .isotope-wrapper-->
+    
+      <?php }} ?>
 
-				
-			</div>
-		</div>
-	</div>
+    </div>
+  </div>
 </section>
+
+
