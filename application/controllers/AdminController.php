@@ -353,7 +353,7 @@ class AdminController extends CI_Controller
 			);
 
 			if(!empty($_FILES['profile_image']['name'])){
-				$config['upload_path'] = './uploads/profile_pics';
+				$config['upload_path'] = './uploads';
                 $config['allowed_types'] = 'jpg|png|jpeg';
                 $config['file_name'] = uniqid();
                 $config['overwrite'] = TRUE;
@@ -437,7 +437,7 @@ class AdminController extends CI_Controller
 			);
 			
 			if (!empty($_FILES['profile_image']['name'])) {
-				$config['upload_path'] = './uploads/profile_pics';
+				$config['upload_path'] = './uploads';
 				$config['allowed_types'] = 'jpg|png|jpeg';
 				$config['file_name'] = uniqid();
 				$config['overwrite'] = TRUE;

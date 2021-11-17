@@ -23,7 +23,7 @@ Browse properties Categories -->
          <?php if(isset($category)){ $cnt=1; ?>  
 	         <?php foreach($category as $row) { ?>
 	            <li class="category-item">
-	              <a href="<?php echo base_url('categories/').$row->id?>">
+	              <a href="<?php echo base_url('search?cat_id=').$row->id?>">
 	                <div class="category-icon">
 	                  <i class="flaticon-building-2"></i>
 	                </div>

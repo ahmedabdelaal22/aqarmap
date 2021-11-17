@@ -79,7 +79,7 @@ $vendor = $this->admin_model->get_vendor();
 														<?php if (empty($row->profile_image)) { ?>
 															<img src="<?php echo base_url('uploads/profile_pics/user.png') ?>" class="image brand-image img-circle elevation-3" height="40" width="40">
 														<?php } else { ?>
-															<img src="<?php echo base_url('uploads/profile_pics/') . $row->profile_image ?>" class="image brand-image img-circle elevation-3" height="40" width="40"> <?php } ?>
+															<img src="<?php echo base_url('uploads/') . $row->profile_image ?>" class="image brand-image img-circle elevation-3" height="40" width="40"> <?php } ?>
 													<?php } ?>
 												</td>
 												<td><?php echo $row->uname; ?></td>

@@ -54,6 +54,34 @@ function count_category($category_id){
   
   }
 }
+
+if (!function_exists('min_price'))
+{
+
+function min_price(){
+  $CI =&get_instance();
+
+  $CI->db->select_min('discount');
+  $CI->db->limit(1); 
+  $query = $CI->db->get('restaurants');
+  return $query->result()[0]->discount;
+  
+  }
+}
+
+
+if (!function_exists('max_price'))
+{
+
+function max_price(){
+  $CI =&get_instance();
+  $CI->db->select_max('discount');
+  $CI->db->limit(1); 
+  $query = $CI->db->get('restaurants');
+  return $query->result()[0]->discount;
+  
+  }
+}
 if (!function_exists('countby_agent'))
 {
 function countby_agent($vid){

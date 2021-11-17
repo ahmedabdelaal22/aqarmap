@@ -27,6 +27,17 @@ class UserController extends CI_Controller
 		$this->load->library('form_validation');
 		$this->load->model('admin_model');
 		$this->load->model('firebase_model');
+
+
+		$this->session->set_userdata(array("search"=>""));
+		$this->session->set_userdata(array("region_id"=>""));
+		$this->session->set_userdata(array("cat_id"=>""));
+		$this->session->set_userdata(array("type"=>""));
+		$this->session->set_userdata(array("rooms"=>""));
+		$this->session->set_userdata(array("floor"=>""));
+		$this->session->set_userdata(array("price_range"=>""));
+		$this->session->set_userdata(array("min_space"=> ""));
+		$this->session->set_userdata(array("max_space"=> ""));
     }
 	public function update_vendor()
 	{

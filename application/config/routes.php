@@ -203,7 +203,7 @@ $route['likeRes'] = 'OfferController/likeRes';
 $route['unlikeRes'] = 'OfferController/unlikeRes';
 
 $route['search'] = 'SearchController/index';
-
+$route['search/(:any)'] = 'SearchController/index';
 
 $route['give_review'] = 'RegionsController/give_review';
 $route['subscribe'] = 'SettingController/subscribe';

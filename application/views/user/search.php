@@ -5,16 +5,16 @@ Listing – grid view -->
     <div class="row">
       <div class="col-md-6">
         <div class="section-title mb-3 mb-lg-4">
-          <h2><span class="text-primary">156</span> Results</h2>
+          <h2><span class="text-primary"><?=$total_rows?></span> Results</h2>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="property-filter-tag">
+        <!-- <div class="property-filter-tag">
           <ul class="list-unstyled">
             <li><a href="#">Apartment <i class="fas fa-times-circle"></i> </a></li>
             <li><a class="filter-clear" href="#">Reset Search <i class="fas fa-redo-alt"></i> </a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="row">
@@ -25,74 +25,78 @@ Listing – grid view -->
               <h6>Advanced filter</h6>
               <a class="ms-auto" data-bs-toggle="collapse" href="#filter-property" role="button" aria-expanded="false" aria-controls="filter-property"> <i class="fas fa-chevron-down"></i> </a>
             </div>
+
             <div class="collapse show" id="filter-property">
               <form class="mt-3">
                 <div class="mb-2 select-border">
-                  <select class="form-control basic-select">
-                    <option>All Type</option>
-                    <option>Villa</option>
-                    <option>Apartment Building</option>
-                    <option>Commercial</option>
-                    <option>Office</option>
-                    <option>Residential</option>
-                    <option>Shop</option>
-                    <option>Apartment</option>
+                  <select class="form-control basic-select" name="cat_id">
+                    <option value="">All Type</option>
+                    <?php $category = $this->admin_model->get_category();
+                   $category_id=$this->input->get('cat_id');
+                   $type=$this->input->get('type');
+                   $region_id=$this->input->get('region_id');
+                   $rooms=$this->input->get('rooms');
+                   $floor=$this->input->get('floor');
+
+                   $from_price=$this->input->get('from_price');
+                   $to_price  =$this->input->get('to_price');
+                   
+                  ?>
+                    <?php foreach ($category as $listing) : ?>
+                    <option value="<?php echo $listing['id']; ?>" <?php if ($listing['id'] == $category_id) echo "selected='selected'"; ?>><?php echo $listing['c_name']; ?></option>
+                    <?php endforeach; ?>
                   </select>
                 </div>
                 <div class="mb-2 select-border">
-                  <select class="form-control basic-select">
-                    <option>For Rent</option>
-                    <option>For Sale</option>
+                  <select class="form-control basic-select"name="type" >
+                  <option value="">All</option>
+                  <?php foreach (types() as $key => $value) : ?>
+                  <option value="<?php echo $key; ?>"   <?php if ($key == $type) echo "selected='selected'"; ?> ><?php echo $value ?></option>
+											<?php endforeach; ?>
                   </select>
                 </div>
                 <div class="mb-2 select-border">
-                  <select class="form-control basic-select">
-                    <option>Distance from location</option>
-                    <option>Within 1 mile</option>
-                    <option>Within 3 miles</option>
-                    <option>Within 5 miles</option>
-                    <option>Within 10 miles</option>
-                    <option>Within 15 miles</option>
-                    <option>Within 30 miles</option>
+                  <select class="form-control basic-select"name="region_id" >
+                    <option value="">location</option>
+                    <?php 
+				$regions = $this->admin_model->get_all_regions();
+              foreach ($regions as $row) : ?> 
+          <option value="<?php echo $row->id; ?>" <?php if ($row->id == $region_id) echo "selected='selected'"; ?>><?php echo $row->name_en; ?></option>
+        <?php endforeach; ?>
                   </select>
                 </div>
                 <div class="mb-2 select-border">
-                  <select class="form-control basic-select">
-                    <option>Bedrooms</option>
-                    <option>01</option>
-                    <option>02</option>
-                    <option>03</option>
+                  <select class="form-control basic-select"name="rooms">
+                    <option value="">Bedrooms</option>
+                    <?php foreach (rooms() as $key => $value) : ?>
+                  <option value="<?php echo $key; ?>"   <?php if ($key == $rooms) echo "selected='selected'"; ?> ><?php echo $value ?></option>
+											<?php endforeach; ?>
                   </select>
                 </div>
+           
+                <input type="hidden" id="from_price" name="from" value="<?php echo ($from_price)?$from_price:min_price()?>"/>
+              <input type="hidden"  id="to_price" name="to" value="<?php echo ($to_price)?$to_price:max_price()?>"/>
+
                 <div class="mb-2 select-border">
-                  <select class="form-control basic-select">
-                    <option>Sort by</option>
-                    <option>Most popular</option>
-                    <option>Highest price</option>
-                    <option>Lowest price</option>
-                    <option>Most reduced</option>
-                  </select>
-                </div>
-                <div class="mb-2 select-border">
-                  <select class="form-control basic-select">
-                    <option>Select Floor</option>
-                    <option>01</option>
-                    <option>02</option>
-                    <option>03</option>
+                  <select class="form-control basic-select" name="floor">
+                    <option value="">Select Floor</option>
+                    <?php foreach (rooms() as $key => $value) : ?>
+                  <option value="<?php echo $key; ?>"   <?php if ($key == $floor) echo "selected='selected'"; ?> ><?php echo $value ?></option>
+											<?php endforeach; ?>
                   </select>
                 </div>
                 <div class="mb-2">
-                  <input class="form-control" placeholder="Type (sq ft)">
+                  <input class="form-control" name="min_space" value="<?=$this->input->get('min_space')?>" placeholder="Type (sq ft)">
                 </div>
                 <div class="mb-2">
-                  <input class="form-control" placeholder="Type (sq ft)">
+                  <input class="form-control"name="max_space" value="<?=$this->input->get('max_space')?>" placeholder="Type (sq ft)">
                 </div>
                  <div class="mb-3 property-price-slider mt-3">
                   <label class="form-label">Select Price Range</label>
-                  <input type="text" id="property-price-slider" name="example_name" value="" />
+                  <input type="text" id="property-price-slider" name="price_range" value="" />
                 </div>
                 <div class="d-grid mb-2">
-                  <button class="btn btn-primary align-items-center" type="submit"><i class="fas fa-filter me-1"></i><span>Filter</span></button>
+                  <input class="btn btn-primary align-items-center"  name='submit' value='Filter' type="submit">
                 </div>
               </form>
             </div>
@@ -104,105 +108,43 @@ Listing – grid view -->
             </div>
             <div class="collapse show" id="status-property">
               <ul class="list-unstyled mb-0 pt-3">
-                <li><a href="#">For rent<span class="ms-auto">(500)</span></a></li>
-                <li><a href="#">For Sale<span class="ms-auto">(1200)</span></a></li>
+              <?php foreach (types() as $key => $value) : ?>
+                <li><a href="<?php echo $key; ?>"><?php echo $value ?><span class="ms-auto">(<?=count_types($key)?>)</span></a></li>
+                <?php endforeach; ?>
               </ul>
             </div>
           </div>
-          <div class="widget">
-            <div class="widget-title widget-collapse">
-              <h6>Type of property</h6>
-              <a class="ms-auto" data-bs-toggle="collapse" href="#type-property" role="button" aria-expanded="false" aria-controls="type-property"> <i class="fas fa-chevron-down"></i> </a>
-            </div>
-            <div class="collapse show" id="type-property">
-              <ul class="list-unstyled mb-0 pt-3">
-                <li><a href="#">Residential<span class="ms-auto">(12)</span></a></li>
-                <li><a href="#">Commercial<span class="ms-auto">(45)</span></a></li>
-                <li><a href="#">Industrial<span class="ms-auto">(23)</span></a></li>
-                <li><a href="#">Apartment<span class="ms-auto">(05)</span></a></li>
-                <li><a href="#">Building code<span class="ms-auto">(10)</span></a></li>
-                <li><a href="#">Communal land<span class="ms-auto">(47)</span></a></li>
-                <li><a href="#">Insurability<span class="ms-auto">(32)</span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="widget">
-            <div class="widget-title">
-              <h6>Mortgage calculator</h6>
-            </div>
-            <form>
-              <div class="mb-2">
-                <div class="input-group input-group-box">
-                  <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
-                  <input type="text" class="form-control" placeholder="Total Amount">
-                 </div>
-              </div>
-              <div class="mb-2">
-                <div class="input-group input-group-box">
-                  <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
-                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Down Payment">
-                </div>
-              </div>
-              <div class="mb-2">
-                <div class="input-group input-group-box">
-                  <span class="input-group-text"><i class="fas fa-percent"></i></span>
-                  <input type="text" class="form-control" placeholder="Interest Rate">
-                 </div>
-              </div>
-              <div class="mb-2">
-                <div class="input-group input-group-box">
-                  <span class="input-group-text"><i class="far fa-clock"></i></span>
-                  <input type="text" class="form-control" placeholder="Loan Term (Years)">
-                </div>
-              </div>
-              <div class="mb-3 select-border">
-                <select class="form-control basic-select">
-                  <option>Monthly</option>
-                  <option>Weekly</option>
-                  <option>Yearly</option>
-                </select>
-              </div>
-              <a class="btn btn-primary d-grid" href="#">Calculate</a>
-            </form>
-          </div>
+    
+
           <div class="widget">
             <div class="widget-title">
               <h6>Recently listed properties</h6>
             </div>
+
+            <?php      $left_restaurants = $this->db->query("SELECT * FROM restaurants WHERE approved = '1'   ORDER BY res_ratings DESC LIMIT 0, 7")->result_array();?>
+
+            <?php if (isset($left_restaurants)) {
+                  $cnt = 1; ?>
+                  <?php foreach ($left_restaurants as $listing) {
+      
+
+?>
+ <?php $image = explode('::::', $listing['res_image'])[0]; ?>
             <div class="recent-list-item">
-              <img class="img-fluid" src="<?=base_url('website')?>/images/property/list/01.jpg" alt="">
+              <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $image; ?>" alt="">
               <div class="recent-list-item-info">
-                <a class="address mb-2" href="property-detail-style-01.html">Awesome family home</a>
-                <span class="text-primary">$1,456,233 </span>
+                <a class="address mb-2" href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?=$listing['res_name']?></a>
+                <span class="text-primary"><?=$listing['discount']?> </span>
               </div>
             </div>
-            <div class="recent-list-item">
-              <img class="img-fluid" src="<?=base_url('website')?>/images/property/list/02.jpg" alt="">
-              <div class="recent-list-item-info">
-                <a class="address mb-2" href="property-detail-style-01.html">Contemporary apartment</a>
-                <span class="text-primary">$2,496,454 </span>
-              </div>
-            </div>
-            <div class="recent-list-item">
-              <img class="img-fluid" src="<?=base_url('website')?>/images/property/list/03.jpg" alt="">
-              <div class="recent-list-item-info">
-                <a class="address mb-2" href="property-detail-style-01.html">Family home for sale</a>
-                <span class="text-primary">$4,662,457 </span>
-              </div>
-            </div>
-            <div class="recent-list-item">
-              <img class="img-fluid" src="<?=base_url('website')?>/images/property/list/04.jpg" alt="">
-              <div class="recent-list-item-info">
-                <a class="address mb-2" href="property-detail-style-01.html">184 lexington avenue</a>
-                <span class="text-primary">$2,456,452 </span>
-              </div>
-            </div>
+            <?php }} ?>
+
           </div>
         </div>
       </div>
       <div class="col-lg-9">
         <div class="property-filter d-sm-flex">
-          <ul class="property-short list-unstyled d-sm-flex mb-0">
+          <!-- <ul class="property-short list-unstyled d-sm-flex mb-0">
             <li>
               <form class="form-inline">
                 <div class="d-lg-flex d-block mb-sm-0 mb-3">
@@ -248,13 +190,22 @@ Listing – grid view -->
               <span></span>
               <span></span>
             </a></li>
-          </ul>
+          </ul> -->
         </div>
         <div class="row mt-4">
+
+<?php if (isset($restaurants)) {
+                  $cnt = 1; ?>
+                  <?php foreach ($restaurants as $listing) {
+            $user_id=     $listing['vid'];
+       $vendor= $this->db->query("SELECT * FROM vendor WHERE id = $user_id ")->row()
+
+?>
+         <?php $image = explode('::::', $listing['res_image'])[0]; ?>
           <div class="col-sm-6">
             <div class="property-item">
               <div class="property-image bg-overlay-gradient-04">
-                <img class="img-fluid" src="<?=base_url('website')?>/images/property/grid/01.jpg" alt="">
+                <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $image; ?>" alt="">
                 <div class="property-lable">
                   <span class="badge badge-md bg-primary">Bungalow</span>
                   <span class="badge badge-md bg-info">Sale </span>
@@ -262,35 +213,38 @@ Listing – grid view -->
                 <span class="property-trending" title="trending"><i class="fas fa-bolt"></i></span>
                 <div class="property-agent">
                   <div class="property-agent-image">
-                    <img class="img-fluid" src="<?=base_url('website')?>/images/avatar/01.jpg" alt="">
+   <?php   if(!empty($vendor->profile_image)){
+                $profile_image = explode('::::',$vendor->profile_image)[0];
+              ?>
+                <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $profile_image; ?>" alt="">
+                <?php } ?>
                   </div>
                   <div class="property-agent-info">
-                    <a class="property-agent-name" href="#">Alice Williams</a>
-                    <span class="d-block">Company Agent</span>
+                    <a class="property-agent-name" href="#"><?=@$vendor->uname?></a>
+                    <span class="d-block"><?=@$vendor->email?></span>
                     <ul class="property-agent-contact list-unstyled">
-                      <li><a href="#"><i class="fas fa-mobile-alt"></i> </a></li>
-                      <li><a href="#"><i class="fas fa-envelope"></i> </a></li>
+                      <li><a href="tel:<?=@$vendor->phone?>"><i class="fas fa-mobile-alt"></i> </a></li>
                     </ul>
                   </div>
                 </div>
-                <div class="property-agent-popup">
-                  <a href="#"><i class="fas fa-camera"></i> 06</a>
-                </div>
+                <?php $this->load->helper('text');?>
               </div>
               <div class="property-details">
                 <div class="property-details-inner">
-                  <h5 class="property-title"><a href="property-detail-style-01.html">Ample apartment at last floor </a></h5>
-                  <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>Virginia drive temple hills</span>
-                  <span class="property-agent-date"><i class="far fa-clock fa-md"></i>10 days ago</span>
-                  <div class="property-price">$150.00<span> / month</span> </div>
+                  <h5 class="property-title"><a href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?=$listing['res_name']?></a></h5>
+                  <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i><?= word_limiter($listing['res_desc'],4);?></span>
+                  <span class="property-agent-date"><i class="far fa-clock fa-md"></i><?php
+              echo date('d/M/Y', $listing['res_create_date']);
+              ?></span>
+                  <div class="property-price"><?=$listing['discount']?><span> / month</span> </div>
                   <ul class="property-info list-unstyled d-flex">
-                    <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>1</span></li>
-                    <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li>
-                    <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span>145m</span></li>
+                    <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Rooms<span><?=$listing['rooms']?></span></li>
+                    <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span><?=$listing['baths']?></span></li>
+                    <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span><?=$listing['space']?>m</span></li>
                   </ul>
                 </div>
                 <div class="property-btn">
-                  <a class="property-link" href="property-detail-style-01.html">See Details</a>
+                  <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>">See Details</a>
                   <ul class="property-listing-actions list-unstyled mb-0">
                     <li class="property-favourites"><a data-bs-toggle="tooltip" data-placement="top" title="Favourite" href="#"><i class="far fa-heart"></i></a></li>
                   </ul>
@@ -298,242 +252,11 @@ Listing – grid view -->
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="property-item">
-              <div class="property-image bg-overlay-gradient-04">
-                <img class="img-fluid" src="<?=base_url('website')?>/images/property/grid/02.jpg" alt="">
-                <div class="property-lable">
-                  <span class="badge badge-md bg-primary">Apartment</span>
-                  <span class="badge badge-md bg-info">New </span>
-                </div>
-                <div class="property-agent">
-                  <div class="property-agent-image">
-                    <img class="img-fluid" src="<?=base_url('website')?>/images/avatar/02.jpg" alt="">
-                  </div>
-                  <div class="property-agent-info">
-                    <a class="property-agent-name" href="#">John doe</a>
-                    <span class="d-block">Company Agent</span>
-                    <ul class="property-agent-contact list-unstyled">
-                      <li><a href="#"><i class="fas fa-mobile-alt"></i> </a></li>
-                      <li><a href="#"><i class="fas fa-envelope"></i> </a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="property-agent-popup">
-                  <a href="#"><i class="fas fa-camera"></i> 12</a>
-                </div>
-              </div>
-              <div class="property-details">
-                <div class="property-details-inner">
-                  <h5 class="property-title"><a href="property-detail-style-01.html">Awesome family home</a></h5>
-                  <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>Vermont dr. hephzibah</span>
-                  <span class="property-agent-date"><i class="far fa-clock fa-md"></i>2 months ago</span>
-                  <div class="property-price">$326.00<span> / month</span> </div>
-                  <ul class="property-info list-unstyled d-flex">
-                    <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>2</span></li>
-                    <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>3</span></li>
-                    <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span>215m</span></li>
-                  </ul>
-                </div>
-                <div class="property-btn">
-                  <a class="property-link" href="property-detail-style-01.html">See Details</a>
-                  <ul class="property-listing-actions list-unstyled mb-0">
-                    <li class="property-favourites"><a data-bs-toggle="tooltip" data-placement="top" title="Favourite" href="#"><i class="far fa-heart"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="property-item">
-              <div class="property-image bg-overlay-gradient-04">
-                <img class="img-fluid" src="<?=base_url('website')?>/images/property/grid/03.jpg" alt="">
-                <div class="property-lable">
-                  <span class="badge badge-md bg-primary">Summer House</span>
-                  <span class="badge badge-md bg-info">Hot </span>
-                </div>
-                <span class="property-trending" title="trending"><i class="fas fa-bolt"></i></span>
-                <div class="property-agent">
-                  <div class="property-agent-image">
-                    <img class="img-fluid" src="<?=base_url('website')?>/images/avatar/03.jpg" alt="">
-                  </div>
-                  <div class="property-agent-info">
-                    <a class="property-agent-name" href="#">Felica queen</a>
-                    <span class="d-block">Investment</span>
-                    <ul class="property-agent-contact list-unstyled">
-                      <li><a href="#"><i class="fas fa-mobile-alt"></i> </a></li>
-                      <li><a href="#"><i class="fas fa-envelope"></i> </a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="property-agent-popup">
-                  <a href="#"><i class="fas fa-camera"></i> 03</a>
-                </div>
-              </div>
-              <div class="property-details">
-                <div class="property-details-inner">
-                  <h5 class="property-title"><a href="property-detail-style-01.html">Contemporary apartment</a></h5>
-                  <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>Newport st. mebane, nc</span>
-                  <span class="property-agent-date"><i class="far fa-clock fa-md"></i>6 months ago</span>
-                  <div class="property-price">$658.00<span> / month</span> </div>
-                  <ul class="property-info list-unstyled d-flex">
-                    <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>3</span></li>
-                    <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>4</span></li>
-                    <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span>3,189m</span></li>
-                  </ul>
-                </div>
-                <div class="property-btn">
-                  <a class="property-link" href="property-detail-style-01.html">See Details</a>
-                  <ul class="property-listing-actions list-unstyled mb-0">
-                    <li class="property-favourites"><a data-bs-toggle="tooltip" data-placement="top" title="Favourite" href="#"><i class="far fa-heart"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="property-item">
-              <div class="property-image bg-overlay-gradient-04">
-                <img class="img-fluid" src="<?=base_url('website')?>/images/property/grid/04.jpg" alt="">
-                <div class="property-lable">
-                  <span class="badge badge-md bg-primary">Duplex</span>
-                  <span class="badge badge-md bg-info">Hot </span>
-                </div>
-                <div class="property-agent">
-                  <div class="property-agent-image">
-                    <img class="img-fluid" src="<?=base_url('website')?>/images/avatar/04.jpg" alt="">
-                  </div>
-                  <div class="property-agent-info">
-                    <a class="property-agent-name" href="#">Sara lisbon</a>
-                    <span class="d-block">Construction</span>
-                    <ul class="property-agent-contact list-unstyled">
-                      <li><a href="#"><i class="fas fa-mobile-alt"></i> </a></li>
-                      <li><a href="#"><i class="fas fa-envelope"></i> </a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="property-agent-popup">
-                  <a href="#"><i class="fas fa-camera"></i> 04</a>
-                </div>
-              </div>
-              <div class="property-details">
-                <div class="property-details-inner">
-                  <h5 class="property-title"><a href="property-detail-style-01.html">Family home for sale</a></h5>
-                  <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>Border st. nicholasville, ky</span>
-                  <span class="property-agent-date"><i class="far fa-clock fa-md"></i>12 months ago</span>
-                  <div class="property-price">$485.00<span> / month</span> </div>
-                  <ul class="property-info list-unstyled d-flex">
-                    <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>2</span></li>
-                    <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>1</span></li>
-                    <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span>2,356m</span></li>
-                  </ul>
-                </div>
-                <div class="property-btn">
-                  <a class="property-link" href="property-detail-style-01.html">See Details</a>
-                  <ul class="property-listing-actions list-unstyled mb-0">
-                    <li class="property-favourites"><a data-bs-toggle="tooltip" data-placement="top" title="Favourite" href="#"><i class="far fa-heart"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="property-item">
-              <div class="property-image bg-overlay-gradient-04">
-                <img class="img-fluid" src="<?=base_url('website')?>/images/property/grid/05.jpg" alt="">
-                <div class="property-lable">
-                  <span class="badge badge-md bg-primary">Penthouses</span>
-                  <span class="badge badge-md bg-info">Rent </span>
-                </div>
-                <span class="property-trending" title="trending"><i class="fas fa-bolt"></i></span>
-                <div class="property-agent">
-                  <div class="property-agent-image">
-                    <img class="img-fluid" src="<?=base_url('website')?>/images/avatar/05.jpg" alt="">
-                  </div>
-                  <div class="property-agent-info">
-                    <a class="property-agent-name" href="#">Mellissa Doe</a>
-                    <span class="d-block">Founder & CEO</span>
-                    <ul class="property-agent-contact list-unstyled">
-                      <li><a href="#"><i class="fas fa-mobile-alt"></i> </a></li>
-                      <li><a href="#"><i class="fas fa-envelope"></i> </a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="property-agent-popup">
-                  <a href="#"><i class="fas fa-camera"></i> 10</a>
-                </div>
-              </div>
-              <div class="property-details">
-                <div class="property-details-inner">
-                  <h5 class="property-title"><a href="property-detail-style-01.html">Luxury villa with pool</a></h5>
-                  <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>West Indian St. Missoula</span>
-                  <span class="property-agent-date"><i class="far fa-clock fa-md"></i>2 years ago</span>
-                  <div class="property-price">$698.00<span> / month</span> </div>
-                  <ul class="property-info list-unstyled d-flex">
-                    <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>5</span></li>
-                    <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>4</span></li>
-                    <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span>1,658m</span></li>
-                  </ul>
-                </div>
-                <div class="property-btn">
-                  <a class="property-link" href="property-detail-style-01.html">See Details</a>
-                  <ul class="property-listing-actions list-unstyled mb-0">
-                    <li class="property-favourites"><a data-bs-toggle="tooltip" data-placement="top" title="Favourite" href="#"><i class="far fa-heart"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="property-item">
-              <div class="property-image bg-overlay-gradient-04">
-                <img class="img-fluid" src="<?=base_url('website')?>/images/property/grid/06.jpg" alt="">
-                <div class="property-lable">
-                  <span class="badge badge-md bg-primary">Studio</span>
-                  <span class="badge badge-md bg-info">New </span>
-                </div>
-                <div class="property-agent">
-                  <div class="property-agent-image">
-                    <img class="img-fluid" src="<?=base_url('website')?>/images/avatar/06.jpg" alt="">
-                  </div>
-                  <div class="property-agent-info">
-                    <a class="property-agent-name" href="#">Michael Bean</a>
-                    <span class="d-block">Research</span>
-                    <ul class="property-agent-contact list-unstyled">
-                      <li><a href="#"><i class="fas fa-mobile-alt"></i> </a></li>
-                      <li><a href="#"><i class="fas fa-envelope"></i> </a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="property-agent-popup">
-                  <a href="#"><i class="fas fa-camera"></i> 02</a>
-                </div>
-              </div>
-              <div class="property-details">
-                <div class="property-details-inner">
-                  <h5 class="property-title"><a href="property-detail-style-01.html">184 lexington avenue</a></h5>
-                  <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>Hamilton rd. willoughby, oh</span>
-                  <span class="property-agent-date"><i class="far fa-clock fa-md"></i>3 years ago</span>
-                  <div class="property-price">$236.00<span> / month</span> </div>
-                  <ul class="property-info list-unstyled d-flex">
-                    <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>2</span></li>
-                    <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li>
-                    <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span>3,657m</span></li>
-                  </ul>
-                </div>
-                <div class="property-btn">
-                  <a class="property-link" href="property-detail-style-01.html">See Details</a>
-                  <ul class="property-listing-actions list-unstyled mb-0">
-                    <li class="property-favourites"><a data-bs-toggle="tooltip" data-placement="top" title="Favourite" href="#"><i class="far fa-heart"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php }} ?>
         </div>
         <div class="row">
           <div class="col-12">
-            <ul class="pagination mt-3">
+            <!-- <ul class="pagination mt-3">
               <li class="page-item disabled me-auto">
                 <span class="page-link b-radius-none">Prev</span>
               </li>
@@ -543,7 +266,9 @@ Listing – grid view -->
               <li class="page-item ms-auto">
                 <a class="page-link b-radius-none" href="#">Next</a>
               </li>
-            </ul>
+            </ul> -->
+
+            <?php echo $links; ?>
           </div>
         </div>
       </div>
