@@ -18,7 +18,7 @@ Contact -->
             </div>
             <div class="ms-3">
               <h6>Address</h6>
-              <p>214 West Arnold St. New York, NY 10002</p>
+              <p><?=appSettings('address_en')?></p>
             </div>
           </div>
           <div class="d-flex mb-3">
@@ -27,7 +27,7 @@ Contact -->
             </div>
             <div class="ms-3">
               <h6>Email</h6>
-              <p>support@realvilla.demo</p>
+              <p><?=appSettings('email')?></p>
             </div>
           </div>
           <div class="d-flex mb-3">
@@ -36,7 +36,7 @@ Contact -->
             </div>
             <div class="ms-3">
               <h6>Phone Number</h6>
-              <p>(123) 345-6789</p>
+              <p><?=appSettings('whatsapp')?></p>
             </div>
           </div>
           <div class="d-flex mb-3">
@@ -45,18 +45,18 @@ Contact -->
             </div>
             <div class="ms-3">
               <h6>Fax</h6>
-              <p>(456) 478-2589</p>
+              <p><?=appSettings('fax')?></p>
             </div>
           </div>
           <div class="social-icon-02">
             <div class="d-flex align-items-center">
               <h6 class="me-3">Social:</h6>
               <ul class="list-unstyled mb-0 list-inline">
-                <li><a href="#"> <i class="fab fa-facebook-f"></i> </a></li>
-                <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
-                <li><a href="#"> <i class="fab fa-linkedin"></i> </a></li>
-                <li><a href="#"> <i class="fab fa-pinterest"></i> </a></li>
-                <li><a href="#"> <i class="fab fa-instagram"></i> </a></li>
+                <li><a href="<?=appSettings('facebook')?>"> <i class="fab fa-facebook-f"></i> </a></li>
+                <li><a href="<?=appSettings('twitter')?>"> <i class="fab fa-twitter"></i> </a></li>
+                <li><a href="<?=appSettings('linkedin')?>"> <i class="fab fa-linkedin"></i> </a></li>
+                <li><a href="<?=appSettings('pinterest')?>"> <i class="fab fa-pinterest"></i> </a></li>
+                <li><a href="<?=appSettings('instagram')?>"> <i class="fab fa-instagram"></i> </a></li>
               </ul>
             </div>
           </div>
@@ -65,22 +65,22 @@ Contact -->
       <div class="col-lg-7 mt-4 mt-lg-0">
         <div class="contact-form">
           <h4 class="mb-4">Need assistance? Please complete the contact form</h4>
-          <form>
+          <form id="cform1">
             <div class="row">
               <div class="mb-3 col-md-6">
-                <input type="text" class="form-control" id="name" placeholder="Your name">
+                <input type="text" class="form-control" name="name" id="nameid" placeholder="Your name">
               </div>
               <div class="mb-3 col-md-6">
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Your email">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your email">
               </div>
               <div class="mb-3 col-md-6">
-                <input type="text" class="form-control" id="phone" placeholder="Your phone">
+                <input type="text" class="form-control" name="phone" id="phone" placeholder="Your phone">
               </div>
               <div class="mb-3 col-md-6">
-                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                <input type="text" class="form-control"  name="title" id="title"  placeholder="Subject">
               </div>
               <div class="mb-3 col-md-12">
-                <textarea class="form-control" rows="4" placeholder="Your message"></textarea>
+                <textarea class="form-control" rows="4" name="message" id="message" placeholder="Your message"></textarea>
               </div>
               <div class="mb-3 col-md-12">
                 <div class="form-check">
@@ -91,7 +91,7 @@ Contact -->
               </div>
               </div>
               <div class="col-md-12">
-                <a class="btn btn-primary" href="#">Send message</a>
+              <button type="button" class="btn btn-primary" id="contact_form" >Send message</button>
               </div>
             </div>
           </form>
@@ -135,134 +135,8 @@ Contact -->
     </div>
   </div>
 </section>
-<!--=================================
-Contact -->
 
-<!--<section class="page_title ls s-py-50 corner-title ls invise overflow-visible">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 text-center">
-							<h1>
-				
-              <?php echo $this->lang->line('contacts') ?>
-							</h1>
-							<ol class="breadcrumb">
-								<li class="breadcrumb-item">
-									<a href="<?=base_url('/')?>">
-              
-                  <?php echo $this->lang->line('home') ?>
-                
-                </a>
-								</li>
-								<li class="breadcrumb-item active">
-							
-                <?php echo $this->lang->line('contact_us') ?>
-								</li>
-							</ol>
-							<div class="divider-15 d-none d-xl-block"></div>
-						</div>
-					</div>
-				</div>
-</section>-->
-			<!--<section class="contact_background" style="background: url(<?=base_url('website')?>/images/contact-min.jpg);">
-				<div class="container">
-					<div class="row " >
-
-						<div class="divider-80"></div>
-
-						<div class="col-md-5 contact_form" >
-
-							<div class="alert alert-danger" id="allererror" style="display:none">
-					<a href="javascript:void()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					<span id="errorspan2"></span>
-				</div>
-							<form class="contact-form c-mb-20 text-center" id="cform1">
-								<div class="row form-header">
-								<div class="col-sm-12">
-					  	        	<h5 class="modal-title" id="exampleModalLabel">أضف مشروعك</h5>
-					        		<span class="sub-title">يمكنك الان مشاركه مشروعك معنا</span>	
-        						</div>
-        						</div>
-								<div class="row">
-									<div class="col-sm-12">
-										<div class="form-group">
-											<label for="name">
-											<?php echo $this->lang->line('full_name_label') ?>	
-												<span class="required">*</span>
-											</label>
-											<input type="text" aria-required="true" size="30" value="" name="name" id="nameid" class="form-control" placeholder="<?php echo $this->lang->line('full_name') ?>">
-										</div>
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-sm-12">
-										<div class="form-group">
-											<label for="email">
-											<?php echo $this->lang->line('email_address_label') ?>
-												<span class="required">*</span>
-											</label>
-											<input type="text" aria-required="true" size="30" value="" name="email" id="email" class="form-control" placeholder="<?php echo $this->lang->line('email_address') ?>">
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-sm-12">
-										<div class="form-group ">
-											<label for="message">
-											<?php echo $this->lang->line('message_label') ?>
-											</label>
-											<textarea aria-required="true" rows="6" cols="45" name="message" id="message" class="form-control" placeholder="<?php echo $this->lang->line('message') ?>"></textarea>
-										</div>
-									</div>
-
-								</div>
-								<div class="row c-mt-md-15 c-md-0">
-									<div class="col-sm-12">
-										<div class="form-group text-center contact-form1">
-											<button type="button" id="contact_form" name="contact_submit" class="btn btn-maincolor">
-										
-											<?php echo $this->lang->line('submit') ?>
-									</button>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-						<div class="col-md-6 contact_content" >
-							<div class="contact_content">
-								<div class="contact_icon">
-									<img class="img-responsive" src="<?=base_url('website')?>/images/logo/logo_v.png">
-								</div>
-								<div class="contact_content_text">
-									<div class="content">
-									<?=appSettings('contact')?>
-									</div>
-									<div class="divider-40"></div>
-									<div class="social_info">
-        <h6 class="Real Estates_title">او تواصل عن طريق</h6>
-        <div class="social_icons">
-          <a class="whatsapp" target="_blank" href="tel:<?=appSettings('whatsapp')?>"><span class="fa fa-whatsapp"></span></a>
-          <a class="instagram" target="_blank" href="<?=appSettings('instegram')?>"><span class="fa fa-instagram"></span></a>
-          <a class="facebook" target="_blank" href="<?=appSettings('facebook')?>"><span class="fa fa-facebook"></span></a>
-        </div>
-									</div>
-								</div>
-							</div>
-							<div class="contact_map">
-							<?=appSettings('map')?>
-						</div>
-						</div>-->
-						<!--.col-* -->
-<!--
-						<div class="divider-120"></div>
-
-					</div>
-				</div>
-			</section>
-
-		
-			<script type="text/javascript">
+<script type="text/javascript">
 
 
 $(document).ready(function() {
@@ -270,7 +144,6 @@ $(document).ready(function() {
 
 		e.preventDefault();
 	  
-
 	
 		var name = $("#nameid").val();
 	
@@ -333,4 +206,7 @@ $(document).ready(function() {
    });
 
 
-</script> -->
+</script> 
+
+
+		

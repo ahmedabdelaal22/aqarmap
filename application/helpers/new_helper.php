@@ -77,9 +77,9 @@ function count_types($type){
 if (!function_exists('key_type'))
 {
 function key_type($key){
-  $type[1]='for sale';
-  $type[2]='For rent';
-  $type[0]='sale or rent';
+  $type[1]='For Sale';
+  $type[2]='For Rent';
+  $type[0]='Sale or Rent';
    return $type[$key];
   }
 }
@@ -92,6 +92,17 @@ function vendore_type($type){
   $vendore_type[2]='Compound Developer';//مطور كمبوند
   $vendore_type[3]='Exclusive';//شركات التسويق العقارى
    return $vendore_type[$type];
+  }
+}
+
+if (!function_exists('get_vendore_type'))
+{
+function get_vendore_type(){
+  $vendore_type[0]='Private Owner';//مالك عقار
+  $vendore_type[1]='Freelancer';//مسوق عقاري
+  $vendore_type[2]='Compound Developer';//مطور كمبوند
+  $vendore_type[3]='Exclusive';//شركات التسويق العقارى
+   return $vendore_type;
   }
 }
 

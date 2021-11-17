@@ -6,15 +6,28 @@ Login -->
       <div class="col-md-8 col-sm-10">
         <div class="section-title">
           <h2 class="text-center">Login</h2>
+
+          <?php if(!empty($this->session->flashdata('success'))): ?>
+          <div class="alert alert-success alert-dismissible fade show">
+          <a href="javascript:void()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <span> <?php echo $this->session->flashdata('success'); ?> </span>
+          </div>
+      <?php endif ?>
+      <?php if($this->session->flashdata('error')): ?>
+          <div class="alert alert-danger alert-dismissible fade show">
+         <a href="javascript:void()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <span><?php echo $this->session->flashdata('error') ?></span>
+          </div>
+      <?php endif ?>
         </div>
-            <form class="row mt-4 align-items-center">
+            <form class="row mt-4 align-items-center" method="post" action="<?php echo base_url('user/login-user'); ?>">
               <div class="mb-3 col-sm-12">
                 <label class="form-label">Email Address:</label>
-                <input type="email" class="form-control" placeholder="">
+                <input type="email" name="email" class="form-control" placeholder="">
               </div>
               <div class="mb-3 col-sm-12">
                 <label class="form-label">Password:</label>
-                <input type="Password" class="form-control" placeholder="">
+                <input type="Password" class="form-control" name="password" placeholder="">
               </div>
               <div class="col-sm-6 d-grid">
                 <button type="submit" class="btn btn-primary">Sign In</button>

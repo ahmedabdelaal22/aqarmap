@@ -54,7 +54,7 @@ class Front_model extends CI_Model
 	public function register_user($user)
 	{
 
-		return $this->db->insert('user', $user);
+		return $this->db->insert('vendor', $user);
 	}
 
 	public function likeCheck($user_id, $res_id)
@@ -80,8 +80,8 @@ class Front_model extends CI_Model
 	public function login_user($email, $pass)
 	{
 		$this->db->select('*');
-		$this->db->from('user');
-		$this->db->where("(user.email ='$email' OR user.username ='$email')");
+		$this->db->from('vendor');
+		$this->db->where("(vendor.email ='$email' OR vendor.uname ='$email')");
 		$this->db->where("password", $pass);
 
 		if ($query = $this->db->get()) {
