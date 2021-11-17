@@ -37,8 +37,17 @@ header -->
               </ul>
             </div>
             <div class="login d-inline-block">
+			<?php 
+		$userid=	$this->session->userdata('UserId');
+		         if(!empty($userid)){
+			?>
 			<!-- data-bs-toggle="modal" data-bs-target="#loginModal" -->
-              <a  href="<?=base_url('/login')?>">Hello sign in<i class="fa fa-user ps-2"></i></a>
+              <a  href="<?=base_url('/profile')?>"><?=$this->session->userdata('user_name')?><i class="fa fa-user ps-2"></i></a>
+			  <a href="<?=base_url('logout')?>">logout</a>
+			  <?php } else{?>
+				<a  href="<?=base_url('/login')?>">Hello sign in<i class="fa fa-user ps-2"></i></a>
+
+				<?php } ?>
             </div>
           </div>
         </div>

@@ -28,7 +28,87 @@ class UserController extends CI_Controller
 		$this->load->model('admin_model');
 		$this->load->model('firebase_model');
     }
+	public function update_vendor()
+	{
+		if($this->session->userdata('UserId')=="")
+	  {
+		  redirect(base_url('login'));
+	  }	
 
+		$cat_id = $_REQUEST['id'];
+	  
+
+	   $this->form_validation->set_rules('uname','User Name','required'); 
+	  $this->form_validation->set_rules('email','Email','required');
+
+	  $this->form_validation->set_error_delimiters('<span class="error" style="color:red;">','</span>');
+	  if($this->form_validation->run() == false)  
+	  {  
+		  //Error
+	  }
+	  else
+	  {
+
+		//`phone`, `whatsapp`, `office_phone`, `fax`, `facebook`, `linkedin`
+		//, `twitter`, `desc`, `type`, `website`, `company`, `lat`, `lon`
+		  $data = array(
+		
+			  'uname' => $_REQUEST['uname'],
+			  'email' => $_REQUEST['email'],
+			  'phone' => $_REQUEST['phone'],
+			  'whatsapp' => $_REQUEST['whatsapp'],
+			  'office_phone' => $_REQUEST['office_phone'],
+			  'fax' => $_REQUEST['fax'],
+			  'facebook' => $_REQUEST['facebook'],
+			  'linkedin' => $_REQUEST['linkedin'],
+			  'twitter' => $_REQUEST['twitter'],
+			  'desc' => $_REQUEST['desc'],
+			  'type' => $_REQUEST['type'],
+			  'website' => $_REQUEST['website'],
+			  'company' => $_REQUEST['company'],
+			  'lat' => $_REQUEST['lat'],
+			  'lon' => $_REQUEST['lon'],
+		  );
+		  
+		  if (!empty($_FILES['profile_image']['name'])) {
+			  $config['upload_path'] = './uploads';
+			  $config['allowed_types'] = 'jpg|png|jpeg';
+			  $config['file_name'] = uniqid();
+			  $config['overwrite'] = TRUE;
+
+			  // Load and initialize upload library
+			  $this->load->library('upload');
+			  $this->upload->initialize($config);
+
+			  // Upload file to server
+			  if ($this->upload->do_upload('profile_image')) {
+				  // Uploaded file data
+				  $fileData = $this->upload->data();
+				  $profile_image = $fileData['file_name'];
+			  } else {
+				  $error = array('error' => $this->upload->display_errors('<div class="alert alert-danger">', '</div>'));
+			  }
+
+			  $data['profile_image'] = $profile_image;
+		  }
+
+		  if($this->input->post('password') != "")
+		  {
+			  $data['password'] = md5($this->input->post('password'));
+		  }
+
+		  $check = $this->admin_model->update_vendor_by_id($cat_id,$data);
+		  if($check)
+		  {
+			  $this->session->set_flashdata('success', 'Category has been successfully Updated.');
+			  redirect('profile',$data);
+		  }
+	  }
+
+	  $data['page'] = 'profile';
+	  $data['vendor'] = $this->admin_model->get_vendor_by_id($cat_id); 
+	  $this->load->view('admin/template',$data);
+	}
 
 	public function forget_user(){
 
@@ -161,7 +241,7 @@ class UserController extends CI_Controller
       	{
 	        $this->session->set_userdata('UserId',$data['id']);
 	        $this->session->set_userdata('aemail',$data['email']);
-	        $this->session->set_userdata('aname',$data['username']);
+	        $this->session->set_userdata('user_name',$data['uname']);
 	        $this->session->set_userdata('aimg',$data['img']);
 		
 			redirect(base_url('/'));
