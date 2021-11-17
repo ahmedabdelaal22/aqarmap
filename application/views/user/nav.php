@@ -146,7 +146,7 @@ header -->
 	</ul>    
     </div>
     <div class="add-listing d-none d-sm-block">
-      <a class="btn btn-primary btn-md" href="submit-property.html"> <i class="fa fa-plus-circle"></i>Add listing </a>
+      <a class="btn btn-primary btn-md" href="<?=base_url('add-listing')?>"> <i class="fa fa-plus-circle"></i>Add listing </a>
     </div>
     </div>
   </nav>
@@ -263,92 +263,6 @@ breadcrumb -->
 
 	</header>
 </div>-->
-
-<!-- Modal -->
-<div class="modal hide fade add_project_modal" id="exampleModal" tabindex="-1" role="dialog"
-	aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<div class="row">
-					<div class="col-sm-12">
-						<h5 class="modal-title" id="exampleModalLabel">أضف مشروعك</h5>
-						<span class="sub-title">يمكنك الان مشاركه مشروعك معنا</span>
-					</div>
-				</div>
-			</div>
-			<div class="modal-body">
-				<span id="errorspan"></span>
-				<form class="contact-form c-mb-20 text-center" id="cform">
-					<div class="row mb-10">
-						<div class="col-sm-12">
-							<div class="form-group">
-								<label for="name">
-									<?php echo $this->lang->line('full_name_label') ?>
-									<span class="required">*</span>
-								</label>
-								<input type="text" aria-required="true" size="30" value="" name="name" id="name"
-									class="form-control" placeholder="<?php echo $this->lang->line('full_name') ?>">
-							</div>
-						</div>
-					</div>
-					<div class="row mb-10">
-						<div class="col-sm-12">
-							<div class="form-group">
-								<label for="phone"><?php echo $this->lang->line('phone_label') ?>
-									<span class="required">*</span>
-								</label>
-								<input type="text" aria-required="true" size="30" value="" name="phone" id="phone"
-									class="form-control" placeholder="<?php echo $this->lang->line('phone') ?>">
-							</div>
-						</div>
-					</div>
-					<div class="row mb-10">
-						<div class="col-sm-12">
-							<div class="form-group">
-								<label for="brand"><?php echo $this->lang->line('brand_label') ?>
-									<span class="required">*</span>
-								</label>
-								<input type="text" aria-required="true" size="30" value="" name="brand" id="brand"
-									class="form-control" placeholder="<?php echo $this->lang->line('brand') ?>">
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="form-group">
-								<label for="category_id">
-									<?php echo $this->lang->line('category_label') ?>
-									<span class="required">*</span>
-								</label>
-								<select class="form-control" name="category_id" required id="category_id">
-									<?php $category = $this->admin_model->get_category(); ?>
-									<option value=""> <?php echo $this->lang->line('category') ?></option>
-									<?php foreach ($category as $listing) : ?>
-									<option value="<?php echo $listing['id']; ?>"><?php echo $listing['c_name']; ?>
-									</option>
-									<?php endforeach; ?>
-								</select>
-							</div>
-						</div>
-					</div>
-					<div class="row mt-30">
-						<div class="col-sm-12">
-							<div class="form-group text-center contact-form1">
-								<button type="button" id="contact_form_submit" name="contact_submit"
-									class="btn btn-primary btn-maincolor">
-									<?php echo $this->lang->line('submit') ?>
-								</button>
-								<button type="button" class="btn btn-secondary"
-									data-dismiss="modal"><?php echo $this->lang->line('cancel') ?></button>
-							</div>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
 
 <script>
 	document.onkeydown = function (evt) {
