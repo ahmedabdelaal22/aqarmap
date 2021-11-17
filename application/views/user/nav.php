@@ -37,7 +37,8 @@ header -->
               </ul>
             </div>
             <div class="login d-inline-block">
-              <a data-bs-toggle="modal" data-bs-target="#loginModal" href="#">Hello sign in<i class="fa fa-user ps-2"></i></a>
+			<!-- data-bs-toggle="modal" data-bs-target="#loginModal" -->
+              <a  href="<?=base_url('/login')?>">Hello sign in<i class="fa fa-user ps-2"></i></a>
             </div>
           </div>
         </div>
@@ -164,7 +165,7 @@ breadcrumb -->
       <div class="col-12">
         <ol class="breadcrumb mb-0">
           <li class="breadcrumb-item"><a href="<?=base_url('/')?>"> <i class="fas fa-home"></i> </a></li>
-          <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="#">Library</a></li>
+          <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="<?=base_url('/')?>">Home</a></li>
           <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> Property grid </span></li>
         </ol>
       </div>

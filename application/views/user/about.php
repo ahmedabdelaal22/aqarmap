@@ -121,7 +121,10 @@ counter -->
               <span class="pt-1 icon fab flaticon-placeholder"></span>
             </div>
             <div class="counter-content">
-              <span class="timer mb-1" data-to="4561" data-speed="10000">4561</span>
+              <?php 
+        $count_location=      $this->db->get('locations')->num_rows();
+              ?>
+              <span class="timer mb-1" data-to="<?=$count_location?>" data-speed="10000"><?=$count_location?></span>
               <label class="mb-0">Property locations</label>
             </div>
           </div>
@@ -132,7 +135,13 @@ counter -->
               <span class="pt-1 icon fab flaticon-for-rent-1"></span>
             </div>
             <div class="counter-content">
-              <span class="timer mb-1" data-to="1261" data-speed="10000">1261</span>
+<?php 
+  $this->db->where('type','2');
+   $count_rent=$this->db->get('restaurants')->num_rows();
+
+?>
+
+              <span class="timer mb-1" data-to="<?=$count_rent?>" data-speed="10000"><?=$count_rent?></span>
               <label class="mb-0">Property rent </label>
             </div>
           </div>
@@ -142,8 +151,13 @@ counter -->
             <div class="counter-icon">
               <span class="pt-1 icon fab flaticon-house-5"></span>
             </div>
+            <?php 
+  $this->db->where('type','1');
+   $count_sell=$this->db->get('restaurants')->num_rows();
+
+?>
             <div class="counter-content">
-              <span class="timer mb-1" data-to="2265" data-speed="10000">2265</span>
+              <span class="timer mb-1" data-to="<?=$count_sell?>" data-speed="10000"><?=$count_sell?></span>
               <label class="mb-0">Property sell </label>
             </div>
           </div>
@@ -154,7 +168,8 @@ counter -->
               <span class="pt-1 icon fab flaticon-agent"></span>
             </div>
             <div class="counter-content">
-              <span class="timer mb-1" data-to="3265" data-speed="10000">3265</span>
+            <?php     $count_vendore=$this->db->get('vendor')->num_rows();?>
+              <span class="timer mb-1" data-to="<?=$count_vendore?>" data-speed="10000"><?=$count_vendore?></span>
               <label class="mb-0">Property agent</label>
             </div>
           </div>

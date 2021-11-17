@@ -120,8 +120,9 @@ class UserController extends CI_Controller
 		} else {
 			$user = array(
 				'email' => $this->input->post('email'),
+				'type' => $this->input->post('type'),
 				'password' => md5($this->input->post('password')),
-				'username' => $this->input->post('username')
+				'uname' => $this->input->post('username')
 			);
 			$email_check = $this->front_model->email_check($user['email']);
 			$username_check = $this->front_model->username_check($user['username']);
@@ -135,11 +136,11 @@ class UserController extends CI_Controller
 				if ($reg) {
 		
 					$this->session->set_flashdata('success', 'user register success');
-					redirect(base_url('user/login'));
+					redirect(base_url('login'));
 				} else {
 			
 					$this->session->set_flashdata('error', 'user register failure');
-					redirect(base_url('user/register'));
+					redirect(base_url('register'));
 				}
 			} else {
 
