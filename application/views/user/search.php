@@ -262,7 +262,7 @@ Listing – grid view -->
                   <h5 class="property-title"><a href="property-detail-style-01.html">Ample apartment at last floor </a></h5>
                   <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>Virginia drive temple hills</span>
                   <span class="property-agent-date"><i class="far fa-clock fa-md"></i>10 days ago</span>
-                  <div class="property-price">$150.00<span> / month</span> </div>
+                  <div class="property-price">$150.00<span> </span> </div>
                   <ul class="property-info list-unstyled d-flex">
                     <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>1</span></li>
                     <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li>
@@ -308,7 +308,7 @@ Listing – grid view -->
                   <h5 class="property-title"><a href="property-detail-style-01.html">Awesome family home</a></h5>
                   <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>Vermont dr. hephzibah</span>
                   <span class="property-agent-date"><i class="far fa-clock fa-md"></i>2 months ago</span>
-                  <div class="property-price">$326.00<span> / month</span> </div>
+                  <div class="property-price">$326.00<span> </span> </div>
                   <ul class="property-info list-unstyled d-flex">
                     <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>2</span></li>
                     <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>3</span></li>
@@ -355,7 +355,7 @@ Listing – grid view -->
                   <h5 class="property-title"><a href="property-detail-style-01.html">Contemporary apartment</a></h5>
                   <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>Newport st. mebane, nc</span>
                   <span class="property-agent-date"><i class="far fa-clock fa-md"></i>6 months ago</span>
-                  <div class="property-price">$658.00<span> / month</span> </div>
+                  <div class="property-price">$658.00<span> </span> </div>
                   <ul class="property-info list-unstyled d-flex">
                     <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>3</span></li>
                     <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>4</span></li>
@@ -401,7 +401,7 @@ Listing – grid view -->
                   <h5 class="property-title"><a href="property-detail-style-01.html">Family home for sale</a></h5>
                   <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>Border st. nicholasville, ky</span>
                   <span class="property-agent-date"><i class="far fa-clock fa-md"></i>12 months ago</span>
-                  <div class="property-price">$485.00<span> / month</span> </div>
+                  <div class="property-price">$485.00<span> </span> </div>
                   <ul class="property-info list-unstyled d-flex">
                     <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>2</span></li>
                     <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>1</span></li>
@@ -448,7 +448,7 @@ Listing – grid view -->
                   <h5 class="property-title"><a href="property-detail-style-01.html">Luxury villa with pool</a></h5>
                   <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>West Indian St. Missoula</span>
                   <span class="property-agent-date"><i class="far fa-clock fa-md"></i>2 years ago</span>
-                  <div class="property-price">$698.00<span> / month</span> </div>
+                  <div class="property-price">$698.00<span> </span> </div>
                   <ul class="property-info list-unstyled d-flex">
                     <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>5</span></li>
                     <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>4</span></li>
@@ -494,7 +494,7 @@ Listing – grid view -->
                   <h5 class="property-title"><a href="property-detail-style-01.html">184 lexington avenue</a></h5>
                   <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>Hamilton rd. willoughby, oh</span>
                   <span class="property-agent-date"><i class="far fa-clock fa-md"></i>3 years ago</span>
-                  <div class="property-price">$236.00<span> / month</span> </div>
+                  <div class="property-price">$236.00<span> </span> </div>
                   <ul class="property-info list-unstyled d-flex">
                     <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>2</span></li>
                     <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li>
