@@ -25,7 +25,7 @@
                           <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>Virginia drive temple hills</span>
                           <span class="property-agent-date"><i class="far fa-clock fa-md"></i>10 days ago</span>
                           <p class="mb-0 d-block mt-3">Use a past defeat as a motivator. Remind yourself you have nowhere to go except up as you.</p>
-                          <div class="property-price">$150.00<span> / month</span> </div>
+                          <div class="property-price">$150.00<span> EGP</span> </div>
                           <ul class="property-info list-unstyled d-flex">
                             <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>1</span></li>
                             <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li>
@@ -57,7 +57,7 @@
                           <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>West Indian St. Missoula</span>
                           <span class="property-agent-date"><i class="far fa-clock fa-md"></i>2 years ago</span>
                           <p class="mb-0 d-block mt-3">For those of you who are serious about having more, doing more, giving more and being more.</p>
-                          <div class="property-price">$698.00<span> / month</span> </div>
+                          <div class="property-price">$698.00<span> EGP</span> </div>
                           <ul class="property-info list-unstyled d-flex">
                             <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>5</span></li>
                             <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>4</span></li>
