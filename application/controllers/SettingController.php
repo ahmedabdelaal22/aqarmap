@@ -91,7 +91,7 @@ public function neweslater(){
 
 
 	public function index(){
-		$this->session->set_userdata('site_lang',  "arabic");
+	//	$this->session->set_userdata('site_lang',  "arabic");
 		$data['page'] = 'settings';
 		$data['settings']  = $this->db->query("SELECT * FROM settings")->result();	
 

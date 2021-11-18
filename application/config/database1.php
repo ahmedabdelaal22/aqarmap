@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '123456',
-	'database' => 'aqarmap',
+	'hostname' => 'qts.cfqvmyqu9rdy.eu-west-3.rds.amazonaws.com',
+	'username' => 'aqar',
+	'password' => 'K3P--sZAEX.eIz/F',
+	'database' => 'aqar',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

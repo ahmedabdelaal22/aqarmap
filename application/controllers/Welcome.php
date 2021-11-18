@@ -28,6 +28,8 @@ class Welcome extends CI_Controller {
 		   $this->load->model('admin_model');
         $this->load->library('session');
 		$siteLang = $this->session->userdata('site_lang');
+
+		//die($siteLang);
 		if ($siteLang =='arabic') {
 		   $this->session->set_userdata('locale','ar');;
 		} else {

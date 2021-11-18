@@ -166,19 +166,11 @@ Listing – grid view -->
             <li>
               <form class="form-inline">
                 <div class="d-lg-flex d-block mb-3 mb-sm-0">
-                  <label class="justify-content-start pe-2 mb-2 mb-sm-0">Sort by: </label>
-                  <div class="short-by">
-                    <select class="form-control basic-select">
-                      <option>12</option>
-                      <option>18 </option>
-                      <option>24 </option>
-                      <option>64 </option>
-                      <option>128</option>
-                    </select>
-                  </div>
+
                 </div>
               </form>
             </li>
+<<<<<<< HEAD
             <li><a href="index-half-map.html"><i class="fas fa-map-marker-alt fa-lg"></i></a></li>
             <li><a class="property-list-icon" href="property-list.html">
               <span></span>
@@ -191,6 +183,9 @@ Listing – grid view -->
               <span></span>
             </a></li>
           </ul> -->
+=======
+          </ul>
+>>>>>>> d9aef53b07bcb15782d972bfe8e108ff7cc43a24
         </div>
         <div class="row mt-4">
 
