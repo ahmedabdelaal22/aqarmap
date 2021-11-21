@@ -290,7 +290,7 @@ POTENZA.isSticky = function () {
       $("#property-price-slider").ionRangeSlider({
         type: "double",
         min: 0,
-        max: 10000,
+        max: 9999999,
         from: from_price,
         to: to_price,
         prefix: "EGP",

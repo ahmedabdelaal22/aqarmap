@@ -19,14 +19,15 @@ banner -->
               <div class="form-group col-lg-3 col-md-6" >
                 <label class="form-label">Property type</label>
                 <select class="form-control basic-select"  name="cat_id">
-                  <option>All Type</option>
+                  <option value="">All Type</option>
                   <?php $category = $this->admin_model->get_category();
                    $category_id=$this->input->get('cat_id');
                    $type=$this->input->get('type');
                    $region_id=$this->input->get('region_id');
                    $rooms=$this->input->get('rooms');
                    $floor=$this->input->get('floor');
-
+                   $from_price=$this->input->get('from_price');
+                   $to_price=$this->input->get('to_price');
                    
                   ?>
                   <?php foreach ($category as $listing) : ?>
@@ -68,13 +69,13 @@ banner -->
               <div class="collapse advanced-search p-0" id="advanced-search">
                 <div class="card card-body">
                   <div class="row">
-             <input type="hidden" id="from_price" name="from" value="1000"/>
-              <input type="hidden"  id="to_price" name="to" value="9000"/>
+             <input type="hidden" id="from_price" name="from" value="<?php echo ($from_price)?$from_price:min_price()?>"/>
+              <input type="hidden"  id="to_price" name="to" value="<?php echo ($to_price)?$to_price:max_price()?>"/>
 
                     <div class="form-group col-md-3">
                       <label class="form-label">Bedrooms</label>
                       <select class="form-control basic-select" name="rooms">
-                        <option>No max</option>
+                        <option value="">No max</option>
                    
                 <?php foreach (rooms() as $key => $value) : ?>
                   <option value="<?php echo $key; ?>"   <?php if ($key == $rooms) echo "selected='selected'"; ?> ><?php echo $value ?></option>
@@ -85,7 +86,7 @@ banner -->
                     <div class="form-group col-md-3">
                       <label class="form-label">Floor</label>
                       <select class="form-control basic-select" name="floor">
-                        <option>Select Floor</option>
+                        <option value="">Select Floor</option>
                         <?php foreach (rooms() as $key => $value) : ?>
                   <option value="<?php echo $key; ?>"   <?php if ($key == $floor) echo "selected='selected'"; ?> ><?php echo $value ?></option>
 											<?php endforeach; ?>
@@ -95,11 +96,11 @@ banner -->
                   <div class="row">
                     <div class="form-group col-md-3">
                       <label class="form-label">Min Area (sq ft)</label>
-                      <input class="form-control" name="min_space" placeholder="Type (sq ft)">
+                      <input class="form-control" name="min_space" value="<?=$this->input->get('min_space')?>" placeholder="Type (sq ft)">
                     </div>
                     <div class="form-group col-md-3">
                       <label class="form-label">Max Area (sq ft)</label>
-                      <input class="form-control"name="max_space" placeholder="Type (sq ft)">
+                      <input class="form-control"name="max_space" value="<?=$this->input->get('max_space')?>" placeholder="Type (sq ft)">
                     </div>
                     <div class="form-group col-md-6 property-price-slider ">
                       <label class="form-label">Select Price Range</label>
@@ -109,7 +110,7 @@ banner -->
                 </div>
               </div>
               <div class="d-lg-none btn-mobile p-3 d-grid">
-                <button class="btn btn-primary align-items-center" type="submit"><i class="fas fa-search me-1"></i><span>Search</span></button>
+                <button class="btn btn-primary align-items-center"  name='submit' value='Submit'type="submit"><i class="fas fa-search me-1"></i><span>Search</span></button>
               </div>
             </form>
           </div>

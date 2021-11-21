@@ -101,7 +101,7 @@ $id = $this->session->userdata('aid');
 										<?php if (empty($vendor->profile_image)) { ?>
 											<img src="<?php echo base_url('uploads/profile_pics/user.png') ?>" height="100" width="100">
 										<?php } else { ?>
-											<img src="<?php echo base_url('uploads/profile_pics/') . $vendor->profile_image ?>" height="100" width="100"> <?php } ?>
+											<img src="<?php echo base_url('uploads/') . $vendor->profile_image ?>" height="100" width="100"> <?php } ?>
 									<?php } ?>
 
 									<div class="form-group">

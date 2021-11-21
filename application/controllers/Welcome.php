@@ -28,6 +28,8 @@ class Welcome extends CI_Controller {
 		   $this->load->model('admin_model');
         $this->load->library('session');
 		$siteLang = $this->session->userdata('site_lang');
+
+		//die($siteLang);
 		if ($siteLang =='arabic') {
 		   $this->session->set_userdata('locale','ar');;
 		} else {
@@ -45,6 +47,19 @@ class Welcome extends CI_Controller {
 		// {
 		// 	redirect(base_url('user/login'));
 		// }
+
+
+
+
+		$this->session->set_userdata(array("search"=>""));
+		$this->session->set_userdata(array("region_id"=>""));
+		$this->session->set_userdata(array("cat_id"=>""));
+		$this->session->set_userdata(array("type"=>""));
+		$this->session->set_userdata(array("rooms"=>""));
+		$this->session->set_userdata(array("floor"=>""));
+		$this->session->set_userdata(array("price_range"=>""));
+		$this->session->set_userdata(array("min_space"=> ""));
+		$this->session->set_userdata(array("max_space"=> ""));
     }	 
 	public function index()
 	{
