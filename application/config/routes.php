@@ -224,3 +224,6 @@ $route['agent/(:any)'] = 'AgentsController/show/$1';
 
 
 $route['store/(:any)'] = 'CategoryController/store/$1';
+
+
+$route['404_override'] = 'My404/index';
