@@ -82,11 +82,13 @@ class SearchController extends CI_Controller
 				$_GET['max_space']=$this->session->userdata('max_space');
 			  }
 		  }
-	
+		  
 
 		 $this->db->select('restaurants.*');
 		 $this->db->from('restaurants');
-	
+		 if (!empty($_GET['payment_method'] )) {
+			$this->db->where('payment_method', $_GET['payment_method'] );
+	      }
 		 if (!empty($search_text )) {
 			$this->db->like('res_name', $search_text );
 	      }

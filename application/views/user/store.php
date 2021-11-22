@@ -4,7 +4,7 @@
       <div class="col-12">
         <ol class="breadcrumb mb-0">
           <li class="breadcrumb-item"><a href="<?=base_url('/')?>"> <i class="fas fa-home"></i> </a></li>
-          <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="<?=base_url('/')?>">Home</a></li>
+          <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="<?php echo base_url('search?cat_id=').$cat->id?>"><?=$cat->c_name?></a></li>
           <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> <?=$res->res_name?></span></li>
         </ol>
       </div>
@@ -37,8 +37,23 @@
                     <li> <a class="a2a_button_pinterest"><i class="fab fa-pinterest"></i></a> </li>
                   </ul>
                 </li>
-                <li><a href="#"> <i class="fas fa-heart"></i> </a></li>
+                <li class="property-favourites">
+                            <?php  
+       $like=0;
+       if(!empty($this->session->userdata('UserId'))){
+        $like=  $this->front_model->likeCheckfront($this->session->userdata('UserId'), $res->res_id);
 
+       }     
+       
+       
+       ?>
+
+                <!-- class="fas fa-heart " -->
+                  <a data-bs-toggle="tooltip"  data-bs-placement="top" title="Favourite"href="javascript:sendRes(<?=$res->res_id?>);">
+                    <i  id="<?=$res->res_id?>" class="far fa-heart  <?php if($like==1){echo 'text-danger';}?>"></i>
+                  </a>
+                  <input type="hidden" id="<?=$res->res_id?>like" value="<?=$like?>">
+              </li>   
               </ul>
             </div>
             <?php
@@ -208,7 +223,7 @@
               </div>
             </div>
           </div>
- 
+          <?php if(!empty($res->education)||!empty($res->transportation)||!empty($res->education)){?>
           <hr class="mt-4 mb-4 mb-sm-5 mt-sm-5">
           <div class="property-nearby">
             <div class="row">
@@ -273,7 +288,7 @@
               </div>
             </div>
           </div>
-      
+      <?php }?>
   
         </div>
       </div>
@@ -344,9 +359,23 @@
    <div class="property-btn">
      <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>">See Details</a>
      <ul class="property-listing-actions list-unstyled mb-0">
-       <li class="property-favourites">
-         <a data-bs-toggle="tooltip" data-bs-placement="top" title="Favourite" href="#"><i class="far fa-heart"></i></a>
-       </li>
+     <li class="property-favourites">
+                            <?php  
+       $like=0;
+       if(!empty($this->session->userdata('UserId'))){
+        $like=  $this->front_model->likeCheckfront($this->session->userdata('UserId'), $listing['res_id']);
+
+       }     
+       
+       
+       ?>
+
+                <!-- class="fas fa-heart " -->
+                  <a data-bs-toggle="tooltip"  data-bs-placement="top" title="Favourite"href="javascript:sendRes(<?=$listing['res_id']?>);">
+                    <i  id="<?=$listing['res_id']?>" class="far fa-heart  <?php if($like==1){echo 'text-danger';}?>"></i>
+                  </a>
+                  <input type="hidden" id="<?=$listing['res_id']?>like" value="<?=$like?>">
+              </li>   
      </ul>
    </div>
  </div>
