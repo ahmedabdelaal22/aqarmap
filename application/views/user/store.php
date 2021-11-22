@@ -15,12 +15,12 @@
                 <li><a href="#"> <i class="fas fa-star text-warning pe-2"></i><?=$res->res_ratings?>/5 </a></li>
                 <li class="share-box">
                   <a href="#"> <i class="fas fa-share-alt"></i> </a>
-                  <ul class="list-unstyled share-box-social">
-                    <li> <a href="#"><i class="fab fa-facebook-f"></i></a> </li>
-                    <li> <a href="#"><i class="fab fa-twitter"></i></a> </li>
-                    <li> <a href="#"><i class="fab fa-linkedin"></i></a> </li>
-                    <li> <a href="#"><i class="fab fa-instagram"></i></a> </li>
-                    <li> <a href="#"><i class="fab fa-pinterest"></i></a> </li>
+                  <ul class="list-unstyled share-box-social a2a_kit a2a_kit_size_32 a2a_default_style">
+                    <li> <a class="a2a_button_facebook" ><i class="fab fa-facebook-f"></i></a> </li>
+                    <li> <a class="a2a_button_twitter"><i class="fab fa-twitter"></i></a> </li>
+                    <li> <a class="a2a_button_linkedin"><i class="fab fa-linkedin"></i></a> </li>
+                    <li> <a class="a2a_button_whatsapp"><i class="fab fa-whatsapp"></i></a> </li>
+                    <li> <a class="a2a_button_pinterest"><i class="fab fa-pinterest"></i></a> </li>
                   </ul>
                 </li>
                 <li><a href="#"> <i class="fas fa-heart"></i> </a></li>
@@ -362,14 +362,19 @@ Review -->
           </div>
           <div class="review-info flex-grow-1">
             <span class="mb-2 d-block">Rating:</span>
-            <ul class="list-unstyled list-inline">
-              <li class="list-inline-item m-0 text-warning"><i class="fas fa-star"></i></li>
-              <li class="list-inline-item m-0 text-warning"><i class="fas fa-star"></i></li>
-              <li class="list-inline-item m-0 text-warning"><i class="fas fa-star"></i></li>
-              <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half-alt"></i></li>
-              <li class="list-inline-item m-0 text-warning"><i class="far fa-star"></i></li>
-            </ul>
-            <div class="mb-3">
+            <div class="rate d-block">
+              <input type="radio" id="star5" name="rate" value="5" />
+              <label class="fas fa-star" for="star5" title="text"></label>
+              <input type="radio" id="star4" name="rate" value="4" />
+              <label class="fas fa-star" for="star4" title="text"></label>
+              <input type="radio" id="star3" name="rate" value="3" />
+              <label class="fas fa-star" for="star3" title="text"></label>
+              <input type="radio" id="star2" name="rate" value="2" />
+              <label class="fas fa-star" for="star2" title="text"></label>
+              <input type="radio" id="star1" name="rate" value="1" />
+              <label class="fas fa-star" for="star1" title="text"></label>
+            </div>
+            <div class="mb-3 clearfix">
               <span class="mb-2 d-block">Rating comment:</span>
               <div class="mb-3">
                 <textarea class="form-control" rows="3"></textarea>
@@ -410,6 +415,10 @@ Review -->
                 <label class="form-label">Phone Number:</label>
                 <input type="text" class="form-control" placeholder="">
               </div>
+              <div class="mb-3 col-sm-12">
+                <label class="form-label">Message:</label>
+                <textarea class="form-control" placeholder=""></textarea>
+              </div>
               <div class="mb-3 col-sm-12 d-grid">
                 <button type="submit" class="btn btn-primary">Request Info</button>
               </div>
@@ -418,3 +427,5 @@ Review -->
     </div>
   </div>
 </div>
+
+<script async src="https://static.addtoany.com/menu/page.js"></script>

@@ -293,7 +293,6 @@ POTENZA.isSticky = function () {
         max: 9999999,
         from: from_price,
         to: to_price,
-        prefix: "EGP",
         hide_min_max: true,
         hide_from_to: false
       });
