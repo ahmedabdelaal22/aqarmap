@@ -22,9 +22,9 @@ header -->
                 Choose location<i class="fas fa-chevron-down ps-2"></i>
               </a>
               <div class="dropdown-menu mt-0" aria-labelledby="dropdownMenuButton">
-	    	<?php 	  foreach ($regions as $row) {?>
+	    	    <?php  foreach ($regions as $row) {?>
                 <a class="dropdown-item" href="<?php echo $row->id; ?>"><?php echo $row->name_en; ?></a>
-         <?php } ?>
+                 <?php } ?>
               </div>
             </div>
             <div class="social d-inline-block">
@@ -66,13 +66,21 @@ header -->
 		<li class="nav-item <?php if($this->uri->segment(1)==""){echo "active";} ?>" >
 			<a class="nav-link" href="<?=base_url('/')?>"><?php echo $this->lang->line('home') ?></a>
 		</li>
+
+
 		<li class="nav-item dropdown <?php if($this->uri->segment(1)=="categories-all"){echo "active";}?>">
 			<a class="nav-link dropdown-toggle"
-				href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('properties') ?> <i class="fas fa-chevron-down fa-xs"></i></a>
+				href="<?=base_url('categories-all')?>" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('categories') ?> <i class="fas fa-chevron-down fa-xs"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?=base_url('/categories')?>/7"><?php echo $this->lang->line('residential') ?></a></li>
-            <li><a class="dropdown-item" href="<?=base_url('/categories')?>/8"><?php echo $this->lang->line('commercial') ?></a></li>
-          </ul>
+		  <?php
+
+$category = $this->admin_model->get_all_category();
+	  ?>
+		  <?php if(isset($category)){ $cnt=1; ?>
+		  <?php foreach($category as $row) { ?>
+            <li><a class="dropdown-item" href="<?php echo base_url('search?cat_id=').$row->id?>"><?php echo $row->c_name; ?></a></li>
+               <?php }} ?>    
+      </ul>
 		</li>
 		<li class="nav-item <?php if($this->uri->segment(1)=="agents"){echo "active";}?>">
 			<a class="nav-link" href="<?=base_url('/agents')?>"><?php echo $this->lang->line('agents') ?></a>
@@ -168,19 +176,7 @@ if($this->uri->segment(1)==""){ ?>
 <?php }else{ ?>
 <!--=================================
 breadcrumb -->
-<div class="bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <ol class="breadcrumb mb-0">
-          <li class="breadcrumb-item"><a href="<?=base_url('/')?>"> <i class="fas fa-home"></i> </a></li>
-          <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="<?=base_url('/')?>">Home</a></li>
-          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> Property grid </span></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</div>
+
 <!--=================================
 breadcrumb -->
 <?php } ?>

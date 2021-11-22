@@ -1,3 +1,17 @@
+<div class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="<?=base_url('/')?>"> <i class="fas fa-home"></i> </a></li>
+          <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="<?=base_url('/')?>">Home</a></li>
+          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> <?=$res->res_name?></span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="wrapper">
   <!--=================================
   Property details -->
@@ -47,7 +61,7 @@
                 </div>
               </div>
               <div class="d-flex">
-                <a href="#" class="btn btn-dark col b-radius-none">View listings</a>
+                <a href="<?php echo base_url('agent/' .@$vendor->id); ?>" class="btn btn-dark col b-radius-none">View listings</a>
                 <a data-bs-toggle="modal" data-bs-target="#requestInfoModal" href="#" class="btn btn-primary col ms-0 b-radius-none">Request info</a>
               </div>
             </div>

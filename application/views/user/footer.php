@@ -8,9 +8,9 @@ footer-->
           <h5 class="text-primary mb-4">About real villa</h5>
           <p class="text-white mb-4">Real Villa helped thousands of clients to find the right property for their needs.</p>
           <ul class="list-unstyled mb-0">
-            <li> <b> <i class="fas fa-map-marker-alt"></i></b><span>214 West Arnold St. New York, NY 10002</span> </li>
-            <li> <b><i class="fas fa-microphone-alt"></i></b><span>(123) 345-6789</span> </li>
-            <li> <b><i class="fas fa-headset"></i></b><span>support@realvilla.demo</span> </li>
+            <li> <b> <i class="fas fa-map-marker-alt"></i></b><span><?=appSettings('address_en')?></span> </li>
+            <li> <b><i class="fas fa-microphone-alt"></i></b><span><?=appSettings('phones')?></span> </li>
+            <li> <b><i class="fas fa-headset"></i></b><span><?=appSettings('email')?></span> </li>
           </ul>
         </div>
       </div>
@@ -18,18 +18,16 @@ footer-->
         <div class="footer-link">
           <h5 class="text-primary mb-4">Useful links</h5>
           <ul class="list-unstyled mb-0">
-            <li> <a href="#">Commercial </a> </li>
-            <li> <a href="#">House </a> </li>
-            <li> <a href="#">Office </a> </li>
-            <li> <a href="#">Residential </a> </li>
-            <li> <a href="#">Residential Tower </a> </li>
+
+          <?php foreach (advertiser_type() as $key => $value) : ?>
+            <li> <a href="<?php echo $key; ?>"><?php echo $value ?> </a> </li>
+					<?php endforeach; ?>
+      
           </ul>
           <ul class="list-unstyled mb-0">
-            <li> <a href="#">Beverly Hills </a> </li>
-            <li> <a href="#">Los angeles </a> </li>
-            <li> <a href="#">Mission Viejo </a> </li>
-            <li> <a href="#">Newport  </a> </li>
-            <li> <a href="#">Beach Pasadena </a> </li>
+              <?php foreach (get_vendore_type() as $key => $value) : ?>
+              <li> <a href="<?php echo $key; ?>"><?php echo $value ?> </a> </li>
+			    		<?php endforeach; ?>
           </ul>
         </div>
       </div>
@@ -37,26 +35,27 @@ footer-->
         <div class="footer-recent-List">
           <h5 class="text-primary mb-4">Recently listed properties</h5>
           <ul class="list-unstyled mb-0">
+
+          <?php      $fotter_restaurants = $this->db->query("SELECT * FROM restaurants WHERE approved = '1'   ORDER BY res_id DESC LIMIT 0, 2")->result_array();?>
+          <?php if (isset($fotter_restaurants)) {
+                  $cnt = 1; ?>
+                  <?php foreach ($fotter_restaurants as $listing) {
+      
+
+                      ?>
+
+<?php $image = explode('::::', $listing['res_image'])[0]; ?>
             <li>
               <div class="footer-recent-list-item">
-                <img class="img-fluid" src="<?=base_url('website')?>/images/property/list/01.jpg" alt="">
+                <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $image; ?>" alt="">
                 <div class="footer-recent-list-item-info">
-                  <h6 class="text-white"><a class="category font-md mb-2" href="property-detail-style-01.html">Awesome family home</a></h6>
-                  <a class="address mb-2 font-sm" href="#">Vermont dr. hephzibah</a>
+                  <h6 class="text-white"><a class="category font-md mb-2" href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?=$listing['res_name']?></a></h6>
+                  <a class="address mb-2 font-sm" href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?=$listing['res_name']?></a>
                   <span class="price text-white">$3,456,235 </span>
                 </div>
               </div>
             </li>
-            <li>
-              <div class="footer-recent-list-item">
-                <img class="img-fluid" src="<?=base_url('website')?>/images/property/list/02.jpg" alt="">
-                <div class="footer-recent-list-item-info">
-                  <h6 class="text-white"><a class="category font-md mb-2" href="property-detail-style-01.html">Lawn court villa</a></h6>
-                  <a class="address mb-2 font-sm" href="#">Newport st. mebane, nc</a>
-                  <span class="price text-white">$1,265,456 </span>
-                </div>
-              </div>
-            </li>
+            <?php }} ?>
           </ul>
         </div>
       </div>
@@ -66,9 +65,9 @@ footer-->
           <p class="text-white">Sign up to our newsletter to get the latest news and offers.</p>
           <form>
             <div class="mb-3">
-              <input type="email" class="form-control" placeholder="Enter email">
+              <input type="email"  name="mail" id="contact_mail" class="form-control" placeholder="Enter email">
             </div>
-            <button type="submit" class="btn btn-primary btn-sm">Get notified</button>
+            <button type="submit" onclick="subscriebe_mail()" class="btn btn-primary btn-sm">Get notified</button>
           </form>
         </div>
       </div>
@@ -84,7 +83,7 @@ footer-->
           <a id="back-to-top" class="back-to-top" href="#"><i class="fas fa-angle-double-up"></i> </a>
         </div>
         <div class="col-md-4 text-center text-md-end">
-          <p class="mb-0 text-white"> &copy;Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> <a href="#"> Real villa </a> All Rights Reserved </p>
+          <p class="mb-0 text-white"> &copy;Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> <a href="https://www.queentechsolutions.net/"> Queen Tech Solutions </a> All Rights Reserved </p>
         </div>
       </div>
     </div>
@@ -296,6 +295,7 @@ const getCookie = (name) => {
 }
 
 function subscriebe_mail(){
+
 
 	var email = $("#contact_mail").val();
  

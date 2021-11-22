@@ -19,8 +19,8 @@ if (!function_exists('types'))
 
 function types(){
 
-  $type[1]='للبيع';
-  $type[2]='للإيجار';
+  $type[1]='Sale';
+  $type[2]='Rent';
    return $type;
   }
 }
@@ -139,8 +139,8 @@ if (!function_exists('advertiser_type'))
 
 function advertiser_type(){
 
-  $type[1]='وسيط';
-  $type[2]='مالك العقار';
+  $type[1]='Mediator';//'وسيط';
+  $type[2]='The Owner Of Real Estate';//مالك العقار
    return $type;
   }
 }
@@ -149,8 +149,8 @@ if (!function_exists('advertiser_type_value'))
 
 function advertiser_type_value($value){
 
-  $type[1]='وسيط';
-  $type[2]='مالك العقار';
+  $type[1]='moderate';
+  $type[2]='Property Owner';
    return $type[$value];
   }
 }
@@ -159,9 +159,9 @@ if (!function_exists('payment_method'))
 
 function payment_method(){
 
-  $type[1]='تقسيط';
-  $type[2]='النقدية';
-  $type[3]=' تقسيط اوالنقدية';
+  $type[1]='Installment';//'تقسيط';
+  $type[2]='cash';//'النقدية';
+  $type[3]='Installment or cash';
    return $type;
   }
 }
@@ -169,10 +169,10 @@ if (!function_exists('payment_method_value'))
 {
 
 function payment_method_value($value){
-
-  $type[1]='تقسيط';
-  $type[2]='النقدية';
-  $type[3]=' تقسيط اوالنقدية';
+  $type['']=' Installment or cash';
+  $type[1]='Installment';//'تقسيط';
+  $type[2]='cash';//'النقدية';
+  $type[3]='Installment or cash';
    return $type[$value];
   }
 }

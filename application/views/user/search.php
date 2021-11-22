@@ -1,5 +1,19 @@
 <!--=================================
 Listing – grid view -->
+
+<div class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="<?=base_url('/')?>"> <i class="fas fa-home"></i> </a></li>
+          <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="<?=base_url('/')?>">Home</a></li>
+          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> Search</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
 <section class="space-ptb">
   <div class="container">
     <div class="row">
@@ -59,10 +73,10 @@ Listing – grid view -->
                   <select class="form-control basic-select"name="region_id" >
                     <option value="">location</option>
                     <?php 
-				$regions = $this->admin_model->get_all_regions();
-              foreach ($regions as $row) : ?> 
-          <option value="<?php echo $row->id; ?>" <?php if ($row->id == $region_id) echo "selected='selected'"; ?>><?php echo $row->name_en; ?></option>
-        <?php endforeach; ?>
+	               			$regions = $this->admin_model->get_all_regions();
+                       foreach ($regions as $row) : ?> 
+                       <option value="<?php echo $row->id; ?>" <?php if ($row->id == $region_id) echo "selected='selected'"; ?>><?php echo $row->name_en; ?></option>
+                     <?php endforeach; ?>
                   </select>
                 </div>
                 <div class="mb-2 select-border">
@@ -75,7 +89,7 @@ Listing – grid view -->
                 </div>
            
                 <input type="hidden" id="from_price" name="from" value="<?php echo ($from_price)?$from_price:min_price()?>"/>
-              <input type="hidden"  id="to_price" name="to" value="<?php echo ($to_price)?$to_price:max_price()?>"/>
+                <input type="hidden"  id="to_price" name="to" value="<?php echo ($to_price)?$to_price:max_price()?>"/>
 
                 <div class="mb-2 select-border">
                   <select class="form-control basic-select" name="floor">
@@ -121,7 +135,7 @@ Listing – grid view -->
               <h6>Recently listed properties</h6>
             </div>
 
-            <?php      $left_restaurants = $this->db->query("SELECT * FROM restaurants WHERE approved = '1'   ORDER BY res_ratings DESC LIMIT 0, 7")->result_array();?>
+            <?php      $left_restaurants = $this->db->query("SELECT * FROM restaurants WHERE approved = '1'   ORDER BY res_ratings DESC LIMIT 0, 5")->result_array();?>
 
             <?php if (isset($left_restaurants)) {
                   $cnt = 1; ?>
@@ -144,53 +158,7 @@ Listing – grid view -->
       </div>
       <div class="col-lg-9">
         <div class="property-filter d-sm-flex">
-          <!-- <ul class="property-short list-unstyled d-sm-flex mb-0">
-            <li>
-              <form class="form-inline">
-                <div class="d-lg-flex d-block mb-sm-0 mb-3">
-                  <label class="justify-content-start mb-2 mb-sm-0">Short by:</label>
-                  <div class="short-by">
-                    <select class="form-control basic-select">
-                      <option>Date new to old</option>
-                      <option>Price Low to High</option>
-                      <option>Price High to Low</option>
-                      <option>Date Old to New</option>
-                      <option>Date New to Old</option>
-                    </select>
-                  </div>
-                </div>
-              </form>
-            </li>
-          </ul>
-          <ul class="property-view-list list-unstyled d-flex mb-0">
-            <li>
-              <form class="form-inline">
-                <div class="d-lg-flex d-block mb-3 mb-sm-0">
-                  <label class="justify-content-start pe-2 mb-2 mb-sm-0">Sort by: </label>
-                  <div class="short-by">
-                    <select class="form-control basic-select">
-                      <option>12</option>
-                      <option>18 </option>
-                      <option>24 </option>
-                      <option>64 </option>
-                      <option>128</option>
-                    </select>
-                  </div>
-                </div>
-              </form>
-            </li>
-            <li><a href="index-half-map.html"><i class="fas fa-map-marker-alt fa-lg"></i></a></li>
-            <li><a class="property-list-icon" href="property-list.html">
-              <span></span>
-              <span></span>
-              <span></span>
-            </a></li>
-            <li><a class="property-grid-icon active" href="property-grid.html">
-              <span></span>
-              <span></span>
-              <span></span>
-            </a></li>
-          </ul> -->
+
         </div>
         <div class="row mt-4">
 
@@ -207,20 +175,20 @@ Listing – grid view -->
               <div class="property-image bg-overlay-gradient-04">
                 <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $image; ?>" alt="">
                 <div class="property-lable">
-                  <span class="badge badge-md bg-primary">Bungalow</span>
-                  <span class="badge badge-md bg-info">Sale </span>
+                <span class="badge badge-md bg-primary"><?=key_type($listing['type'])?> </span>
+              <span class="badge badge-md bg-info"><?=payment_method_value($listing['payment_method'])?> </span>
                 </div>
                 <span class="property-trending" title="trending"><i class="fas fa-bolt"></i></span>
                 <div class="property-agent">
                   <div class="property-agent-image">
-   <?php   if(!empty($vendor->profile_image)){
-                $profile_image = explode('::::',$vendor->profile_image)[0];
-              ?>
+                  <?php   if(!empty($vendor->profile_image)){
+                    $profile_image = explode('::::',$vendor->profile_image)[0];
+                      ?>
                 <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $profile_image; ?>" alt="">
                 <?php } ?>
                   </div>
                   <div class="property-agent-info">
-                    <a class="property-agent-name" href="#"><?=@$vendor->uname?></a>
+                    <a class="property-agent-name" href="<?php echo base_url('agent/' .@$vendor->id); ?>"><?=@$vendor->uname?></a>
                     <span class="d-block"><?=@$vendor->email?></span>
                     <ul class="property-agent-contact list-unstyled">
                       <li><a href="tel:<?=@$vendor->phone?>"><i class="fas fa-mobile-alt"></i> </a></li>
@@ -234,8 +202,9 @@ Listing – grid view -->
                   <h5 class="property-title"><a href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?=$listing['res_name']?></a></h5>
                   <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i><?= word_limiter($listing['res_desc'],4);?></span>
                   <span class="property-agent-date"><i class="far fa-clock fa-md"></i><?php
-              echo date('d/M/Y', $listing['res_create_date']);
-              ?></span>
+                   echo date('d/M/Y', $listing['res_create_date']);
+                        ?>
+              </span>
                   <div class="property-price"><?=$listing['discount']?><span> / month</span> </div>
                   <ul class="property-info list-unstyled d-flex">
                     <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Rooms<span><?=$listing['rooms']?></span></li>

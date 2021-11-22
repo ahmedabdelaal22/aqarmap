@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="row">
-    <?php      $restaurants = $this->db->query("SELECT * FROM restaurants WHERE approved = '1'   ORDER BY res_ratings DESC LIMIT 0, 15")->result_array();?>
+    <?php      $restaurants = $this->db->query("SELECT * FROM restaurants WHERE approved = '1'   ORDER BY res_id DESC LIMIT 0, 6")->result_array();?>
 
 <?php if (isset($restaurants)) {
                   $cnt = 1; ?>
@@ -27,8 +27,8 @@
           <?php $image = explode('::::', $listing['res_image'])[0]; ?>
             <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $image; ?>" alt="">
             <div class="property-lable">
-              <span class="badge badge-md bg-primary">Bungalow</span>
-              <span class="badge badge-md bg-info">Sale </span>
+              <span class="badge badge-md bg-primary"><?=key_type($listing['type'])?> </span>
+              <span class="badge badge-md bg-info"><?=payment_method_value($listing['payment_method'])?> </span>
             </div>
             <span class="property-trending" title="trending"><i class="fas fa-bolt"></i></span>
             <div class="property-agent">
@@ -40,7 +40,7 @@
                 <?php } ?>
               </div>
               <div class="property-agent-info">
-                <a class="property-agent-name" href="#"><?=@$vendor->uname?></a>
+                <a class="property-agent-name" href="<?php echo base_url('agent/' .@$vendor->id); ?>"><?=@$vendor->uname?></a>
                 <span class="d-block"><?=@$vendor->email?></span>
                 <ul class="property-agent-contact list-unstyled">
                   <li><a href="tel:<?=@$vendor->phone?>"><i class="fas fa-mobile-alt"></i> </a></li>
@@ -82,7 +82,7 @@
       <?php }} ?>
 
       <div class="col-12 text-center">
-        <a class="btn btn-link" href="property-list.html"><i class="fas fa-plus"></i>View All Listings</a>
+        <a class="btn btn-link" href="<?php echo base_url('search'); ?>"><i class="fas fa-plus"></i>View All Listings</a>
       </div>
     </div>
   </div>

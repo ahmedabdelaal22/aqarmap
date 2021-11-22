@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="col-lg-3 text-lg-end">
-        <a class="btn btn-primary" href="about-us.html">More about us </a>
+        <a class="btn btn-primary" href="<?=base_url('/about')?>">More about us </a>
       </div>
     </div>
     <div class="row g-0 mt-4">
