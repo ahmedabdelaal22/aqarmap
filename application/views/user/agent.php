@@ -12,7 +12,7 @@ Listing – grid view -->
                 <?php  if(!empty($agent->profile_image)){
                 $profile_image = explode('::::',$agent->profile_image)[0];
               ?>
-                  <img class="img-fluid rounded-circle" src="<?php echo base_url(); ?>uploads/<?php echo $profile_image; ?>" alt="">
+                  <img class="img-fluid rounded-circle" src="<?php echo base_url(); ?>uploads/<?php echo $profile_image; ?>" alt="" onerror="this.onerror=null;this.src='<?=base_url('website')?>/images/default-avatar.jpg'">
                   <?php } ?>
                 </div>
                 <div class="agent-listing text-center mt-auto">
@@ -158,12 +158,14 @@ review -->
             </div>
             <span class="property-trending" title="trending"><i class="fas fa-bolt"></i></span>
             <div class="property-agent">
-              <div class="property-agent-image"><?php
-              if(!empty($vendor->profile_image)){
-                $profile_image = explode('::::',$vendor->profile_image)[0];
-              ?>
-                <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $profile_image; ?>" alt="">
-                <?php } ?>
+              <div class="property-agent-image"><?php   if(!empty($vendor->profile_image)){
+                    $profile_image = explode('::::',$vendor->profile_image)[0];
+                      ?>
+                <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $profile_image; ?>" alt="" onerror="this.onerror=null;this.src='<?=base_url('website')?>/images/default-avatar.jpg'">
+                <?php }else{
+                    ?>
+<img class="img-fluid" src="<?=base_url('website')?>/images/default-avatar.jpg" alt="" >
+                  <?php } ?>
               </div>
               <div class="property-agent-info">
                 <a class="property-agent-name" href="#"><?=@$vendor->uname?></a>
