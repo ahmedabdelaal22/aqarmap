@@ -205,7 +205,7 @@ Listing – grid view -->
                    echo date('d/M/Y', $listing['res_create_date']);
                         ?>
               </span>
-                  <div class="property-price"><?=$listing['discount']?><span> / month</span> </div>
+                  <div class="property-price"><?=$listing['discount']?><span> </span> </div>
                   <ul class="property-info list-unstyled d-flex">
                     <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Rooms<span><?=$listing['rooms']?></span></li>
                     <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span><?=$listing['baths']?></span></li>
