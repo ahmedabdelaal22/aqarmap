@@ -4655,7 +4655,7 @@ ul li:last-child {
     display: -ms-flexbox;
     display: flex; }
     .footer .footer-recent-List ul li .footer-recent-list-item img {
-      height: 80px; }
+      height: 80px;width: 80px; }
     .footer .footer-recent-List ul li .footer-recent-list-item .footer-recent-list-item-info {
       padding-left: 20px; }
       .footer .footer-recent-List ul li .footer-recent-list-item .footer-recent-list-item-info a {
