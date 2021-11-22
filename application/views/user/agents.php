@@ -30,6 +30,9 @@ Listing – list view -->
               ?>
                  <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $profile_image; ?>" alt="" onerror="this.onerror=null;this.src='<?=base_url('website')?>/images/default-avatar.jpg'">
 
+                  <?php }else{
+                    ?>
+<img class="img-fluid" src="<?=base_url('website')?>/images/default-avatar.jpg" alt="" >
                   <?php } ?>
                 </div>
                 <div class="agent-listing text-center mt-auto">
