@@ -130,10 +130,10 @@ public function neweslater(){
 		$this->form_validation->set_rules('phone', 'Phone', 'required'
 		, array('required' => 'الهاتف مطلوب'));
    //     $this->form_validation->set_rules('address', 'Address', 'required');
-		$this->form_validation->set_rules('brand', 'Brand', 'required'
-		, array('required' => 'العلامة التجارية مطلوبة'));
-        $this->form_validation->set_rules('category_id', 'Category', 'required'
-		, array('required' => 'القسم مطلوب'));
+		$this->form_validation->set_rules('email', 'Email', 'required'
+		, array('required' => 'email required'));
+        $this->form_validation->set_rules('description', 'Description', 'required'
+		, array('required' => 'description required'));
 
 
 	if ($this->form_validation->run() == FALSE) {
@@ -146,8 +146,9 @@ public function neweslater(){
 		try {
 	
 			$data['description'] = $this->input->post('description');
-			$data['brand'] = $this->input->post('brand');
-			$data['category_id'] = $this->input->post('category_id');
+		
+			$data['store_id'] = $this->input->post('store_id');
+			$data['email'] = $this->input->post('email');
 			$data['phone'] = $this->input->post('phone');
 			$data['name'] = $this->input->post('name');
 	
