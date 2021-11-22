@@ -99,39 +99,10 @@ Contact -->
       </div>
     </div>
     <div class="row mt-1 mt-md-2">
-      <div class="col-12">
-        <h4 class="mb-4 my-4 my-sm-5">Additional contact Info</h4>
+      <div class="col-12 mb-4 mt-4">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1026.4504386861468!2d31.32865233672747!3d30.078316917921587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e3c49236317%3A0xa12585da079dcc75!2sQueen%20Tech%20Solutions!5e0!3m2!1sar!2seg!4v1637594291927!5m2!1sar!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
-      <div class="col-md-4">
-        <div class="d-flex">
-          <i class="flaticon-time-call font-xlll text-primary"></i>
-          <div class="ms-4">
-            <h5>Estate agency offices</h5>
-            <p>Our Estate Agency offices can help with you buying or selling a home.</p>
-            <a href="#">Click to contact an estate agency branch</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mt-4 mt-md-0">
-        <div class="d-flex">
-          <i class="flaticon-email-1 font-xlll text-primary"></i>
-          <div class="ms-4">
-            <h5>Lettings offices</h5>
-            <p>Our Lettings offices can assist with you letting your home, protection and moving home.</p>
-            <a href="#">Click to contact a lettings branch</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mt-4 mt-md-0">
-        <div class="d-flex">
-          <i class="flaticon-group font-xlll text-primary"></i>
-          <div class="ms-4">
-            <h5>Chat to us online</h5>
-            <p class="mb-0">Chat to us online if you have a question about using our Mortgage calculator.</p>
-            <a class="btn btn-primary btn-sm mt-3" href="#"> Start web chat</a>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
