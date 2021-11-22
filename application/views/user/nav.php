@@ -23,7 +23,7 @@ header -->
               </a>
               <div class="dropdown-menu mt-0" aria-labelledby="dropdownMenuButton">
 	    	    <?php  foreach ($regions as $row) {?>
-                <a class="dropdown-item" href="<?php echo $row->id; ?>"><?php echo $row->name_en; ?></a>
+                <a class="dropdown-item" href="<?php echo base_url('search?region_id=').$row->id?>"><?php echo $row->name_en; ?></a>
                  <?php } ?>
               </div>
             </div>

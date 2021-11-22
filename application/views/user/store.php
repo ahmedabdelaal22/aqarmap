@@ -279,6 +279,8 @@
       </div>
     </div>
   </section>
+  <input type="hidden" id="userlogin" value="<?=$this->session->userdata('UserId')?>">
+
   <section class="space-pt">
   <div class="container">
     <hr class="mb-5 mt-0">
@@ -394,7 +396,11 @@ Review -->
                 <textarea class="form-control" rows="3"></textarea>
               </div>
             </div>
-            <span> <a href="login.html"> <b>Login</b>  </a> to leave a review</span>
+            <button type="button"id="addreview" class="btn btn-primary">Add a review</button>
+
+            <?php if(empty($this->session->userdata('UserId'))){?>
+            <span> <a href="<?php echo base_url('login'); ?>"> <b>Login</b>  </a> to leave a review</span>
+            <?php }?>
           </div>
         </div>
       </div>
@@ -416,25 +422,26 @@ Review -->
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-                    <form class="row mt-4 align-items-center">
+                    <form class="row mt-4 align-items-center" id="cform">
+                      <input type="hidden" name="store_id" id="store_id" value="<?=$listing['res_id']?>"/>
               <div class="mb-3 col-sm-12">
-                <label class="form-label">Username:</label>
-                <input type="text" class="form-control" placeholder="">
+                <label class="form-label"><?php echo $this->lang->line('full_name') ?>:</label>
+                <input type="text" class="form-control"  name="name" id="name" placeholder="">
               </div>
               <div class="mb-3 col-sm-12">
-                <label class="form-label">Email Address:</label>
-                <input type="email" class="form-control" placeholder="">
+                <label class="form-label"><?php echo $this->lang->line('email') ?>:</label>
+                <input type="email" class="form-control" placeholder=""name="email" id="email">
               </div>
               <div class="mb-3 col-sm-12">
-                <label class="form-label">Phone Number:</label>
-                <input type="text" class="form-control" placeholder="">
+                <label class="form-label"><?php echo $this->lang->line('phone') ?>:</label>
+                <input type="text" class="form-control" placeholder=""name="phone" id="phone">
               </div>
               <div class="mb-3 col-sm-12">
-                <label class="form-label">Message:</label>
-                <textarea class="form-control" placeholder=""></textarea>
+                <label class="form-label"><?php echo $this->lang->line('description') ?>:</label>
+                <textarea class="form-control" placeholder="" name="description" id="description"></textarea>
               </div>
               <div class="mb-3 col-sm-12 d-grid">
-                <button type="submit" class="btn btn-primary">Request Info</button>
+                <button type="submit" id="contact_form_submit"  class="btn btn-primary">Request Info</button>
               </div>
             </form>
       </div>
@@ -443,3 +450,192 @@ Review -->
 </div>
 
 <script async src="https://static.addtoany.com/menu/page.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#contact_form_submit").click(function (e) {
+
+			e.preventDefault();
+
+
+
+			var name = $("input[name='name']").val();
+      var store_id = $("#store_id").val();
+			var description = $("textarea[name='description']").val();
+	
+			var phone = $("input[name='phone']").val();
+			var email = $("input[name='email']").val();
+
+
+			$.ajax({
+				url: "<?=base_url('subscribe_submit')?>",
+				type: 'POST',
+				data: {
+          store_id: store_id,
+					name: name,
+					description: description,
+					email: email,
+					phone: phone
+				},
+				success: function (data) {
+					console.log(data);
+
+
+					// console.log(data.status);
+					if (data.status == true) {
+						$('#requestInfoModal').modal('toggle');
+						alert(data.message);
+						$("#cform")[0].reset();
+						$("span").remove(".invalid");
+						$('input[name=name]').removeClass('invalid');
+						$('input[name=phone]').removeClass('invalid');
+						$('input[name=description]').removeClass('invalid');
+						$('input[name=email]').removeClass('invalid');
+				
+
+					} else {
+						// $("#allererror").show();
+						//	$("#errorspan").html(data.message);
+						printErrorMsg(data.message);
+					}
+				}
+			});
+
+
+		});
+
+
+		function printErrorMsg(msg) {
+			$("span").remove(".invalid");
+			$('input[name=name]').removeClass('invalid');
+			$('input[name=phone]').removeClass('invalid');
+			$('input[name=description]').removeClass('invalid');
+			$('input[name=email]').removeClass('invalid');
+			$.each(msg, function (key, value) {
+				$(document).find('[name=' + key + ']').after('<span class="text-strong invalid">' + value +
+					'</span>')
+
+			});
+		}
+	});
+</script>
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#addreview").click(function (e) {
+   e.preventDefault();
+   
+
+   var ratings = $("input[name='rate']").val();
+    
+      var user_id = $("#userlogin").val();
+      var res_id = $("#store_id").val();
+      var text = $("#form76").val();
+
+      if (user_id) {
+        $.ajax({
+          url: "<?=base_url('give_review')?>",
+          type: 'POST',
+          data: {
+            user_id: user_id,
+            res_id: res_id,
+            ratings: ratings,
+            text: text
+          },
+          success: function (data) {
+            console.log(data);
+            // console.log(data.status);
+            if (data.status == true) {
+              var now = new Date(Date.now());
+var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+            //   $( "#allreviews" ).append('<hr><div class="media mt-3 mb-4">'
+            // +'<img class="d-flex mr-3 z-depth-1" src="<?php echo base_url('uploads/').$this->session->userdata('aimg')?>" width="62" alt="Generic placeholder image">'
+            // +'<input id="input-21b1" value="'+ratings+'" disabled type="text" class="rating" data-theme="krajee-fas" data-min=0 data-max=5 data-step=0.2 data-size="lg"required title="">'
+            // +' <div class="media-body">'
+            // +'     <div class="d-sm-flex justify-content-between">'
+            // +'  <p class="mt-1 mb-2">'
+            // +'<div class="rating-container theme-krajee-fas rating-lg rating-animate rating-disabled">'
+
+            // +'  <strong><?=$this->session->userdata('aname')?> </strong>'
+            // +' <span> – </span><span>'
+            // +''+formatted+''
+            // +'  </span>'
+            // +' </p>'
+
+            // +'   </div>'
+            // +' <p class="mb-0">'+text+'</p>'
+            // +' </div>'
+            // +'  </div>  <hr>');
+              alert(data.message);
+              location.reload();
+              // style="color:red" id="favorite"
+
+            } else {
+              alert(data.message);
+              //		printErrorMsg(data.message);
+            }
+          }
+        });
+      } else {
+        alert("please login");
+      }
+
+
+});
+    $("#favorite").click(function (e) {
+
+      e.preventDefault();
+
+      var user_id = $("#userlogin").val();
+      var res_id = $("#resturant").val();
+      var like = $("#like").val();
+
+      if (user_id) {
+  
+        if(like==1){
+          $(this).css('color', '');
+          var url="<?=base_url('unlikeRes')?>";
+          $("#like").val("0");
+   
+        }else{
+          $(this).css('color', 'red');
+          var url="<?=base_url('likeRes')?>";
+          $("#like").val("1");
+        
+        }
+
+        $.ajax({
+          url: url,
+          type: 'POST',
+          data: {
+            user_id: user_id,
+            res_id: res_id
+          },
+          success: function (data) {
+            console.log(data);
+            // console.log(data.status);
+            if (data.status == true) {
+              $(this).css('color', 'red');
+              alert(data.message);
+              // style="color:red" id="favorite"
+
+            } else {
+              alert(data.message);
+              //		printErrorMsg(data.message);
+            }
+          }
+        });
+      } else {
+        alert("please login");
+      }
+
+
+    
+
+    });
+    
+  
+
+  });
+</script>

@@ -89,6 +89,8 @@ footer-->
     </div>
   </div>
 </footer>
+<input type="hidden" id="userlogin" value="<?=$this->session->userdata('UserId')?>">
+
 <!--=================================
 footer-->
 
@@ -334,28 +336,26 @@ function myshowmodel(id,name){
 //	$('#ratingModal').trigger('focus');
 }
 function sendRestest(res_id){
-	var user_id=getCookie('user_id_cookie');
-if(user_id==''){
+  var user_id = $("#userlogin").val();
 
-let generate=	 Math.floor(Math.random() * 26) + Date.now();
-	setCookie('user_id_cookie',generate);
-	user_id=getCookie('user_id_cookie');
+if(user_id){
 
-}
+
+
 var like = $("#test"+res_id+"like").val();
 	if(like==1){
-          var url="<?=base_url('unlikeRes')?>";
+     var url="<?=base_url('unlikeRes')?>";
          
 		  $("#test"+res_id+"like").val("0");
 		  
-		  $( "#test"+res_id+"").removeClass( "added" );
+		  $( "#test"+res_id+"").removeClass( "text-danger" );
 		
    
         }else{
         
           var url="<?=base_url('likeRes')?>";
-		  $( "#test"+res_id+"").addClass( "added" );
-		  $("#test"+res_id+"like").val("1");
+		      $( "#test"+res_id+"").addClass( "text-danger" );
+		      $("#test"+res_id+"like").val("1");
         
         }
 
@@ -380,29 +380,28 @@ var like = $("#test"+res_id+"like").val();
             }
           }
         });
+      }else{
+        alert("please login");
+      }
 }
 function sendRes(res_id){
-	var user_id=getCookie('user_id_cookie');
-if(user_id==''){
+  var user_id = $("#userlogin").val();
+if(user_id){
 
-let generate=	 Math.floor(Math.random() * 26) + Date.now();
-	setCookie('user_id_cookie',generate);
-	user_id=getCookie('user_id_cookie');
 
-}
 var like = $("#"+res_id+"like").val();
 	if(like==1){
           var url="<?=base_url('unlikeRes')?>";
          
 		  $("#"+res_id+"like").val("0");
 		  
-		  $( "#"+res_id+"").removeClass( "added" );
+		  $( "#"+res_id+"").removeClass( "text-danger" );
 		
    
         }else{
         
           var url="<?=base_url('likeRes')?>";
-		  $( "#"+res_id+"").addClass( "added" );
+		  $( "#"+res_id+"").addClass( "text-danger" );
 		  $("#"+res_id+"like").val("1");
         
         }
@@ -428,6 +427,10 @@ var like = $("#"+res_id+"like").val();
             }
           }
         });
+
+      }else{
+        alert("please login");
+      }
      }
 
  

@@ -70,7 +70,21 @@
               <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>">See Details</a>
               <ul class="property-listing-actions list-unstyled mb-0">
                 <li class="property-favourites">
-                  <a data-bs-toggle="tooltip" data-bs-placement="top" title="Favourite" href="#"><i class="far fa-heart"></i></a>
+       <?php  
+       $like=0;
+       if(!empty($this->session->userdata('UserId'))){
+        $like=  $this->front_model->likeCheckfront($this->session->userdata('UserId'), $listing['res_id']);
+
+       }     
+       
+       
+       ?>
+
+                <!-- class="fas fa-heart " -->
+                  <a data-bs-toggle="tooltip" data-bs-placement="top" title="Favourite"href="javascript:sendRestest(<?=$listing['res_id']?>);">
+                    <i class="far fa-heart  <?php if($like==1){echo 'text-danger';}?>"  id="test<?=$listing['res_id']?>"></i>
+                  </a>
+                  <input type="hidden" id="test<?=$listing['res_id']?>like" value="<?=$like?>">
                 </li>
               </ul>
             </div>
