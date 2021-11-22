@@ -3692,7 +3692,8 @@ button {
       margin-left: auto; }
 
 .property-offer .property-offer-image {
-  padding: 90px 80px; }
+  padding: 90px 80px; 
+background-repeat: no-repeat !important; background-size: cover !important;}
 
 .property-offer .property-details .property-agent {
   padding: 0px 20px 20px; }
@@ -5167,4 +5168,24 @@ ul li:last-child {
 
 .property-details .property-btn .property-listing-actions li.property-favourites a:hover {
     color: #dc3545;
+}
+
+
+
+.best-deals .owl-stage {
+    display: flex;
+    flex: 1 0 auto;
+    height: 100%;
+}
+.best-deals .owl-stage .owl-item > .item,
+.best-deals .owl-stage .owl-item > .item > div,
+.best-deals .owl-stage .owl-item > .item > div > div,
+.best-deals .owl-stage .owl-item > .item > div > div > div{height: 100%;}
+.best-deals .owl-stage .owl-item{
+      position: relative;
+    overflow: hidden;
+    /* margin-bottom: 80px; *//*This is optional*/
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }

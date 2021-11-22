@@ -1,6 +1,6 @@
 <!--=================================
  offering the Best Real Estate-->
-<section class="clearfix">
+<section class="clearfix best-deals">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8">
