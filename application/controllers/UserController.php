@@ -186,6 +186,11 @@ class UserController extends CI_Controller
 		$this->load->view('user/template', $data);
 	}
 	public function profile(){
+
+		if($this->session->userdata('UserId')=="")
+		{
+			redirect(base_url('login'));
+		}
 		$data['page'] = 'profile';
 		$this->load->view('user/template', $data);
 	}
