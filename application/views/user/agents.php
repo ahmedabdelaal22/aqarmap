@@ -12,7 +12,7 @@ Listing – list view -->
         <div class="property-filter-tag">
  
         </div>
-      </div>
+    </div>
     </div>
     <div class="row">
       <div class="col-lg-12 col-md-12">
@@ -28,7 +28,7 @@ Listing – list view -->
                 <?php  if(!empty($row->profile_image)){
                 $profile_image = explode('::::',$row->profile_image)[0];
               ?>
-                 <img class="img-fluid   " src="<?php echo base_url(); ?>uploads/<?php echo $profile_image; ?>" alt="">
+                 <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $profile_image; ?>" alt="" onerror="this.onerror=null;this.src='<?=base_url('website')?>/images/default-avatar.jpg'">
 
                   <?php } ?>
                 </div>
