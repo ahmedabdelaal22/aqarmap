@@ -6,7 +6,14 @@
 
 <?php $locale=$this->session->userdata('locale') ?>
 
-<html class="">
+<?php if($this->session->userdata('site_lang')== 'english'){
+	$direction = 'ltr';
+}else{
+	$direction = 'rtl';
+}
+	?>
+
+<html  dir="<?php echo $direction; ?>" class="">
 <!--<![endif]-->
 <head>
 	<?php //$locale=$this->session->userdata('locale');?>
@@ -35,7 +42,11 @@
     <link rel="stylesheet" href="<?=base_url('website')?>/css/font-awesome/all.min.css" />
     <link rel="stylesheet" href="<?=base_url('website')?>/css/flaticon/flaticon.css" />
 
+<?php if($this->session->userdata('site_lang')== 'english'){?>
     <link rel="stylesheet" href="<?=base_url('website')?>/css/bootstrap/bootstrap.min.css" />
+<?php }else{ ?>
+    <link rel="stylesheet" href="<?=base_url('website')?>/css/bootstrap/bootstrap.rtl.min.css" />
+<?php } ?>
 
 		<link rel="stylesheet" href="<?=base_url('website')?>/css/datetimepicker/datetimepicker.min.css" />
 
@@ -44,11 +55,12 @@
     <link rel="stylesheet" href="<?=base_url('website')?>/css/range-slider/ion.rangeSlider.css" />
     <link rel="stylesheet" href="<?=base_url('website')?>/css/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="<?=base_url('website')?>/css/magnific-popup/magnific-popup.css" />
+    <link rel="stylesheet" href="<?=base_url('website')?>/css/style.css" />
 	<?php if($this->session->userdata('site_lang')== 'english'){?>
     <!-- Template Style -->
-    <link rel="stylesheet" href="<?=base_url('website')?>/css/style.css" />
+
     <?php }else{?>
-		<link rel="stylesheet" type="text/css" href="<?=base_url('website')?>/css/main_ar.css">
+    	<link rel="stylesheet" href="<?=base_url('website')?>/css/rtl.css" />
 	<?php }?>
 
 

@@ -8,6 +8,9 @@ Design and Developed by: potenzaglobalsolutions.com
 NOTE: This is main stylesheet of template, This file contains the styling for the actual Template.
 
 */
+html{
+  overflow-x: hidden;
+}
 body {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
@@ -5233,4 +5236,7 @@ ul li:last-child {
 
 .header .topbar .dropdown.language_select{
   margin-left: 20px;margin-right: 0;
+}
+.language_select img {
+    margin: 0 3px;
 }

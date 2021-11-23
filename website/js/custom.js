@@ -136,9 +136,19 @@ POTENZA.isSticky = function () {
           $space = ($this.attr('data-space')) ? $this.data('space') : 30,
           $animateOut = ($this.attr('data-animateOut')) ? $this.data('animateOut') : false;
 
+var mydir = jQuery("html").attr("dir");
+
+if (mydir == 'rtl') {
+     var rtlVal=true
+}
+else{
+     var rtlVal=false
+    }
+
         $(this).owlCarousel({
           loop: $loop,
           items: $items,
+          rtl: mydir,
           responsive: {
             0: {
               items: $this.data('xx-items') ? $this.data('xx-items') : 1

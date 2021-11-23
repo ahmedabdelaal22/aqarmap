@@ -1,0 +1,107 @@
+.header .navbar-nav li > a i {
+    margin-right: 5px;margin-left: 0px;
+}
+.btn i {
+    padding-right: 0px;padding-left: 10px;
+}
+.header .topbar .dropdown.language_select {
+    margin-left: 0px;
+    margin-right: 20px;
+}
+
+.header .topbar .social {
+    margin-left: 20px;margin-right: 0;
+}
+.header .topbar .dropdown {
+    margin-right: 0px;margin-left: 20px;
+}
+.category ul .category-item a .category-icon {
+    margin-left: 14px;margin-right: 0px;
+}
+.category ul .category-item a span {
+    margin-right: auto;margin-left: 0;
+}
+.badge + .badge {
+    margin-right: 6px;margin-left: 0px;
+}
+.property-image .property-agent .property-agent-image {
+    margin-right: 0px;margin-left: 10px;
+}
+.property-image .property-agent .property-agent-info:before {
+    right: -9px;left: auto;border-width: 5px 0px 5px 10px;
+    border-color: transparent transparent transparent #ffffff;
+}
+.property-details i {
+    margin-left: 5px;margin-right: 0;
+}
+.property-details .property-details-inner .property-address {
+    margin-left: 10px;margin-right: 0;    display: inline-block;
+    vertical-align: middle;
+}
+
+.owl-nav-top-right .owl-nav .owl-prev {
+    left: 80px;
+    right: auto;
+}
+.owl-nav-top-right .owl-nav .owl-next {
+    left: 20px;right: auto;
+}
+.owl-nav .fa-chevron-left:before {
+    content: "\f054";
+}
+.owl-nav .fa-chevron-right:before {
+    content: "\f053";
+}
+.breadcrumb .breadcrumb-item i {
+    padding-left: 5px;padding-right: 0px;
+}
+.breadcrumb .fa-chevron-right:before {
+    content: "\f053";
+}
+.select-border .select2-container--default .select2-selection--single 
+.select2-selection__arrow {
+    left: 20px;right: auto;
+}
+.sidebar .widget .recent-list-item .recent-list-item-info {
+    padding-right: 20px;padding-left: 0;
+}
+.footer .footer-recent-List ul li .footer-recent-list-item 
+.footer-recent-list-item-info {
+    padding-right: 20px;padding-left: 0;
+}
+.counter.counter-02 .counter-icon .icon {
+    padding-left: 20px;padding-right: 0px;
+}
+.footer .footer-link ul {
+    padding-left: 16px;padding-right: 0;
+}
+
+.testimonial-main {padding: 140px 0;transform: rotateY(180deg);}
+.testimonial-main .col-lg-8 {
+    margin-right: auto;
+}
+.testimonial-main .owl-carousel.owl-dots-bottom-left.owl-rtl.owl-loaded.owl-drag {
+    transform: rotateY(180deg);}
+
+.form-control{text-align: right;}
+
+.nav-tabs-03 .nav-item .nav-link span {
+    margin-left: 14px;margin-right: 0px;
+}
+.input-group.file-upload .input-group-text:after {
+    content: "استعراض";right: auto;left: 0;}
+.input-group.file-upload .input-group-text {
+    padding: 15px 20px 15px 90px;}
+
+.owl-carousel .owl-nav .owl-next {
+    left: 10px;right: auto;}
+.owl-carousel .owl-nav .owl-prev{
+    right: 10px;left: auto;
+}
+.rate {
+    float: right;
+}
+.navbar-toggler {
+    left: 10px;
+    right: auto;
+}
