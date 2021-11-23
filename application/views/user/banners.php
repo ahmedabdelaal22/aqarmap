@@ -31,7 +31,14 @@ banner -->
                    
                   ?>
                   <?php foreach ($category as $listing) : ?>
-                    <option value="<?php echo $listing['id']; ?>" <?php if ($listing['id'] == $category_id) echo "selected='selected'"; ?>><?php echo $listing['c_name']; ?></option>
+                    <option value="<?php echo $listing['id']; ?>" <?php if ($listing['id'] == $category_id) echo "selected='selected'"; ?>>
+                   
+                    <?php if($this->session->userdata('site_lang') == 'english'){?>
+                      <?php echo $listing['c_name']; ?>       
+                  <?php }else{?>
+                    <?php echo $listing['c_name_a']; ?>      
+                  <?php }?>
+                  </option>
                     <?php endforeach; ?>
   
                 </select>
@@ -56,9 +63,8 @@ banner -->
               foreach ($regions as $row) : ?> 
           <option value="<?php echo $row->id; ?>" <?php if ($row->id == $region_id) echo "selected='selected'"; ?>>
           
-          <?php if($this->session->userdata('site_lang') == 'english'){?>
-	                    
-            <?php echo $row->name_en; ?>        
+                  <?php if($this->session->userdata('site_lang') == 'english'){?>
+                   <?php echo $row->name_en; ?>        
                   <?php }else{?>
                     <?php echo $row->name_ar; ?>        
                   <?php }?>
