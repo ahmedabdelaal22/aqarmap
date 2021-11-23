@@ -27,6 +27,7 @@ header -->
                  <?php } ?>
               </div>
             </div>
+
             <div class="social d-inline-block">
               <ul class="list-unstyled">
                 <li><a href="<?=appSettings('facebook')?>"> <i class="fab fa-facebook-f"></i> </a></li>
@@ -49,6 +50,22 @@ header -->
 
 				<?php } ?>
             </div>
+
+<!-- Language Select -->
+            <div class="dropdown d-inline-block ps-2 ps-md-0 language_select">
+              <a class="dropdown-toggle" href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="<?=base_url('website')?>/images/flags/en.png"> ENG <i class="fas fa-chevron-down ps-2"></i>
+              </a>
+              <div class="dropdown-menu mt-0" aria-labelledby="dropdownMenuButton">
+
+                <a class="dropdown-item" href="#"><img src=""><img src="<?=base_url('website')?>/images/flags/en.png"> ENG</a>
+                <a class="dropdown-item" href="#"><img src=""><img src="<?=base_url('website')?>/images/flags/ar.png"> AR</a>
+
+              </div>
+            </div>
+<!-- Language Select -->
+
+
           </div>
         </div>
       </div>
