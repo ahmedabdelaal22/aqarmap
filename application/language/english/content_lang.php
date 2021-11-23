@@ -2,6 +2,24 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+
+
+
+$lang['for_sale'] = 'For Sale';
+$lang['for_rent'] = 'For Rent';
+$lang['sale_or_rent'] = 'Sale or Rent';
+
+
+$lang['private_owner'] = 'Private Owner';
+
+$lang['freelancer'] = 'Freelancer';
+$lang['compound_developer'] = 'Compound Developer';
+$lang['exclusive'] = 'Exclusive';
+
+$lang['installment'] = 'Installment';
+$lang['cash'] = 'Cash';
+$lang['installment_or_cash'] = 'Installment or cash';
 $lang['home'] = 'Home';
 $lang['categories'] = 'Categories';
 $lang['agents'] = 'Agents';

@@ -18,9 +18,10 @@ if (!function_exists('types'))
 {
 
 function types(){
-
-  $type[1]='Sale';
-  $type[2]='Rent';
+  $CI =&get_instance();
+  $type[1]=$CI->lang->line('for_sale');
+  $type[2]=$CI->lang->line('for_rent');
+  $type['']=$CI->lang->line('sale_or_rent');
    return $type;
   }
 }
@@ -105,9 +106,10 @@ function count_types($type){
 if (!function_exists('key_type'))
 {
 function key_type($key){
-  $type[1]='For Sale';
-  $type[2]='For Rent';
-  $type[0]='Sale or Rent';
+  $CI =&get_instance();
+  $type[1]=$CI->lang->line('for_sale');
+  $type[2]=$CI->lang->line('for_rent');
+  $type[0]=$CI->lang->line('sale_or_rent');
    return $type[$key];
   }
 }
@@ -115,10 +117,11 @@ function key_type($key){
 if (!function_exists('vendore_type'))
 {
 function vendore_type($type){
-  $vendore_type[0]='Private Owner';//مالك عقار
-  $vendore_type[1]='Freelancer';//مسوق عقاري
-  $vendore_type[2]='Compound Developer';//مطور كمبوند
-  $vendore_type[3]='Exclusive';//شركات التسويق العقارى
+  $CI =&get_instance();
+  $vendore_type[0]=$CI->lang->line('private_owner');
+  $vendore_type[1]=$CI->lang->line('freelancer');
+  $vendore_type[2]=$CI->lang->line('compound_developer');
+  $vendore_type[3]=$CI->lang->line('exclusive');
    return $vendore_type[$type];
   }
 }
@@ -126,10 +129,11 @@ function vendore_type($type){
 if (!function_exists('get_vendore_type'))
 {
 function get_vendore_type(){
-  $vendore_type[0]='Private Owner';//مالك عقار
-  $vendore_type[1]='Freelancer';//مسوق عقاري
-  $vendore_type[2]='Compound Developer';//مطور كمبوند
-  $vendore_type[3]='Exclusive';//شركات التسويق العقارى
+  $CI =&get_instance();
+  $vendore_type[0]=$CI->lang->line('private_owner');
+  $vendore_type[1]=$CI->lang->line('freelancer');
+  $vendore_type[2]=$CI->lang->line('compound_developer');
+  $vendore_type[3]=$CI->lang->line('exclusive');
    return $vendore_type;
   }
 }
@@ -138,9 +142,9 @@ if (!function_exists('advertiser_type'))
 {
 
 function advertiser_type(){
-
-  $type[1]='Mediator';//'وسيط';
-  $type[2]='The Owner Of Real Estate';//مالك العقار
+  $CI =&get_instance();
+  $type[1]=$CI->lang->line('installment');'Mediator';//'وسيط';
+  $type[2]=$CI->lang->line('installment');'The Owner Of Real Estate';//مالك العقار
    return $type;
   }
 }
@@ -148,9 +152,9 @@ if (!function_exists('advertiser_type_value'))
 {
 
 function advertiser_type_value($value){
-
-  $type[1]='moderate';
-  $type[2]='Property Owner';
+  $CI =&get_instance();
+  $type[1]=$CI->lang->line('moderate');
+  $type[2]=$CI->lang->line('property_owner');
    return $type[$value];
   }
 }
@@ -158,10 +162,10 @@ if (!function_exists('payment_method'))
 {
 
 function payment_method(){
-
-  $type[1]='Installment';//'تقسيط';
-  $type[2]='cash';//'النقدية';
-  $type[3]='Installment or cash';
+  $CI =&get_instance();
+  $type[1]=$CI->lang->line('installment');
+  $type[2]=$CI->lang->line('cash');
+  $type[3]=$CI->lang->line('installment_or_cash');
    return $type;
   }
 }
@@ -169,74 +173,13 @@ if (!function_exists('payment_method_value'))
 {
 
 function payment_method_value($value){
-  $type['']=' Installment or cash';
-  $type[1]='Installment';//'تقسيط';
-  $type[2]='cash';//'النقدية';
-  $type[3]='Installment or cash';
+  $CI =&get_instance();
+  $type['']=$CI->lang->line('installment_or_cash');
+  $type[1]=$CI->lang->line('installment');
+  $type[2]=$CI->lang->line('cash');
+  $type[3]=$CI->lang->line('installment_or_cash');
    return $type[$value];
   }
 }
 
-if (!function_exists('getallsub'))
-{
-function getallsub($listing,$name='')
-{
-   
-     $html='';
-    if(count($listing->shildren)){
-        $name.='>'.$listing->c_name;
-      //  $html.= " <option value=".$listing->id.">". $listing->c_name."</option>";
-      foreach($listing->shildren as $row){
-       
-        if(count($row->shildren)){
-            $name.='>'.$listing->c_name;
-           // $html.= " <option value=".$row->id.">". $name."</option>";
-           $html.= getallsub($row, $name);
-          // die($html);
-        }else{
-            if(@$row->id){
-                $name.='>'.$row->c_name;
-            $html.= " <option value=".$row->id.">". $name."</option>";
-            $name='';
-            }
-        }
-       }
-      } else {
-          if(@$listing->id){
-            $name.='>'.$listing->c_name;
-            $html.= " <option value=".$listing->id.">". $name."</option>";
-            $name='';
-          }
-      
 
-       }
-       echo  $html;
-
- }
-//  function getCategories($categories, $parent = 0,$name='')
-//  {
-//      $html = "";
-//     //print_r($categories);die;
-//      foreach($categories as $cat)
-//      {
-//          if($cat->parent_id == $parent)
-//          {
-//              $current_id = $cat->id;
-//                $name.='>'.$cat->c_name;
-//               $data= getCategories($categories, $current_id,$name);
-//                if(empty($data)){
-//                 $html.= " <option value=".$cat->id.">". $name."</option>";
-//                }
-            
-//             $html .=  $data;
-
-          
-//          }
-//      }
-   
-//      return  $html;
-//  }
-
-
-
-}

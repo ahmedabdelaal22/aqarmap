@@ -2,6 +2,27 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+
+$lang['for_sale'] = 'للبيع';
+$lang['for_rent'] = 'للإيجار';
+$lang['sale_or_rent'] = 'بيع أو إيجار';
+
+
+$lang['private_owner'] = 'مالك عقار';
+
+$lang['freelancer'] = 'مسوق عقاري';
+$lang['compound_developer'] = 'مطور كمبوند';
+$lang['exclusive'] = 'شركات التسويق العقارى';
+$lang['installment'] = 'تقسيط';
+
+
+
+
+
+$lang['installment'] = 'تقسيط';
+$lang['cash'] = 'النقدية';
+$lang['installment_or_cash'] = 'تقسيط او نقدا';
 $lang['home'] = 'الرئيسية';
 $lang['categories'] = 'الاقسام';
 $lang['properties'] = 'عقارات';
