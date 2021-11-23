@@ -17,7 +17,7 @@ banner -->
           <div class="property-search-item">
             <form class="row basic-select-wrapper" method="GET" name="searchaction" action="<?=base_url('/search')?>">
               <div class="form-group col-lg-3 col-md-6" >
-                <label class="form-label"><?php echo $this->lang->line('property_type') ?></label>
+                <label class="form-label">Property type</label>
                 <select class="form-control basic-select"  name="cat_id">
                   <option value="">All Type</option>
                   <?php $category = $this->admin_model->get_category();
@@ -37,7 +37,7 @@ banner -->
                 </select>
               </div>
               <div class="form-group col-lg-3 col-md-6">
-                <label class="form-label"><?php echo $this->lang->line('status') ?></label>
+                <label class="form-label">Status</label>
                 <select class="form-control basic-select"  name="type" >
 
                 <?php foreach (types() as $key => $value) : ?>
@@ -48,21 +48,31 @@ banner -->
               </div>
               <div class="form-group d-flex col-lg-4">
                 <div class="form-group-search">
-                  <label class="form-label"><?php echo $this->lang->line('location') ?></label>
+                  <label class="form-label">Location</label>
                   <select class="form-control basic-select"  name="region_id" >
+                  <option value="">All Locations</option>
                   <?php 
 				$regions = $this->admin_model->get_all_regions();
               foreach ($regions as $row) : ?> 
-          <option value="<?php echo $row->id; ?>" <?php if ($row->id == $region_id) echo "selected='selected'"; ?>><?php echo $row->name_en; ?></option>
+          <option value="<?php echo $row->id; ?>" <?php if ($row->id == $region_id) echo "selected='selected'"; ?>>
+          
+          <?php if($this->session->userdata('site_lang') == 'english'){?>
+	                    
+            <?php echo $row->name_en; ?>        
+                  <?php }else{?>
+                    <?php echo $row->name_ar; ?>        
+                  <?php }?>
+        
+        </option>
         <?php endforeach; ?>
 
                  </select>
                 </div>
-                <span class="align-items-center ms-3 d-none d-lg-block"><button class="btn btn-primary d-flex align-items-center" type="submit"><i class="fas fa-search me-1"></i><span><?php echo $this->lang->line('search') ?></span></button></span>
+                <span class="align-items-center ms-3 d-none d-lg-block"><button class="btn btn-primary d-flex align-items-center" type="submit"><i class="fas fa-search me-1"></i><span>Search</span></button></span>
               </div>
               <div class="form-group text-center col-lg-2">
                 <div class="d-flex justify-content-center d-md-inline-block">
-                  <a class="more-search p-0" data-bs-toggle="collapse" href="#advanced-search" role="button" aria-expanded="false" aria-controls="advanced-search"> <span class="d-block pe-2 mb-1"><?php echo $this->lang->line('advanced_search') ?></span>
+                  <a class="more-search p-0" data-bs-toggle="collapse" href="#advanced-search" role="button" aria-expanded="false" aria-controls="advanced-search"> <span class="d-block pe-2 mb-1">Advanced search</span>
                   <i class="fas fa-angle-double-down"></i></a>
                 </div>
               </div>
@@ -73,7 +83,7 @@ banner -->
               <input type="hidden"  id="to_price" name="to" value="<?php echo ($to_price)?$to_price:max_price()?>"/>
 
                     <div class="form-group col-md-3">
-                      <label class="form-label"><?php echo $this->lang->line('bedrooms') ?></label>
+                      <label class="form-label">Bedrooms</label>
                       <select class="form-control basic-select" name="rooms">
                         <option value="">No max</option>
                    
@@ -84,7 +94,7 @@ banner -->
                     </div>
                
                     <div class="form-group col-md-3">
-                      <label class="form-label"><?php echo $this->lang->line('floor') ?></label>
+                      <label class="form-label">Floor</label>
                       <select class="form-control basic-select" name="floor">
                         <option value="">Select Floor</option>
                         <?php foreach (rooms() as $key => $value) : ?>
@@ -95,15 +105,15 @@ banner -->
                   </div>
                   <div class="row">
                     <div class="form-group col-md-3">
-                      <label class="form-label"><?php echo $this->lang->line('min_area') ?></label>
+                      <label class="form-label">Min Area (sq ft)</label>
                       <input class="form-control" name="min_space" value="<?=$this->input->get('min_space')?>" placeholder="Type (sq ft)">
                     </div>
                     <div class="form-group col-md-3">
-                      <label class="form-label"><?php echo $this->lang->line('max_area') ?></label>
+                      <label class="form-label">Max Area (sq ft)</label>
                       <input class="form-control"name="max_space" value="<?=$this->input->get('max_space')?>" placeholder="Type (sq ft)">
                     </div>
                     <div class="form-group col-md-6 property-price-slider ">
-                      <label class="form-label"><?php echo $this->lang->line('select_price_range') ?></label>
+                      <label class="form-label">Select Price Range</label>
                       <input type="text" id="property-price-slider" name="price_range" value="" />
                     </div>
                   </div>
