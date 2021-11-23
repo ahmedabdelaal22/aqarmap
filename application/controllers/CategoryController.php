@@ -136,7 +136,8 @@ class CategoryController extends CI_Controller
 	
 		$data['page'] = 'store';
 		$data['res']  =$this->db->get_where('restaurants', array('res_id' => $store_id), 1)->row();
-         //	print_r($data['res']); die;
+		$data['cat']  =$this->db->get_where('categories', array('id' => $data['res']->cat_id), 1)->row();
+
 		$this->load->view('user/template',$data);
 	}
 

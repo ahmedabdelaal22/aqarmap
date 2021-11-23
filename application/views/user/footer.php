@@ -19,14 +19,14 @@ footer-->
           <h5 class="text-primary mb-4">Useful links</h5>
           <ul class="list-unstyled mb-0">
 
-          <?php foreach (advertiser_type() as $key => $value) : ?>
-            <li> <a href="<?php echo $key; ?>"><?php echo $value ?> </a> </li>
+          <?php foreach (payment_method() as $key => $value) : ?>
+            <li> <a href="<?php echo base_url('search?payment_method=').$key?>"><?php echo $value ?> </a> </li>
 					<?php endforeach; ?>
       
           </ul>
           <ul class="list-unstyled mb-0">
               <?php foreach (get_vendore_type() as $key => $value) : ?>
-              <li> <a href="<?php echo $key; ?>"><?php echo $value ?> </a> </li>
+              <li> <a href="<?php echo base_url('agents?type=').$key?>"><?php echo $value ?> </a> </li>
 			    		<?php endforeach; ?>
           </ul>
         </div>

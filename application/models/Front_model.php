@@ -189,6 +189,10 @@ class Front_model extends CI_Model
 
 	public function get_agents($limit, $start){
 
+
+		if(@$_GET['type']){
+			$this->db->where('type',$_GET['type'] );
+		}
 			$this->db->limit($limit, $start);
 			$query = $this->db->get('vendor');
 	
