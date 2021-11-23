@@ -102,29 +102,14 @@ class CategoryController extends CI_Controller
    }
 
     $query = $this->db->get();
-     $res=$query->result_array();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		$data['page'] = 'restaurant';
+    $res=$query->result_array();
+	$data['page'] = 'restaurant';
 	
-		$data['restaurants']  = $res;	
+    $data['restaurants']  = $res;	
 		//print_r($data['restaurants']); 
-		$this->load->view('user/template',$data);
-	}
+	$this->load->view('user/template',$data);
+	
+}
 
 	
 
@@ -265,10 +250,11 @@ class CategoryController extends CI_Controller
 		}
 	}
 
-	public function lang(){
+	public function lang($lang){
+	
 		$ci =& get_instance();
 		$ci->load->helper('language');
-		if($ci->session->userdata('site_lang') == 'arabic'){
+		if($lang == 'en'){
 			$this->session->set_userdata('site_lang','english');
 		}else{
 			$this->session->set_userdata('site_lang','arabic');

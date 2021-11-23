@@ -44,15 +44,14 @@
     <link rel="stylesheet" href="<?=base_url('website')?>/css/range-slider/ion.rangeSlider.css" />
     <link rel="stylesheet" href="<?=base_url('website')?>/css/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="<?=base_url('website')?>/css/magnific-popup/magnific-popup.css" />
-
+	<?php if($this->session->userdata('site_lang')== 'english'){?>
     <!-- Template Style -->
     <link rel="stylesheet" href="<?=base_url('website')?>/css/style.css" />
+    <?php }else{?>
+		<link rel="stylesheet" type="text/css" href="<?=base_url('website')?>/css/main_ar.css">
+	<?php }?>
 
 
-	<?php if($locale == 'ar'){?>
-	<!--<link rel="stylesheet" type="text/css" href="<?=base_url('website')?>/css/main_ar.css">-->
-	<!--<link rel="stylesheet" type="text/css" href="<?=base_url('website')?>/css/vip_ar.css">-->
-	<?php } ?>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

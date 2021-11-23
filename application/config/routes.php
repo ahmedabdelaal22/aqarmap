@@ -190,7 +190,6 @@ $route['user/update-vendor'] = 'UserController/update_vendor';
 
 $route['favourite'] = 'CategoryController/favourite';
 
-$route['lang'] = 'CategoryController/lang';
 $route['about'] = 'SettingController/about';
 $route['contact'] = 'SettingController/contact';
 $route['terms'] = 'SettingController/terms';
@@ -224,6 +223,7 @@ $route['agent/(:any)'] = 'AgentsController/show/$1';
 
 
 $route['store/(:any)'] = 'CategoryController/store/$1';
+$route['lang/(:any)'] = 'CategoryController/lang/$1';
 
 
 $route['404_override'] = 'My404/index';

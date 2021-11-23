@@ -54,12 +54,17 @@ header -->
 <!-- Language Select -->
             <div class="dropdown d-inline-block ps-2 ps-md-0 language_select">
               <a class="dropdown-toggle" href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  <?php if($this->session->userdata('site_lang')== 'english'){?>
                 <img src="<?=base_url('website')?>/images/flags/en.png"> ENG <i class="fas fa-chevron-down ps-2"></i>
+				<?php }else{?>
+					<img src="<?=base_url('website')?>/images/flags/ar.png"> AR <i class="fas fa-chevron-down ps-2"></i>
+
+					<?php }?>
               </a>
               <div class="dropdown-menu mt-0" aria-labelledby="dropdownMenuButton">
 
-                <a class="dropdown-item" href="#"><img src=""><img src="<?=base_url('website')?>/images/flags/en.png"> ENG</a>
-                <a class="dropdown-item" href="#"><img src=""><img src="<?=base_url('website')?>/images/flags/ar.png"> AR</a>
+                <a class="dropdown-item" href="<?=base_url('lang/en')?>"><img src=""><img src="<?=base_url('website')?>/images/flags/en.png"> ENG</a>
+                <a class="dropdown-item" href="<?=base_url('lang/ar')?>"><img src=""><img src="<?=base_url('website')?>/images/flags/ar.png"> AR</a>
 
               </div>
             </div>
@@ -91,7 +96,7 @@ header -->
           <ul class="dropdown-menu">
 		  <?php
 
-$category = $this->admin_model->get_all_category();
+                   $category = $this->admin_model->get_all_category();
 	  ?>
 		  <?php if(isset($category)){ $cnt=1; ?>
 		  <?php foreach($category as $row) { ?>
