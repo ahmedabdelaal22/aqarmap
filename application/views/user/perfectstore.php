@@ -55,8 +55,21 @@
         <?php $this->load->helper('text');?>
           <div class="property-details">
             <div class="property-details-inner">
-              <h5 class="property-title"><a href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?=$listing['res_name']?></a></h5>
-              <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i><?= word_limiter($listing['res_desc'],3);?></span>
+              <h5 class="property-title"><a href="<?php echo base_url('store/' . $listing['res_id']); ?>">
+              <?php if($this->session->userdata('site_lang') == 'english'){?>
+
+              <?=$listing['res_name']?>
+              <?php }else{?>
+                <?=$listing['res_name_a']?>
+            <?php }?>
+            </a></h5>
+              <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>
+              <?php if($this->session->userdata('site_lang') == 'english'){?>
+                            <?=$listing['res_address']?> 
+              <?php }else{?>
+                <?=$listing['res_address']?> 
+            <?php }?>
+            </span>
               <span class="property-agent-date">
                 <i class="far fa-clock fa-md"></i><?php
               echo date('d/M/Y', $listing['res_create_date']);

@@ -8,7 +8,16 @@ footer-->
           <h5 class="text-primary mb-4">About real villa</h5>
           <p class="text-white mb-4">Real Villa helped thousands of clients to find the right property for their needs.</p>
           <ul class="list-unstyled mb-0">
-            <li> <b> <i class="fas fa-map-marker-alt"></i></b><span><?=appSettings('address_en')?></span> </li>
+            <li> <b> <i class="fas fa-map-marker-alt"></i></b><span>
+            <?php if($this->session->userdata('site_lang') == 'english'){?>
+              <?=appSettings('address_en')?>
+
+<?php }else{?>
+  <?=appSettings('address_ar')?>
+
+<?php }?>
+            
+            </span> </li>
             <li> <b><i class="fas fa-microphone-alt"></i></b><span><?=appSettings('phones')?></span> </li>
             <li> <b><i class="fas fa-headset"></i></b><span><?=appSettings('email')?></span> </li>
           </ul>
@@ -49,8 +58,26 @@ footer-->
               <div class="footer-recent-list-item">
                 <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $image; ?>" alt="">
                 <div class="footer-recent-list-item-info">
-                  <h6 class="text-white"><a class="category font-md mb-2" href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?=$listing['res_name']?></a></h6>
-                  <a class="address mb-2 font-sm" href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?=$listing['res_name']?></a>
+                  <h6 class="text-white"><a class="category font-md mb-2" href="<?php echo base_url('store/' . $listing['res_id']); ?>">
+                  <?php if($this->session->userdata('site_lang') == 'english'){?>
+
+<?=$listing['res_name']?>
+<?php }else{?>
+  <?=$listing['res_name_a']?>
+<?php }?>
+                
+                
+                </a></h6>
+                  <a class="address mb-2 font-sm" href="<?php echo base_url('store/' . $listing['res_id']); ?>">
+                  
+                  <?php if($this->session->userdata('site_lang') == 'english'){?>
+                            <?=$listing['res_address']?> 
+              <?php }else{?>
+                <?=$listing['res_address']?> 
+            <?php }?>
+                
+                
+                </a>
                   <span class="price text-white">$3,456,235 </span>
                 </div>
               </div>
@@ -91,120 +118,7 @@ footer-->
 </footer>
 <input type="hidden" id="userlogin" value="<?=$this->session->userdata('UserId')?>">
 
-<!--=================================
-footer-->
 
-
-<!--<section class="newsletter">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3 col-md-12 newsletter_pre"><p>اكتشف كل العروض عل موقعك الالكتروني اول باول</p></div>
-			<div class="col-lg-6 col-md-12">
-				<form class="newsletter_form">
-					<input type="email" name="mail" id="contact_mail"
-					placeholder="john@daleel.com" class="newsinput">
-				<input class="btn btn-dark" type="submit" name="submit" value="اشترك الان" onclick="subscriebe_mail()">						
-				</form>
-			</div>
-		</div>
-	</div>
-</section>-->
-
-<!--<footer class="page_footer corner-footer ds s-pt-30 s-pb-0 s-pb-lg-10 s-pb-xl-50 c-gutter-60 s-parallax">
-				<div class="divider-20 d-none d-xl-block"></div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-2 col-sm-6 col-xs-6">
-				<img class="footer_logo" src="<?=base_url('website')?>/images/logo/logo_v.png" alt="">
-				<p>	<?=appSettings('address_ar')?></p>
-				<p><?=appSettings('phones')?></p>-->
-				<!--<div class="widget widget_social_buttons">
-				<a href="<?=appSettings('facebook')?>" class="fa fa-facebook color-icon" title="facebook" target="_blank"></a>
-					<a href="<?=appSettings('twitter')?>" class="fa fa-twitter color-icon" title="twitter" target="_blank"></a>
-					<a href="<?=appSettings('google')?>" class="fa fa-google color-icon" title="google" target="_blank"></a>
-					<a href="<?=appSettings('pinterest')?>" class="fa fa-pinterest color-icon" title="pinterest" target="_blank"></a>
-					
-				</div>-->
-				<!--<div class="widget widget_social_buttons">
-			    	<a href="<?=base_url('terms')?>" class="fa fa-info  color-icon" title="terms" target="_blank"></a>
-					<a href="<?=base_url('prives')?>" class="fa fa-info color-icon" title="prives" target="_blank"></a>
-				</div>
-			</div>
-			<div class="col-md-2 col-sm-6 col-xs-6">
-				<label>الاقسام الاكثر زيارة</label>
-				<?php
-
-$best_cat = $this->admin_model->get_best_categories();
-?>
-				<ul>
-				<?php if(isset($best_cat)){ $cnt=1; ?>  
-                    <?php foreach($best_cat as $row) { ?>
-					<li><a href="<?=base_url('categories/').$row->id?>"><?=$row->c_name_a?></a></li>
-					<?php }}?>
-					 <li><a href="#">المستشفيات</a></li>
-					<li><a href="#">التعليم والمدارس</a></li>
-					<li><a href="#">المعامل</a></li> 
-				</ul>
-			</div>
-			<div class="col-md-2 col-sm-6 col-xs-6">
-				<label>دليل العاشر</label>
-				<ul>
-					<li><a href="<?=base_url('/about')?>">دليل العاشر من رمضان</a></li>
-					<li><a href="<?=base_url('/about')?>">عن العاشر من رمضان</a></li>
-					<li><a href="#" data-toggle="modal" data-target="#regionModal">أحياء العاشر من رمضان</a></li>
-					<li><a href="#" data-toggle="modal" data-target="#emergencyModal">أرقام الطوارئ</a></li>
-	
-				
-				</ul>
-			</div>
-			<div class="col-md-2 col-sm-6 col-xs-6">
-				<label>معلومات</label>
-				<ul>
-					<li><a href="#" data-toggle="modal" data-target="#exampleModal">اضف مشروعك</a></li>
-					<li><a href="<?=base_url('/about')?>"><?php echo $this->lang->line('about_us') ?></a></li>
-					<li><a href="<?=base_url('/contact')?>"><?php echo $this->lang->line('contact_us') ?></a></li>
-				</ul>
-				<?php
-
-$keywords = $this->admin_model->get_best_keywords();
-?>
-				<ul class="tags">
-				<?php if(isset($keywords)){ $cnt=1; ?>  
-                    <?php foreach($keywords as $row) { ?>
-					<li><a href="<?=base_url($row->link)?>"><?=$row->name?></a></li>
-					<?php }}?>-->
-					<!-- <li><a href="#">مطعم ابن حميدو</a></li>
-					<li><a href="#">الحي العاشر</a></li>
-					<li><a href="#">معرض الليثي</a></li> 
-				</ul>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-6">
-				<label>حمل التطبيق الان</label>
-				<div class="app_Real Estates_icons">
-					<a target="_blank" href="<?=appSettings('appReal Estates')?>"><img class="img-responsive" src="<?=base_url('website')?>/images/appReal Estates.png"></a>
-					<a target="_blank" href="<?=appSettings('googleplay')?>"><img class="img-responsive" src="<?=base_url('website')?>/images/googleplay.png"></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>-->
-
-
-<!--<section class="page_copyright light-copy cs s-py-20 s-py-lg-5 s-parallax copyright">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-md-6 text-right">
-				<p>All Rights Reserved</p>
-			</div>
-			<div class="col-md-6 text-left">
-				<a href="https://queentechsolutions.net">Powered by Queentechsolutions.net</a>
-			</div>
-		</div>
-	</div>
-</section>
--->
-
-<!-- Modal -->
 	<?php 
 				$regions = $this->admin_model->get_all_regions();
 			 ?>

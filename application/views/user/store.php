@@ -4,8 +4,25 @@
       <div class="col-12">
         <ol class="breadcrumb mb-0">
           <li class="breadcrumb-item"><a href="<?=base_url('/')?>"> <i class="fas fa-home"></i> </a></li>
-          <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="<?php echo base_url('search?cat_id=').$cat->id?>"><?=$cat->c_name?></a></li>
-          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> <?=$res->res_name?></span></li>
+          <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="<?php echo base_url('search?cat_id=').$cat->id?>">
+          <?php if($this->session->userdata('site_lang') == 'english'){?>
+            <?=$cat->c_name?>
+            <?php }else{?>
+            <?=$cat->c_name_a?>
+             <?php }?>
+
+          
+        
+        
+        </a></li>
+          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span>
+            
+             <?php if($this->session->userdata('site_lang') == 'english'){?>
+              <?=$res->res_name?>
+            <?php }else{?>
+              <?=$res->res_name_a?>
+             <?php }?>
+            </span></li>
         </ol>
       </div>
     </div>
@@ -21,8 +38,22 @@
         <div class="col-lg-4 mb-5 mb-lg-0 order-lg-2">
           <div class="sticky-top">
             <div class="mb-4">
-              <h3><?=$res->res_name?></h3>
-              <span class="d-block mb-3"><i class="fas fa-map-marker-alt fa-xs pe-2"></i><?=$res->res_address?></span>
+              <h3>
+               
+            <?php if($this->session->userdata('site_lang') == 'english'){?>
+              <?=$res->res_name?>
+            <?php }else{?>
+              <?=$res->res_name_a?>
+             <?php }?>
+              </h3>
+              <span class="d-block mb-3"><i class="fas fa-map-marker-alt fa-xs pe-2"></i>
+              
+              <?php if($this->session->userdata('site_lang') == 'english'){?>
+              <?=$res->res_address?>
+            <?php }else{?>
+              <?=$res->res_address_a?>
+             <?php }?>
+            </span>
               <span class="price font-xll text-primary d-block"><?=$res->discount?></span>
               <span class="sub-price font-lg text-dark d-block"><b><?=$res->space?>/Sqft </b> </span>
               <ul class="property-detail-meta list-unstyled ">
@@ -128,7 +159,15 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <ul class="property-list list-unstyled mb-0">
-                      <li><b>overlooking:</b> <?=$res->overlooking?> </li>
+                      <li><b>overlooking:</b>
+                      <?php if($this->session->userdata('site_lang') == 'english'){?>
+                        <?=$res->overlooking?> 
+              <?php }else{?>
+                <?=$res->overlooking_a?> 
+            <?php }?>
+                     
+                    
+                    </li>
                       <?php if(!empty($res->pool)){?>
                       <li><b>Pool Size:</b> <?=$res->pool?> Sqft</li>
                       <?php }?>
@@ -156,7 +195,13 @@
                 <h5>Description</h5>
               </div>
               <div class="col-sm-9">
-                <p><?=$res->res_desc?></p>
+                <p>
+                <?php if($this->session->userdata('site_lang') == 'english'){?>
+                        <?=$res->res_desc?> 
+              <?php }else{?>
+                <?=$res->res_desc_a?> 
+            <?php }?>
+               
               </div>
             </div>
           </div>
@@ -171,7 +216,15 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <ul class="property-list list-unstyled mb-0">
-                      <li><b><?=$res->res_address?> </b></li>
+                      <li><b>
+                     
+                        <?php if($this->session->userdata('site_lang') == 'english'){?>
+                        <?=$res->res_address?> 
+                        <?php }else{?>
+                        <?=$res->res_address_a?> 
+                        <?php }?>
+                      
+                      </b></li>
                 
                     </ul>
                   </div>
@@ -242,7 +295,14 @@
                   <div class="nearby-list">
                     <ul class="property-list list-unstyled mb-0">
                       <li class="d-flex">
-                        <span class="me-1"><b><?=$res->education?></b> </span>
+                        <span class="me-1"><b>
+                          
+                          <?php if($this->session->userdata('site_lang') == 'english'){?>
+                            <?=$res->education?>
+                        <?php }else{?>
+                          <?=$res->education_a?>
+                        <?php }?>
+                        </b> </span>
                 
                       </li>
              
@@ -260,7 +320,15 @@
                   <div class="nearby-list">
                     <ul class="property-list list-unstyled mb-0">
                       <li class="d-flex">
-                        <span class="me-1"><b><?=$res->health_medical?></b> </span>
+                        <span class="me-1"><b>
+                          
+                              
+                          <?php if($this->session->userdata('site_lang') == 'english'){?>
+                            <?=$res->health_medical?>
+                        <?php }else{?>
+                          <?=$res->health_medical_a?>
+                        <?php }?>
+                        </b> </span>
                    
                       </li>
                   
@@ -277,7 +345,14 @@
                   <div class="nearby-list">
                     <ul class="property-list list-unstyled mb-0">
                       <li class="d-flex">
-                        <span class="me-1"><b><?=$res->transportation?></b></span>
+                        <span class="me-1"><b>
+                    
+                          <?php if($this->session->userdata('site_lang') == 'english'){?>
+                            <?=$res->transportation?>
+                        <?php }else{?>
+                          <?=$res->transportation_a?>
+                        <?php }?>
+                        </b></span>
      
                       </li>
           
@@ -317,8 +392,8 @@
  <?php $image = explode('::::', $listing['res_image'])[0]; ?>
    <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $image; ?>" alt="">
    <div class="property-lable">
-     <span class="badge badge-md bg-primary">Bungalow</span>
-     <span class="badge badge-md bg-info">Sale </span>
+   <span class="badge badge-md bg-primary"><?=key_type($listing['type'])?> </span>
+              <span class="badge badge-md bg-info"><?=payment_method_value($listing['payment_method'])?> </span>
    </div>
    <span class="property-trending" title="trending"><i class="fas fa-bolt"></i></span>
    <div class="property-agent">
@@ -343,8 +418,24 @@
 <?php $this->load->helper('text');?>
  <div class="property-details">
    <div class="property-details-inner">
-     <h5 class="property-title"><a href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?=$listing['res_name']?></a></h5>
-     <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i><?= word_limiter($listing['res_desc'],4);?></span>
+     <h5 class="property-title"><a href="<?php echo base_url('store/' . $listing['res_id']); ?>">
+     
+     
+                  <?php if($this->session->userdata('site_lang') == 'english'){?>
+                      <?=$listing['res_name']?>
+                        <?php }else{?>
+                          <?=$listing['res_name_a']?>
+                        <?php }?>
+    </a></h5>
+     <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>
+    
+    
+     <?php if($this->session->userdata('site_lang') == 'english'){?>
+                     <?= word_limiter($listing['res_desc'],4);?>
+                        <?php }else{?>
+                          <?=$listing['res_desc_a']?>
+                        <?php }?>
+    </span>
      <span class="property-agent-date">
        <i class="far fa-clock fa-md"></i><?php
      echo date('d/M/Y', $listing['res_create_date']);
