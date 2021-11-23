@@ -538,6 +538,7 @@ class AdminController extends CI_Controller
 		{
 			$data = array(
 				'c_name' => $_REQUEST['c_name'],
+				'c_name_a' => $_REQUEST['c_name_a'],
 				'parent_id' => $_REQUEST['parent_id'],
 				// 'type' => $_REQUEST['type'],
 			);
@@ -681,6 +682,7 @@ class AdminController extends CI_Controller
 		{
 			$data = array(
 				'c_name' => $_REQUEST['c_name'],
+				'c_name_a' => $_REQUEST['c_name_a'],
 				'parent_id' => $_REQUEST['parent_id'],
 			);
 
@@ -983,6 +985,10 @@ class AdminController extends CI_Controller
 			$data['res_desc'] = $this->input->post('description');
 
 
+				
+			$data['res_name_a'] = $this->input->post('res_name_a');
+			$data['res_desc_a'] = $this->input->post('res_desc_a');
+
 			$data['space'] = $this->input->post('space');
 
 			$data['display_ads'] = $this->input->post('display_ads');
@@ -995,7 +1001,7 @@ class AdminController extends CI_Controller
 			$data['cat_id'] = $this->input->post('cat_id');
 
 			$data['region_id'] = $this->input->post('region_id');
-			$data['location_id'] = $this->input->post('location_id');
+		//	$data['location_id'] = $this->input->post('location_id');
 			$data['status'] = $this->input->post('status');
 			$data['real_compound'] = $this->input->post('real_compound');
 			$data['real_owner'] = $this->input->post('real_owner');
@@ -1005,12 +1011,25 @@ class AdminController extends CI_Controller
 			$data['baths'] = $this->input->post('baths');
 			$data['year_of_construction'] = $this->input->post('year_of_construction');
 			$data['overlooking'] = $this->input->post('overlooking');
+			$data['overlooking_a'] = $this->input->post('overlooking_a');
+
 			$data['advertiser_type'] = $this->input->post('advertiser_type');
 			$data['payment_method'] = $this->input->post('payment_method');
 			$data['discount'] = $this->input->post('discount');
 			$data['vid'] = $this->input->post('vid');
 		
-			
+		//	`education`, `education_a`, `health_medical`
+		//	, `health_medical_a`, `transportation`, `transportation_a
+			$data['education'] = $this->input->post('education');
+			$data['education_a'] = $this->input->post('education_a');
+			$data['health_medical'] = $this->input->post('health_medical');
+			$data['health_medical_a'] = $this->input->post('health_medical_a');
+			$data['transportation'] = $this->input->post('transportation');
+
+			$data['transportation_a'] = $this->input->post('transportation_a');
+
+
+
 			$data['lat']=$this->input->post('lat');
 			$data['lon']=$this->input->post('lon');
 
@@ -1021,6 +1040,7 @@ class AdminController extends CI_Controller
 			$data['res_isOpen'] = 'open';
 			$data['res_status'] = 'active';
 			$data['res_address'] = $address;
+			$data['res_address_a'] = $this->input->post('res_address_a');
 			$data['res_create_date'] = time();
 
 			// print_r($data);
@@ -1081,6 +1101,7 @@ class AdminController extends CI_Controller
 
 	public function update_restaurants()
   	{
+
 		
   		if($this->session->userdata('aid')=="")
 		{
@@ -1093,7 +1114,7 @@ class AdminController extends CI_Controller
 	  	$this->form_validation->set_rules('description', 'Restaurant Description', 'required');
 	  	$this->form_validation->set_rules('address', 'Restaurant Address', 'required');
 	  	$this->form_validation->set_rules('phone', 'Restaurant Phone', 'required');
-		  $this->form_validation->set_rules('location_id', 'Location Name', 'required');
+	//	  $this->form_validation->set_rules('location_id', 'Location Name', 'required');
 		$this->form_validation->set_error_delimiters('<span class="error" style="color:red;">','</span>');
 		if($this->form_validation->run() == false)  
 		{  
@@ -1220,12 +1241,17 @@ class AdminController extends CI_Controller
 			$data['res_name'] = $this->input->post('name');
 		    $data['res_desc'] = $this->input->post('description');
 			
+
+			$data['res_name_a'] = $this->input->post('res_name_a');
+		    $data['res_desc_a'] = $this->input->post('res_desc_a');
+
+
 			$data['cat_id'] = $this->input->post('cat_id');
 			$data['status'] = $this->input->post('status');
 
 		
 			$data['region_id'] = $this->input->post('region_id');
-			$data['location_id'] = $this->input->post('location_id');
+		//	$data['location_id'] = $this->input->post('location_id');
 
 			$data['discount'] = $this->input->post('discount');
 			$data['vid'] = $this->input->post('vid');
@@ -1238,14 +1264,25 @@ class AdminController extends CI_Controller
 		    $data['res_isOpen'] = 'open';
 		    $data['res_status'] = 'active';
 		    $data['res_address'] = $this->input->post('address');
+			$data['res_address_a'] = $this->input->post('res_address_a');
 			$data['res_phone'] = $this->input->post('phone');
 			$data['floor'] = $this->input->post('floor');
 			$data['rooms'] = $this->input->post('rooms');
 			$data['baths'] = $this->input->post('baths');
 			$data['year_of_construction'] = $this->input->post('year_of_construction');
 			$data['overlooking'] = $this->input->post('overlooking');
+			$data['overlooking_a'] = $this->input->post('overlooking_a');
+
 			$data['advertiser_type'] = $this->input->post('advertiser_type');
 			$data['payment_method'] = $this->input->post('payment_method');
+
+
+			$data['education'] = $this->input->post('education');
+			$data['education_a'] = $this->input->post('education_a');
+			$data['health_medical'] = $this->input->post('health_medical');
+			$data['health_medical_a'] = $this->input->post('health_medical_a');
+			$data['transportation'] = $this->input->post('transportation');
+			$data['transportation_a'] = $this->input->post('transportation_a');
 
 			$check = $this->admin_model->update_restaurants_by_id($id,$data);
 			if($check)

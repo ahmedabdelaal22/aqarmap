@@ -55,10 +55,14 @@ $id = $this->session->userdata('aid');
 									<input type="hidden" name="id" value="<?php echo $restaurant->res_id; ?>">
 
 									<div class="form-group">
-										<label for="exampleInputEmail1">Real Estates Name</label>
+										<label for="exampleInputEmail1">Real Estates Name (en)</label>
 										<input type="text" name="name" class="form-control" id="exampleInputEmail1" value="<?php echo $restaurant->res_name; ?>" required>
 									</div>
 
+									<div class="form-group">
+										<label for="exampleInputEmail1">Real Estates Name (ar)</label>
+										<input type="text" name="res_name_a" class="form-control" id="exampleInputEmail1" value="<?php echo $restaurant->res_name_a; ?>" required>
+									</div>
 									<div class="form-group">
 										<label>Vendor</label>
 										<select class="form-control" name="vid" required>
@@ -102,7 +106,7 @@ $id = $this->session->userdata('aid');
 											<?php endforeach; ?>
 										</select>
 									</div>
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label>locations</label>
 										<select class="form-control" name="location_id" id="location_id" required>
 											<option value="">Select locations</option>
@@ -112,7 +116,7 @@ $id = $this->session->userdata('aid');
 											<?php endforeach; ?>
 										</select>
 										<?php echo form_error('location_id'); ?><br>
-									</div>
+									</div> -->
 									<div class="form-group">
 										<?php
 										$chk = explode(",", $restaurant->status);
@@ -157,10 +161,16 @@ $id = $this->session->userdata('aid');
 							
 
 									<div class="form-group">
-										<label>Description</label>
+										<label>Description (en)</label>
 										<textarea class="form-control" name="description" rows="3" required><?php echo $restaurant->res_desc; ?></textarea>
 									</div>
 
+
+									
+									<div class="form-group">
+										<label>Description (ar)</label>
+										<textarea class="form-control" name="res_desc_a" rows="3" required><?php echo $restaurant->res_desc_a; ?></textarea>
+									</div>
 									<div class="row">
 										<div class="col-md-6">
 											<label for="exampleInputfnm">Phone Number</label>
@@ -206,8 +216,12 @@ $id = $this->session->userdata('aid');
 										<input type="text" id="year_of_construction" name="year_of_construction" class="form-control" value="<?php echo $restaurant->year_of_construction; ?>" placeholder="Enter Year Of Construction" required>
 									</div>
 									<div class="form-group">
-										<label>تطل على</label>
-										<input type="text" id="overlooking" name="overlooking" class="form-control" placeholder="Enter Overlooking" value="<?php echo $restaurant->overlooking; ?>" required>
+										<label>Overlooking (en) </label>
+										<input type="text" id="overlooking" name="overlooking" class="form-control" placeholder="Enter Overlooking (en)" value="<?php echo $restaurant->overlooking; ?>" required>
+									</div>
+									<div class="form-group">
+										<label>Overlooking (ar)</label>
+										<input type="text" id="overlooking_a" name="overlooking_a" class="form-control" placeholder="Enter Overlooking (ar)" value="<?php echo $restaurant->overlooking_a; ?>" required>
 									</div>
 									<div class="form-group">
 										<label>
@@ -234,6 +248,31 @@ $id = $this->session->userdata('aid');
 										</select>
 									</div>
 						
+
+									<div class="form-group">
+										<label>Education (en)</label>
+										<textarea class="form-control" name="education" rows="3" required><?php echo $restaurant->education; ?></textarea>
+									</div>
+									<div class="form-group">
+										<label>Education (ar)</label>
+										<textarea class="form-control" name="education_a" rows="3" required><?php echo $restaurant->education_a; ?></textarea>
+									</div>
+									<div class="form-group">
+										<label>Health Medical (En)</label>
+										<textarea class="form-control" name="health_medical" rows="3" required><?php echo $restaurant->health_medical; ?></textarea>
+									</div>
+									<div class="form-group">
+										<label>Health Medical (ar)</label>
+										<textarea class="form-control" name="health_medical_a" rows="3" required><?php echo $restaurant->health_medical_a; ?></textarea>
+									</div>
+									<div class="form-group">
+										<label>Transportation (en)</label>
+										<textarea class="form-control" name="transportation" rows="3" required><?php echo $restaurant->transportation; ?></textarea>
+									</div>
+									<div class="form-group">
+										<label>Transportation (ar)</label>
+										<textarea class="form-control" name="transportation_a" rows="3" required><?php echo $restaurant->transportation_a; ?></textarea>
+									</div>
 									<div class="form-group">
 										<label for="exampleInputFile">Real Estates Logo</label>
 										<div class="input-group">
