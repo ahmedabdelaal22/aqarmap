@@ -23,7 +23,15 @@ header -->
               </a>
               <div class="dropdown-menu mt-0" aria-labelledby="dropdownMenuButton">
 	    	    <?php  foreach ($regions as $row) {?>
-                <a class="dropdown-item" href="<?php echo base_url('search?region_id=').$row->id?>"><?php echo $row->name_en; ?></a>
+
+					<?php if($this->session->userdata('site_lang') == 'english'){?>
+	                    
+						  <a class="dropdown-item" href="<?php echo base_url('search?region_id=').$row->id?>"><?php echo $row->name_en; ?></a>
+
+					<?php }else{?>
+						<a class="dropdown-item" href="<?php echo base_url('search?region_id=').$row->id?>"><?php echo $row->name_ar; ?></a>
+
+					<?php }?>
                  <?php } ?>
               </div>
             </div>
@@ -100,7 +108,15 @@ header -->
 	  ?>
 		  <?php if(isset($category)){ $cnt=1; ?>
 		  <?php foreach($category as $row) { ?>
-            <li><a class="dropdown-item" href="<?php echo base_url('search?cat_id=').$row->id?>"><?php echo $row->c_name; ?></a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('search?cat_id=').$row->id?>">
+		
+			<?php if($this->session->userdata('site_lang') == 'english'){?>
+	                      <h6 class="mb-0"><?=$row->c_name?></h6>
+					<?php }else{?>
+						<h6 class="mb-0"><?=$row->c_name_a?></h6>
+					<?php }?>
+		
+		</a></li>
                <?php }} ?>    
       </ul>
 		</li>
@@ -113,75 +129,7 @@ header -->
 		<li class="nav-item <?php if($this->uri->segment(1)=="contact"){echo "active";}?>">
 			<a class="nav-link" href="<?=base_url('/contact')?>"><?php echo $this->lang->line('contact_us') ?></a>
 		</li>
-		<!--<li>
-			<a href="<?=base_url('categories-all')?>">categories</a>
-			<ul>
-				<?php
 
-      $category = $this->admin_model->get_all_category();
-            ?>
-				<?php if(isset($category)){ $cnt=1; ?>
-				<?php foreach($category as $row) { ?>
-				<li>
-					<a href="<?php echo base_url('categories/').$row->id?>">
-						<?php echo $row->c_name; ?> </a>
-				</li>
-
-				<?php }
-                              }
-                     ?>
-			</ul>
-		</li>-->
-		<!-- blog -->
-
-		<!-- gallery -->
-		<!--<li>
-			<?php 
-		$userid=	$this->session->userdata('UserId');
-		if(!empty($userid)){
-			?>
-
-			<a href="#"><?=$this->session->userdata('aname')?></a>
-			<ul>
-		        	<li>
-			            <a href="<?=base_url('profile')?>">profile</a>
-	             	</li>
-					 <li>
-			            <a href="<?=base_url('logout')?>">logout</a>
-	             	</li>
-			</ul>
-	
-			<?php } else{?>
-				<a href="#">login</a>
-				<ul>
-		        	<li>
-			            <a href="<?=base_url('login')?>">Login</a>
-	             	</li>
-					 <li>
-			            <a href="<?=base_url('register')?>">Register</a>
-	             	</li>
-			</ul>
-
-				<?php }?>
-		</li>-->
-
-		<!-- eof blog -->
-
-
-		<!--<li>
-			<a href="<?=base_url('contact')?>">Contacts</a>
-			<ul>
-		        	<li>
-			            <a href="<?=base_url('contact')?>">Contacts</a>
-	             	</li>
-					 <li>
-			            <a href="<?=base_url('subscribe')?>">Subscribe Resturant</a>
-	             	</li>
-			</ul>
-		</li>
-		<li>
-			<a href="<?=base_url('/offers')?>">Offers</a>
-		</li>-->
 	</ul>    
     </div>
     <div class="add-listing d-none d-sm-block">
@@ -204,92 +152,7 @@ breadcrumb -->
 <?php } ?>
 
 
-<!--=================================
- header -->
- <!--
-<div class=" ">
-	<header class="page_header ds">
-		<div class="container">
-			<div class="row align-items-center tophead">
 
-				<div class="tophead_search_form col-md-6">
-					<div class="container">
-						<div class="row">
-
-							<div class="add_project"><a class="btn btn-primary" href="#" data-toggle="modal"
-									data-target="#exampleModal">اضف مشروعك</a></div>
-
-							<form method="GET" name="searchaction" action="<?=base_url('/search')?>">
-								<div class=" keyword"><input type="text" name="search"
-										value="<?=$this->input->get('search')?>"
-										placeholder="<?php echo $this->lang->line('key_search') ?>"
-										class="search-text"><a href="#" class="icon"></a></div>
-								<div class=" location">
-									<select name="region_id" id="region_id" class="search-text form-control"
-										data-dropup-auto="false" data-size="5">
-
-										<option value="">ابحث عن الموقع</option>
-											<?php
-			                      $region_id=($this->input->post('region_id'))?$this->input->post('region_id'):$this->input->get('region_id');
-
-		                                 foreach ($regions as $row) {?>
-										 		<optgroup label="<?php echo $row->name_ar; ?>">
-												 <option <?php if ('region,'.$row->id == $region_id) echo "selected='selected'"; ?> value="region,<?=$row->id?>">الكل</option>
-												 <?php $locations = $this->admin_model->get_location_by_region($row->id); ?>
-												 <?php foreach ($locations as $listing) : ?>
-										         	<option value="<?php echo $listing['id']; ?>"<?php if ($listing['id'] == $region_id) echo "selected='selected'"; ?>>
-										              	<?php echo $listing['name_ar']; ?>
-									                	</option>
-														<?php endforeach; ?>
-												</optgroup>
-											<?php } ?>
-	
-									</select>
-									<a href="#" class="icon"></a></div>
-							</form>
-
-							<div class="tophead_icons text-left">
-								<div class="notification" href="#">
-									<a class="toggle" href="#"><img width="25" height="25"
-											src="<?=base_url('website')?>/images/notification.png"></a>
-									<ul class="fav_items">
-										<?php 
-				$notfications = $this->admin_model->get_last7_notfication();
-			 ?>
-
-										<?php	foreach ($notfications as $row) {?>
-										<li class="fav_item">
-											<a href="#">
-												<div class="img"><img width="60" height="60"
-														src="<?=base_url('website')?>/images/categories/1.jpg"></div>
-												<div class="content">
-													<h6><?=$row->title?></h6>
-													<span><?=$row->message?></span>
-												</div>
-											</a>
-										</li>
-										<?php } ?>
-
-									</ul>
-								</div>
-								<a class="favourite" href="<?=base_url('/favourite')?>"><img width="25" height="25"
-										src="<?=base_url('website')?>/images/heart.png"></a>
-							</div>
-
-						</div>
-
-					</div>
-				</div>
-				<span class="toggle_menu">
-					<span></span>
-				</span>
-			</div>
-
-		</div>
-		 
-
-	</header>
-</div>-->
 
 <script>
 	document.onkeydown = function (evt) {
