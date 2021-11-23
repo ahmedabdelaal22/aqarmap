@@ -64,11 +64,15 @@ $id = $this->session->userdata('aid');
 										</select>
 									</div>
                 <div class="form-group">
-                  <label for="exampleInputfnm">Category Name</label>
-                  <input type="text" class="form-control" id="exampleInputfnm" placeholder="Enter Category" name="c_name">
+                  <label for="exampleInputfnm">Category Name (en)</label>
+                  <input type="text" class="form-control" id="exampleInputfnm" placeholder="Enter Category (en)" name="c_name">
                   <?php echo form_error('c_name'); ?>
                 </div>
-
+                <div class="form-group">
+                  <label for="exampleInputfnm">Category Name (ar)</label>
+                  <input type="text" class="form-control" id="exampleInputfnm" placeholder="Enter Category (ar)" name="c_name_a">
+                  <?php echo form_error('c_name_a'); ?>
+                </div>
                 <!-- <div class="form-group">
                   <label for="exampleInputFile">Category Image</label>
                   <div class="input-group">

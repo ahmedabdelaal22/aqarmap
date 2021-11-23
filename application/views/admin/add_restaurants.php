@@ -55,10 +55,13 @@ $profile = $this->admin_model->get_admin($id);
 								<div class="box-body">
 
 									<div class="form-group">
-										<label for="exampleInputEmail1">Real Estates Name</label>
-										<input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter Real Estates Name" required>
+										<label for="exampleInputEmail1">Real Estates Name  (En)</label>
+										<input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter Real Estates Name (en)" required>
 									</div>
-
+									<div class="form-group">
+										<label for="exampleInputEmail1">Real Estates Name  (Ar)</label>
+										<input type="text" name="res_name_a" class="form-control" id="exampleInputEmail1" placeholder="Enter Real Estates Name (ar)" required>
+									</div>
 									<div class="form-group">
 										<label>Vendor</label>
 										<select class="form-control" name="vid" required>
@@ -112,7 +115,7 @@ $profile = $this->admin_model->get_admin($id);
 											<?php endforeach; ?>
 										</select>
 									</div>
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label>locations</label>
 										<select class="form-control" name="location_id" id="location_id" required>
 											<option value="">Select locations</option>
@@ -122,7 +125,7 @@ $profile = $this->admin_model->get_admin($id);
 											<?php endforeach; ?>
 										</select>
 										<?php echo form_error('location_id'); ?><br>
-									</div>
+									</div> -->
 									<div class="form-group">
 										<label for="exampleInputfnm">Status</label>
 				
@@ -156,10 +159,13 @@ $profile = $this->admin_model->get_admin($id);
 				
 
 									<div class="form-group">
-										<label>Description</label>
+										<label>Description (en)</label>
 										<textarea class="form-control" name="description" rows="3" placeholder="Enter ..." required></textarea>
 									</div>
-
+									<div class="form-group">
+										<label>Description (ar)</label>
+										<textarea class="form-control" name="res_desc_a" rows="3" placeholder="Enter ..." required></textarea>
+									</div>
 									<div class="row">
 										<div class="col-md-6">
 											<label for="exampleInputfnm">Phone Number</label>
@@ -178,8 +184,12 @@ $profile = $this->admin_model->get_admin($id);
 
 							
 									<div class="form-group">
-										<label>Address</label>
-										<input type="text" id="address" name="address" class="form-control" id="exampleInputEmail1" placeholder="Enter Address" required>
+										<label>Address (en)</label>
+										<input type="text" id="address" name="address" class="form-control" id="exampleInputEmail1" placeholder="Enter Address (en)" required>
+									</div>
+									<div class="form-group">
+										<label>Address (ar)</label>
+										<input type="text" id="res_address_a" name="res_address_a" class="form-control" id="exampleInputEmail1" placeholder="Enter Address (ar)" required>
 									</div>
 									<div class="form-group">
 										<label>Price</label>
@@ -206,8 +216,12 @@ $profile = $this->admin_model->get_admin($id);
 										<input type="text" id="year_of_construction" name="year_of_construction" class="form-control" placeholder="Enter Year Of Construction" required>
 									</div>
 									<div class="form-group">
+										<label>Overlooking (en)</label>
+										<input type="text" id="overlooking" name="overlooking" class="form-control" placeholder="Enter Overlooking (en)" required>
+									</div>
+									<div class="form-group">
 										<label>Overlooking</label>
-										<input type="text" id="overlooking" name="overlooking" class="form-control" placeholder="Enter Overlooking" required>
+										<input type="text" id="overlooking_a" name="overlooking_a" class="form-control" placeholder="Enter Overlooking (ar)" required>
 									</div>
 									<div class="form-group">
 										<label>
@@ -271,6 +285,30 @@ $profile = $this->admin_model->get_admin($id);
 										</div>
 									</div>
 
+									<div class="form-group">
+										<label>Education (en)</label>
+										<textarea class="form-control" name="education" rows="3" placeholder="Enter Education (en)" required></textarea>
+									</div>
+									<div class="form-group">
+										<label>Education (ar)</label>
+										<textarea class="form-control" name="education_a" rows="3" placeholder="Enter Education (ar)" required></textarea>
+									</div>
+									<div class="form-group">
+										<label>Health Medical (en)</label>
+										<textarea class="form-control" name="health_medical" rows="3" placeholder="Health Medical (en)" required></textarea>
+									</div>
+									<div class="form-group">
+										<label>Health Medical (ar)</label>
+										<textarea class="form-control" name="health_medical_a" rows="3" placeholder="Health Medical (ar)" required></textarea>
+									</div>
+									<div class="form-group">
+										<label>Transportation (en)</label>
+										<textarea class="form-control" name="transportation" rows="3" placeholder="Transportation (en)" required></textarea>
+									</div>
+									<div class="form-group">
+										<label>Transportation (ar)</label>
+										<textarea class="form-control" name="transportation_a" rows="3" placeholder="Transportation (ar)" required></textarea>
+									</div>
 									<div class="card-footer">
 										<button type="submit" name="submit" class="btn btn-primary">Submit</button>
 									</div>

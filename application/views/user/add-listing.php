@@ -37,8 +37,12 @@ Submit Property -->
                 <form>
                   <div class="row">
                     <div class="mb-3 col-md-6">
-                      <label class="form-label">Property Title </label>
-                      <input type="text" class="form-control" placeholder="Awesome family home">
+                      <label class="form-label">Real Estates Name (en) </label>
+                      <input type="text"  name="name"  class="form-control" placeholder="Enter Real Estates Name (en)">
+                    </div>
+                    <div class="mb-3 col-md-6">
+                      <label class="form-label">Real Estates Name (ar) </label>
+                      <input type="text"  name="res_name_a"  class="form-control" placeholder="Enter Real Estates Name (ar)">
                     </div>
                     <div class="mb-3 col-md-6 select-border">
                       <label class="form-label">Offer</label>

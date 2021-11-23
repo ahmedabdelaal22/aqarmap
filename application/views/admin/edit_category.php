@@ -65,10 +65,14 @@
 									</div>
                 <div class="form-group">
                    <input type="hidden" name="id" value="<?php echo $category->id; ?>">
-                    <label>Category Name</label>
-                    <input type="text" name="c_name"  value="<?php echo $category->c_name; ?>" class="form-control" placeholder="Category Name" autocomplete="off"><?php echo form_error('c_name'); ?>
+                    <label>Category Name (en)</label>
+                    <input type="text" name="c_name"  value="<?php echo $category->c_name; ?>" class="form-control" placeholder="Category Name (en)" autocomplete="off"><?php echo form_error('c_name'); ?>
                 </div>
 
+                <div class="form-group">
+                    <label>Category Name (ar)</label>
+                    <input type="text" name="c_name_a"  value="<?php echo $category->c_name_a; ?>" class="form-control" placeholder="Category Name (ar)" autocomplete="off"><?php echo form_error('c_name_ar'); ?>
+                </div>
                 <!-- <div class="form-group">
                    <label for="exampleInputFile">Category Image</label>
                    <div class="input-group">
