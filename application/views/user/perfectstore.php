@@ -67,7 +67,7 @@
               <?php if($this->session->userdata('site_lang') == 'english'){?>
                             <?=$listing['res_address']?> 
               <?php }else{?>
-                <?=$listing['res_address']?> 
+                <?=$listing['res_address_a']?> 
             <?php }?>
             </span>
               <span class="property-agent-date">

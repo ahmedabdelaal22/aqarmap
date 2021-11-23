@@ -195,7 +195,7 @@ Listing – grid view -->
                 <img class="img-fluid" src="<?php echo base_url(); ?>uploads/<?php echo $profile_image; ?>" alt="" onerror="this.onerror=null;this.src='<?=base_url('website')?>/images/default-avatar.jpg'">
                 <?php }else{
                     ?>
-<img class="img-fluid" src="<?=base_url('website')?>/images/default-avatar.jpg" alt="" >
+                 <img class="img-fluid" src="<?=base_url('website')?>/images/default-avatar.jpg" alt="" >
                   <?php } ?>
                   </div>
                   <div class="property-agent-info">
@@ -226,7 +226,7 @@ Listing – grid view -->
                   <?php if($this->session->userdata('site_lang') == 'english'){?>
                             <?=$listing['res_address']?> 
                             <?php }else{?>
-                            <?=$listing['res_address']?> 
+                            <?=$listing['res_address_a']?> 
                              <?php }?>
                 
                 
