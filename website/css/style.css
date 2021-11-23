@@ -5240,3 +5240,7 @@ ul li:last-child {
 .language_select img {
     margin: 0 3px;
 }
+.dropdown-item h6 {
+    font-size: 16px;
+    font-weight: 500;
+}
