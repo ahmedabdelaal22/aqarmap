@@ -6,7 +6,7 @@
 
 <?php $locale=$this->session->userdata('locale') ?>
 
-<?php if($this->session->userdata('site_lang')== 'english'){
+<?php if($this->session->userdata('site_lang')== 'english'|| $this->session->userdata('site_lang') == ''){
 	$direction = 'ltr';
 }else{
 	$direction = 'rtl';
@@ -46,7 +46,8 @@
     <link rel="stylesheet" href="<?=base_url('website')?>/css/font-awesome/all.min.css" />
     <link rel="stylesheet" href="<?=base_url('website')?>/css/flaticon/flaticon.css" />
 
-<?php if($this->session->userdata('site_lang')== 'english'){?>
+<?php if($this->session->userdata('site_lang')== 'english'  || $this->session->userdata('site_lang') == ''){ ?>
+
     <link rel="stylesheet" href="<?=base_url('website')?>/css/bootstrap/bootstrap.min.css" />
 <?php }else{ ?>
     <link rel="stylesheet" href="<?=base_url('website')?>/css/bootstrap/bootstrap.rtl.min.css" />
@@ -60,12 +61,11 @@
     <link rel="stylesheet" href="<?=base_url('website')?>/css/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="<?=base_url('website')?>/css/magnific-popup/magnific-popup.css" />
     <link rel="stylesheet" href="<?=base_url('website')?>/css/style.css" />
-	<?php if($this->session->userdata('site_lang')== 'english'){?>
-    <!-- Template Style -->
-
-    <?php }else{?>
+	<?php if($this->session->userdata('site_lang') == 'arabic'){?>
     	<link rel="stylesheet" href="<?=base_url('website')?>/css/rtl.css" />
-	<?php }?>
+
+    <?php }?>
+	
 
 
 

@@ -62,7 +62,7 @@ header -->
 <!-- Language Select -->
             <div class="dropdown d-inline-block ps-2 ps-md-0 language_select">
               <a class="dropdown-toggle" href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				  <?php if($this->session->userdata('site_lang')== 'english'){?>
+				  <?php if($this->session->userdata('site_lang') == 'english' || $this->session->userdata('site_lang') == ''){?>
                 <img src="<?=base_url('website')?>/images/flags/en.png"> ENG <i class="fas fa-chevron-down ps-2"></i>
 				<?php }else{?>
 					<img src="<?=base_url('website')?>/images/flags/ar.png"> AR <i class="fas fa-chevron-down ps-2"></i>
