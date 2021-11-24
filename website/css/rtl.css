@@ -1,3 +1,22 @@
+body {
+  font-family: 'Tajawal', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: 'Tajawal', sans-serif; 
+}
+.breadcrumb,.counter .timer,
+.nav-tabs .nav-item .nav-link,
+.sidebar .widget .recent-list-item .recent-list-item-info a 
+,.location-list ul li a,.property-details .property-price,
+.footer .footer-recent-List ul li
+ .footer-recent-list-item .footer-recent-list-item-info a
+{font-family: 'Tajawal', sans-serif; }
+
 .header .navbar-nav li > a i {
     margin-right: 5px;margin-left: 0px;
 }

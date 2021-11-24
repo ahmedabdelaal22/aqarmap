@@ -10,13 +10,9 @@
             <?php }else{?>
             <?=$cat->c_name_a?>
              <?php }?>
-
-          
-        
-        
-        </a></li>
+             </a>
+           </li>
           <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span>
-            
              <?php if($this->session->userdata('site_lang') == 'english'){?>
               <?=$res->res_name?>
             <?php }else{?>
@@ -107,8 +103,8 @@
                 </div>
               </div>
               <div class="d-flex">
-                <a href="<?php echo base_url('agent/' .@$vendor->id); ?>" class="btn btn-dark col b-radius-none">View listings</a>
-                <a data-bs-toggle="modal" data-bs-target="#requestInfoModal" href="#" class="btn btn-primary col ms-0 b-radius-none">Request info</a>
+                <a href="<?php echo base_url('agent/' .@$vendor->id); ?>" class="btn btn-dark col b-radius-none"><?php echo $this->lang->line('view_listings') ?></a>
+                <a data-bs-toggle="modal" data-bs-target="#requestInfoModal" href="#" class="btn btn-primary col ms-0 b-radius-none"><?php echo $this->lang->line('request_info') ?></a>
               </div>
             </div>
           </div>
@@ -132,34 +128,34 @@
           <div class="property-info mt-5">
             <div class="row">
               <div class="col-sm-3 mb-3 mb-sm-0">
-                <h5>Property details</h5>
+                <h5><?php echo $this->lang->line('property_details') ?></h5>
               </div>
               <div class="col-sm-9">
                 <div class="row mb-3">
                   <div class="col-sm-6">
                     <ul class="property-list list-unstyled">
-                      <li><b>Property ID:</b> <?=$res->res_id?></li>
-                      <li><b>Price:</b> <?=$res->discount?></li>
-                      <li><b>Property Size:</b> <?=$res->space?> Sq Ft</li>
-                      <li><b>rooms:</b> <?=$res->rooms?></li>
-                      <li><b>Bathrooms:</b> <?=$res->baths?></li>
+                      <li><b><?php echo $this->lang->line('property_id') ?>:</b> <?=$res->res_id?></li>
+                      <li><b><?php echo $this->lang->line('price') ?>:</b> <?=$res->discount?></li>
+                      <li><b><?php echo $this->lang->line('property_size') ?>:</b> <?=$res->space?> Sq Ft</li>
+                      <li><b><?php echo $this->lang->line('rooms') ?>:</b> <?=$res->rooms?></li>
+                      <li><b><?php echo $this->lang->line('bathrooms') ?>:</b> <?=$res->baths?></li>
                     </ul>
                   </div>
                   <div class="col-sm-6">
                     <ul class="property-list list-unstyled">
-                      <li><b>Garage:</b> <?=$res->garage?></li>
-                      <li><b>Garage Size:</b> <?=$res->garage_size?> SqFt</li>
-                      <li><b>Year Built:</b>  <?=$res->year_of_construction?></li>
+                      <li><b><?php echo $this->lang->line('garage') ?>:</b> <?=$res->garage?></li>
+                      <li><b><?php echo $this->lang->line('garage_size') ?>:</b> <?=$res->garage_size?> SqFt</li>
+                      <li><b><?php echo $this->lang->line('year_built') ?>:</b>  <?=$res->year_of_construction?></li>
                      
-                      <li><b>Property Status:</b><?=key_type($res->type)?></li>
+                      <li><b><?php echo $this->lang->line('property_status') ?>:</b><?=key_type($res->type)?></li>
                     </ul>
                   </div>
                 </div>
-                <h6 class="text-primary mb-3 mb-sm-0">Additional details</h6>
+                <h6 class="text-primary mb-3 mb-sm-0"><?php echo $this->lang->line('additional_details') ?></h6>
                 <div class="row">
                   <div class="col-sm-6">
                     <ul class="property-list list-unstyled mb-0">
-                      <li><b>overlooking:</b>
+                      <li><b><?php echo $this->lang->line('overlooking') ?>:</b>
                       <?php if($this->session->userdata('site_lang') == 'english'){?>
                         <?=$res->overlooking?> 
               <?php }else{?>
@@ -169,7 +165,7 @@
                     
                     </li>
                       <?php if(!empty($res->pool)){?>
-                      <li><b>Pool Size:</b> <?=$res->pool?> Sqft</li>
+                      <li><b><?php echo $this->lang->line('pool_size') ?>:</b> <?=$res->pool?> Sqft</li>
                       <?php }?>
               
                     </ul>
@@ -177,10 +173,10 @@
                   <div class="col-sm-6">
                     <ul class="property-list list-unstyled mb-0">
                       <?php if($res->real_compound ==1 ){?>
-                      <li><b>Real Compound</b></li>
+                      <li><b><?php echo $this->lang->line('real_compound') ?></b></li>
                       <?php } ?>
                       <?php if($res->real_owner ==1 ){?>
-                      <li><b>Real Estate Directly From The Owner</b></li>
+                      <li><b><?php echo $this->lang->line('real_estate_directly') ?></b></li>
                       <?php } ?>
                     </ul>
                   </div>
@@ -192,7 +188,7 @@
           <div class="property-description">
             <div class="row">
               <div class="col-sm-3 mb-3 mb-sm-0">
-                <h5>Description</h5>
+                <h5><?php echo $this->lang->line('description') ?></h5>
               </div>
               <div class="col-sm-9">
                 <p>
@@ -210,7 +206,7 @@
           <div class="property-address">
             <div class="row">
               <div class="col-sm-3 mb-3 mb-sm-0">
-                <h5>Address</h5>
+                <h5><?php echo $this->lang->line('address') ?></h5>
               </div>
               <div class="col-sm-9">
                 <div class="row">
@@ -237,7 +233,7 @@
           <div class="property-floor-plans">
             <div class="row">
               <div class="col-sm-3 mb-3 mb-sm-0">
-                <h5>Map</h5>
+                <h5><?php echo $this->lang->line('map') ?></h5>
               </div>
               <div class="col-sm-9">
     <div id="googleMap" style="width:100%;height:400px;"></div>
@@ -267,7 +263,7 @@
           <div class="property-video">
             <div class="row">
               <div class="col-sm-3 mb-3 mb-sm-0">
-                <h5>Property video</h5>
+                <h5><?php echo $this->lang->line('property_video') ?></h5>
               </div>
               <div class="col-sm-9">
                 <div class="embed-responsive embed-responsive-16by9">
@@ -281,7 +277,7 @@
           <div class="property-nearby">
             <div class="row">
               <div class="col-sm-3 mb-3 mb-sm-0">
-                <h5>What's nearby</h5>
+                <h5><?php echo $this->lang->line('Whats_nearby') ?></h5>
               </div>
              
               <div class="col-sm-9">
@@ -374,7 +370,7 @@
   <section class="space-pt">
   <div class="container">
     <hr class="mb-5 mt-0">
-    <h5 class="mb-4">Similar properties</h5>
+    <h5 class="mb-4"><?php echo $this->lang->line('similar_properties') ?></h5>
     <div class="row">
     <?php      $restaurants = $this->db->query("SELECT * FROM restaurants WHERE approved = '1'   ORDER BY res_ratings DESC LIMIT 0, 3")->result_array();?>
 
@@ -448,7 +444,7 @@
      </ul>
    </div>
    <div class="property-btn">
-     <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>">See Details</a>
+     <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?php echo $this->lang->line('see_details') ?></a>
      <ul class="property-listing-actions list-unstyled mb-0">
      <li class="property-favourites">
                             <?php  
@@ -486,7 +482,7 @@ Review -->
     <div class="row">
       <div class="col-12">
         <div class="section-title">
-          <h4>Leave a review for joana williams</h4>
+          <h4><?php echo $this->lang->line('leave_review') ?></h4>
         </div>
       </div>
     </div>
@@ -497,7 +493,7 @@ Review -->
             <img class="img-fluid rounded-circle" src="<?=base_url('website')?>/images/avatar/01.jpg" alt="">
           </div>
           <div class="review-info flex-grow-1">
-            <span class="mb-2 d-block">Rating:</span>
+            <span class="mb-2 d-block"><?php echo $this->lang->line('rating') ?>:</span>
             <div class="rate d-block">
               <input type="radio" id="star5" name="rate" value="5" />
               <label class="fas fa-star" for="star5" title="text"></label>
@@ -511,15 +507,15 @@ Review -->
               <label class="fas fa-star" for="star1" title="text"></label>
             </div>
             <div class="mb-3 clearfix">
-              <span class="mb-2 d-block">Rating comment:</span>
+              <span class="mb-2 d-block"><?php echo $this->lang->line('rating_comment') ?>:</span>
               <div class="mb-3">
                 <textarea class="form-control" rows="3"></textarea>
               </div>
             </div>
-            <button type="button"id="addreview" class="btn btn-primary">Add a review</button>
+            <button type="button"id="addreview" class="btn btn-primary"><?php echo $this->lang->line('add_review') ?></button>
 
             <?php if(empty($this->session->userdata('UserId'))){?>
-            <span> <a href="<?php echo base_url('login'); ?>"> <b>Login</b>  </a> to leave a review</span>
+            <span> <a href="<?php echo base_url('login'); ?>"> <b><?php echo $this->lang->line('login') ?></b>  </a> <?php echo $this->lang->line('login_to_leave_review') ?></span>
             <?php }?>
           </div>
         </div>

@@ -5,8 +5,8 @@
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <div class="section-title text-center">
-          <h2>Discover our best deals</h2>
-          <p>Check the listings of the best dealer on Real Villa and contact the agency or its agent by phone or contact form.</p>
+          <h2><?php echo $this->lang->line('best_deals_head') ?></h2>
+          <p><?php echo $this->lang->line('best_deals_subhead') ?></p>
         </div>
       </div>
     </div>
@@ -57,13 +57,13 @@
                           <div class="property-price"><?=$listing['discount']?><span> EGP</span> </div>
                           <ul class="property-info list-unstyled d-flex">
         
-                            <li class="flex-fill property-bed"><i class="fas fa-bed"></i>rooms<span><?=$listing['rooms']?></span></li>
-                            <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span><?=$listing['baths']?></span></li>
-                             <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span><?=$listing['space']?>m</span></li>
+                            <li class="flex-fill property-bed"><i class="fas fa-bed"></i><?php echo $this->lang->line('rooms_label') ?><span><?=$listing['rooms']?></span></li>
+                            <li class="flex-fill property-bath"><i class="fas fa-bath"></i><?php echo $this->lang->line('bath_label') ?><span><?=$listing['baths']?></span></li>
+                             <li class="flex-fill property-m-sqft"><i class="far fa-square"></i><?php echo $this->lang->line('sqft_label') ?><span><?=$listing['space']?>m</span></li>
                           </ul>
                         </div>
                         <div class="property-btn">
-                          <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>">See Details</a>
+                          <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?php echo $this->lang->line('see_details') ?></a>
                           <ul class="property-listing-actions list-unstyled mb-0">
                             <li class="property-favourites">
                             <?php  

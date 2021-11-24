@@ -11,15 +11,15 @@ banner -->
   <div class="container">
     <div class="row">
       <div class="col-12 position-relative">
-        <h1 class="text-white text-center mb-2">Create lasting wealth through Real Villa</h1>
-        <p class="lead text-center text-white mb-4 fw-normal">Take a step to realizing your dream. #TimeToMove</p>
+        <h1 class="text-white text-center mb-2"><?php echo $this->lang->line('banners_head') ?></h1>
+        <p class="lead text-center text-white mb-4 fw-normal"><?php echo $this->lang->line('banners_subhead') ?></p>
         <div class="property-search-field bg-white">
           <div class="property-search-item">
             <form class="row basic-select-wrapper" method="GET" name="searchaction" action="<?=base_url('/search')?>">
               <div class="form-group col-lg-3 col-md-6" >
                 <label class="form-label"><?php echo $this->lang->line('property_type') ?></label>
                 <select class="form-control basic-select"  name="cat_id">
-                  <option value="">All Type</option>
+                  <option value=""><?php echo $this->lang->line('all_types') ?></option>
                   <?php $category = $this->admin_model->get_category();
                    $category_id=$this->input->get('cat_id');
                    $type=$this->input->get('type');
@@ -57,7 +57,7 @@ banner -->
                 <div class="form-group-search">
                   <label class="form-label"><?php echo $this->lang->line('location') ?></label>
                   <select class="form-control basic-select"  name="region_id" >
-                  <option value="">All Locations</option>
+                  <option value=""><?php echo $this->lang->line('all_locations') ?></option>
                   <?php 
 				$regions = $this->admin_model->get_all_regions();
               foreach ($regions as $row) : ?> 
@@ -85,13 +85,9 @@ banner -->
               <div class="collapse advanced-search p-0" id="advanced-search">
                 <div class="card card-body">
                   <div class="row">
-             <input type="hidden" id="from_price" name="from" value="<?php echo ($from_price)?$from_price:min_price()?>"/>
-              <input type="hidden"  id="to_price" name="to" value="<?php echo ($to_price)?$to_price:max_price()?>"/>
-
                     <div class="form-group col-md-3">
                       <label class="form-label"><?php echo $this->lang->line('bedrooms') ?></label>
                       <select class="form-control basic-select" name="rooms">
-                        <option value="">No max</option>
                    
                 <?php foreach (rooms() as $key => $value) : ?>
                   <option value="<?php echo $key; ?>"   <?php if ($key == $rooms) echo "selected='selected'"; ?> ><?php echo $value ?></option>
@@ -102,23 +98,25 @@ banner -->
                     <div class="form-group col-md-3">
                       <label class="form-label"><?php echo $this->lang->line('floor') ?></label>
                       <select class="form-control basic-select" name="floor">
-                        <option value="">Select Floor</option>
+                        <option value=""><?php echo $this->lang->line('select_floor') ?></option>
                         <?php foreach (rooms() as $key => $value) : ?>
                   <option value="<?php echo $key; ?>"   <?php if ($key == $floor) echo "selected='selected'"; ?> ><?php echo $value ?></option>
 											<?php endforeach; ?>
                       </select>
                     </div>
-                  </div>
-                  <div class="row">
                     <div class="form-group col-md-3">
                       <label class="form-label"><?php echo $this->lang->line('min_area') ?></label>
-                      <input class="form-control" name="min_space" value="<?=$this->input->get('min_space')?>" placeholder="Type (sq ft)">
+                      <input class="form-control" name="min_space" value="<?=$this->input->get('min_space')?>" placeholder="<?=$this->input->get('min_space')?>">
                     </div>
                     <div class="form-group col-md-3">
                       <label class="form-label"><?php echo $this->lang->line('max_area') ?></label>
-                      <input class="form-control"name="max_space" value="<?=$this->input->get('max_space')?>" placeholder="Type (sq ft)">
+                      <input class="form-control"name="max_space" value="<?=$this->input->get('max_space')?>" placeholder="<?=$this->input->get('max_space')?>">
                     </div>
+                  </div>
+                  <div class="row">
                     <div class="form-group col-md-6 property-price-slider ">
+               <input type="hidden" id="from_price" name="from" value="<?php echo ($from_price)?$from_price:min_price()?>"/>
+              <input type="hidden"  id="to_price" name="to" value="<?php echo ($to_price)?$to_price:max_price()?>"/>
                       <label class="form-label"><?php echo $this->lang->line('select_price_range') ?></label>
                       <input type="text" id="property-price-slider" name="price_range" value="" />
                     </div>

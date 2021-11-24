@@ -37,6 +37,10 @@
 	
 	    <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300,500,600,700%7CRoboto:300,400,500,700">
+		<?php if($this->session->userdata('site_lang')== 'arabic'){?>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;500&display=swap" rel="stylesheet">
+		<?php } ?>
+
 
     <!-- CSS Global Compulsory (Do not remove)-->
     <link rel="stylesheet" href="<?=base_url('website')?>/css/font-awesome/all.min.css" />

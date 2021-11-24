@@ -5,12 +5,12 @@
     <div class="row align-items-center">
       <div class="col-lg-9">
         <div class="section-title mb-0">
-          <h2>Plenty of reasons to choose us</h2>
-          <p>Our agency has many specialized areas, but our CUSTOMERS are our real specialty.</p>
+          <h2><?php echo $this->lang->line('about_module_head') ?></h2>
+          <p><?php echo $this->lang->line('about_module_subhead') ?></p>
         </div>
       </div>
       <div class="col-lg-3 text-lg-end">
-        <a class="btn btn-primary" href="<?=base_url('/about')?>">More about us </a>
+        <a class="btn btn-primary" href="<?=base_url('/about')?>"><?php echo $this->lang->line('more_about_us') ?></a>
       </div>
     </div>
     <div class="row g-0 mt-4">
@@ -20,8 +20,8 @@
             <i class="flaticon-like"></i>
           </div>
           <div class="feature-info-content">
-            <h6 class="mb-3 feature-info-title">Excellent reputation</h6>
-            <p class="mb-0">Our comprehensive database of listings and market info give the most accurate view of the market and your home value.</p>
+            <h6 class="mb-3 feature-info-title"><?php echo $this->lang->line('about1_head') ?></h6>
+            <p class="mb-0"><?php echo $this->lang->line('about1_subhead') ?></p>
           </div>
         </div>
       </div>
@@ -31,8 +31,8 @@
             <i class="flaticon-agent"></i>
           </div>
           <div class="feature-info-content">
-            <h6 class="mb-3 feature-info-title">Best local agents</h6>
-            <p class="mb-0">You are just minutes from joining with the best agents who are fired up about helping you Buy or sell.</p>
+            <h6 class="mb-3 feature-info-title"><?php echo $this->lang->line('about2_head') ?></h6>
+            <p class="mb-0"><?php echo $this->lang->line('about2_subhead') ?></p>
           </div>
         </div>
       </div>
@@ -42,8 +42,8 @@
             <i class="flaticon-like-1"></i>
           </div>
           <div class="feature-info-content">
-            <h6 class="mb-3 feature-info-title">Peace of mind</h6>
-            <p class="mb-0">Rest guaranteed that your agent and their expert team are handling every detail of your transaction from start to end.</p>
+            <h6 class="mb-3 feature-info-title"><?php echo $this->lang->line('about3_head') ?></h6>
+            <p class="mb-0"><?php echo $this->lang->line('about3_subhead') ?></p>
           </div>
         </div>
       </div>
@@ -53,8 +53,8 @@
             <i class="flaticon-house-1"></i>
           </div>
           <div class="feature-info-content">
-            <h6 class="mb-3 feature-info-title">Tons of options</h6>
-            <p class="mb-0">Discover a place you’ll love to live in. Choose from our vast inventory and choose your desired house.</p>
+            <h6 class="mb-3 feature-info-title"><?php echo $this->lang->line('about4_head') ?></h6>
+            <p class="mb-0"><?php echo $this->lang->line('about4_subhead') ?></p>
           </div>
         </div>
       </div>

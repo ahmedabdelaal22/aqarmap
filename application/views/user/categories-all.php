@@ -11,8 +11,8 @@ Browse properties Categories -->
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <div class="section-title text-center">
-          <h2>Browse by category</h2>
-          <p>To browse and buy in your areas of interest, look for properties by category.</p>
+          <h2><?php echo $this->lang->line('categories_head') ?></h2>
+          <p><?php echo $this->lang->line('categories_subhead') ?></p>
         </div>
       </div>
     </div>

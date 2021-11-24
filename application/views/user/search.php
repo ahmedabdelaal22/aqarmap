@@ -19,7 +19,7 @@ Listing – grid view -->
     <div class="row">
       <div class="col-md-6">
         <div class="section-title mb-3 mb-lg-4">
-          <h2><span class="text-primary"><?=$total_rows?></span> Results</h2>
+          <h2><span class="text-primary"><?=$total_rows?></span> <?php echo $this->lang->line('results') ?></h2>
         </div>
       </div>
       <div class="col-md-6">
@@ -36,7 +36,7 @@ Listing – grid view -->
         <div class="sidebar">
           <div class="widget">
             <div class="widget-title widget-collapse">
-              <h6>Advanced filter</h6>
+              <h6><?php echo $this->lang->line('advanced_filter') ?></h6>
               <a class="ms-auto" data-bs-toggle="collapse" href="#filter-property" role="button" aria-expanded="false" aria-controls="filter-property"> <i class="fas fa-chevron-down"></i> </a>
             </div>
 
@@ -44,7 +44,7 @@ Listing – grid view -->
               <form class="mt-3">
                 <div class="mb-2 select-border">
                   <select class="form-control basic-select" name="cat_id">
-                    <option value="">All Type</option>
+                    <option value=""><?php echo $this->lang->line('all_types') ?></option>
                     <?php $category = $this->admin_model->get_category();
                    $category_id=$this->input->get('cat_id');
                    $type=$this->input->get('type');
@@ -70,7 +70,7 @@ Listing – grid view -->
                 </div>
                 <div class="mb-2 select-border">
                   <select class="form-control basic-select"name="type" >
-                  <option value="">All</option>
+                  <option value=""><?php echo $this->lang->line('all') ?></option>
                   <?php foreach (types() as $key => $value) : ?>
                   <option value="<?php echo $key; ?>"   <?php if ($key == $type) echo "selected='selected'"; ?> ><?php echo $value ?></option>
 											<?php endforeach; ?>
@@ -78,7 +78,7 @@ Listing – grid view -->
                 </div>
                 <div class="mb-2 select-border">
                   <select class="form-control basic-select"name="region_id" >
-                    <option value="">location</option>
+                    <option value=""><?php echo $this->lang->line('location') ?></option>
                     <?php 
 	               			$regions = $this->admin_model->get_all_regions();
                        foreach ($regions as $row) : ?> 
@@ -96,7 +96,7 @@ Listing – grid view -->
                 </div>
                 <div class="mb-2 select-border">
                   <select class="form-control basic-select"name="rooms">
-                    <option value="">Bedrooms</option>
+                    <option value=""><?php echo $this->lang->line('bedrooms') ?></option>
                     <?php foreach (rooms() as $key => $value) : ?>
                   <option value="<?php echo $key; ?>"   <?php if ($key == $rooms) echo "selected='selected'"; ?> ><?php echo $value ?></option>
 											<?php endforeach; ?>
@@ -108,31 +108,31 @@ Listing – grid view -->
 
                 <div class="mb-2 select-border">
                   <select class="form-control basic-select" name="floor">
-                    <option value="">Select Floor</option>
+                    <option value=""><?php echo $this->lang->line('select_floor') ?></option>
                     <?php foreach (rooms() as $key => $value) : ?>
                   <option value="<?php echo $key; ?>"   <?php if ($key == $floor) echo "selected='selected'"; ?> ><?php echo $value ?></option>
 											<?php endforeach; ?>
                   </select>
                 </div>
                 <div class="mb-2">
-                  <input class="form-control" name="min_space" value="<?=$this->input->get('min_space')?>" placeholder="Type (sq ft)">
+                  <input class="form-control" name="min_space" value="<?=$this->input->get('min_space')?>" placeholder="<?php echo $this->lang->line('min_area') ?>">
                 </div>
                 <div class="mb-2">
-                  <input class="form-control"name="max_space" value="<?=$this->input->get('max_space')?>" placeholder="Type (sq ft)">
+                  <input class="form-control"name="max_space" value="<?=$this->input->get('max_space')?>" placeholder="<?php echo $this->lang->line('max_area') ?>">
                 </div>
                  <div class="mb-3 property-price-slider mt-3">
-                  <label class="form-label">Select Price Range</label>
+                  <label class="form-label"><?php echo $this->lang->line('select_price_range') ?></label>
                   <input type="text" id="property-price-slider" name="price_range" value="" />
                 </div>
                 <div class="d-grid mb-2">
-                  <input class="btn btn-primary align-items-center"  name='submit' value='Filter' type="submit">
+                  <input class="btn btn-primary align-items-center"  name='submit' value='<?php echo $this->lang->line('filter') ?>' type="submit">
                 </div>
               </form>
             </div>
           </div>
           <div class="widget">
             <div class="widget-title widget-collapse">
-              <h6>Status of property</h6>
+              <h6><?php echo $this->lang->line('property_status') ?> </h6>
               <a class="ms-auto" data-bs-toggle="collapse" href="#status-property" role="button" aria-expanded="false" aria-controls="status-property"> <i class="fas fa-chevron-down"></i> </a>
             </div>
             <div class="collapse show" id="status-property">
@@ -147,7 +147,7 @@ Listing – grid view -->
 
           <div class="widget">
             <div class="widget-title">
-              <h6>Recently listed properties</h6>
+              <h6><?php echo $this->lang->line('recently_listed_properties') ?></h6>
             </div>
 
             <?php      $left_restaurants = $this->db->query("SELECT * FROM restaurants WHERE approved = '1'   ORDER BY res_ratings DESC LIMIT 0, 5")->result_array();?>
@@ -252,13 +252,13 @@ Listing – grid view -->
               </span>
                   <div class="property-price"><?=$listing['discount']?><span> </span> </div>
                   <ul class="property-info list-unstyled d-flex">
-                    <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Rooms<span><?=$listing['rooms']?></span></li>
-                    <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span><?=$listing['baths']?></span></li>
-                    <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span><?=$listing['space']?>m</span></li>
+                    <li class="flex-fill property-bed"><i class="fas fa-bed"></i><?php echo $this->lang->line('rooms_label') ?><span><?=$listing['rooms']?></span></li>
+                    <li class="flex-fill property-bath"><i class="fas fa-bath"></i><?php echo $this->lang->line('bath_label') ?><span><?=$listing['baths']?></span></li>
+                    <li class="flex-fill property-m-sqft"><i class="far fa-square"></i><?php echo $this->lang->line('sqft_label') ?><span><?=$listing['space']?>m</span></li>
                   </ul>
                 </div>
                 <div class="property-btn">
-                  <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>">See Details</a>
+                  <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?php echo $this->lang->line('see_details') ?></a>
                   <ul class="property-listing-actions list-unstyled mb-0">
                   <li class="property-favourites">
                             <?php  

@@ -73,7 +73,7 @@ $lang['welcome'] = 'Welcome to our website';
 $lang['name_ar'] = 'Name (Ar)';
 $lang['name_en'] = 'Name (EN)';
 $lang['logo'] = 'LOGO';
-$lang['email'] = 'Email';
+$lang['email'] = 'الايميل';
 $lang['name_ar'] = 'Name (ar)';
 $lang['favicon'] = 'Favicon';
 $lang['support_email'] = 'Support Email';
@@ -89,13 +89,13 @@ $lang['facebook'] = 'Facebook';
 $lang['twitter'] = 'Twitter';
 $lang['google'] = 'GooGle';
 $lang['pinterest'] = 'Pinterest';
-$lang['map'] = 'Map';
+$lang['map'] = 'الخريطة';
 $lang['about'] = 'About';
 
 $lang['contacts'] = 'Contacts';
 $lang['category'] = 'اختار القسم';
-$lang['address'] = 'Address';
-$lang['description'] = 'Description';
+$lang['address'] = 'العنوان';
+$lang['description'] = 'الوصف';
 $lang['success_subscribe'] = 'Success Subscribe';
 $lang['subscribe_resturant'] = 'Subscribe Resturant';
 $lang['subscribe_resturant_form'] = 'Subscribe Resturant Form';
@@ -115,6 +115,9 @@ $lang['googleplay'] = 'Google Play';
 $lang['contact'] = 'Contact';
 $lang['name_ar'] = 'Name (ar)';
 
+// banners search section
+$lang['banners_head'] = 'خلق ثروة دائمة من خلال فيلا حقيقية';
+$lang['banners_subhead'] = 'اتخذ خطوة لتحقيق حلمك. #وقت التحرك';
 $lang['property_type'] = 'نوع العقار';
 $lang['status'] = 'الحالة';
 $lang['location'] = 'الموقع';
@@ -125,3 +128,89 @@ $lang['floor'] = 'الطابق';
 $lang['min_area'] = 'ادني مساحة';
 $lang['max_area'] = 'اقصي مساحة';
 $lang['select_price_range'] = 'اختر نطاق السعر';
+$lang['all_types'] = 'كل الانواع';
+$lang['all_locations'] = 'كل المواقع';
+$lang['select_floor'] = 'اختار الطابق';
+
+// nav
+$lang['get_app'] = 'التطبيق: ';
+$lang['choose_location'] = 'اختار الموقع';
+$lang['add_listing'] = 'اضف عقار';
+$lang['hello_sign'] = 'تسجيل الدخول';
+
+// categories module
+$lang['categories_head'] = 'تصفح حسب الفئة';
+$lang['categories_subhead'] = 'للتصفح والشراء في مناطق اهتمامك ، ابحث عن العقارات حسب الفئة.';
+
+// new listed module
+$lang['new_listed_head'] = 'العقارات المضافة حديثا';
+$lang['new_listed_subhead'] = 'ابحث عن منزل أحلامك من العقارات المضافة حديثًا';
+$lang['view_all_listings'] = 'مشاهدة جميع العقارات';
+
+
+// best deals module
+$lang['best_deals_head'] = 'اكتشف أفضل عروضنا';
+$lang['best_deals_subhead'] = 'تحقق من قوائم أفضل تاجر واتصل بالوكالة أو وكيلها عبر الهاتف أو نموذج الاتصال.';
+
+// property strings
+$lang['see_details'] = 'شاهد التفاصيل';
+$lang['property_video'] = 'فيديو العقار';
+$lang['similar_properties'] = 'عقارات مشابهة';
+$lang['leave_review'] = 'اترك تعليق';
+$lang['rating'] = 'التقييم';
+$lang['rating_comment'] = 'تعليق التقييم';
+$lang['add_review'] = 'اضافة تعليق';
+$lang['login'] = 'تسجيل دخول';
+$lang['login_to_leave_review'] = 'لتتمكن من ترك تعليق';
+$lang['property_details'] = 'تفاصيل العقار';
+
+$lang['property_id'] = 'كود العقار';
+$lang['price'] = 'السعر';
+$lang['property_size'] = 'مساحة العقار';
+$lang['rooms'] = 'الغرف';
+$lang['bathrooms'] = 'الحمامات';
+$lang['garage'] = 'الجراج';
+$lang['garage_size'] = 'مساحة الجراج';
+$lang['year_built'] = 'سنة البناء';
+$lang['property_status'] = 'حالة العقار';
+$lang['additional_details'] = 'تفاصيل اضافية';
+$lang['overlooking'] = 'الاطلالة';
+$lang['real_compound'] = 'Real Compound';
+$lang['real_estate_directly'] = 'Real Estate Directly From The Owner';
+$lang['request_info'] = 'طلب معلومات';
+$lang['view_listings'] = 'مشاهدة العقارات';
+$lang["Whats_nearby"] = "ماذا يوجد بالجوار";
+$lang["pool_size"] = "مساحة المسبح";
+
+$lang['rooms_label'] = 'غرف';
+$lang['bath_label'] = 'حمام';
+$lang['sqft_label'] = 'متر مربع ';
+
+// search
+$lang["results"] = "نتائج";
+$lang["all"] = "الكل";
+$lang["filter"] = "فلتر";
+$lang["advanced_filter"] = "فلتر متقدم";
+$lang["recently_listed_properties"] = "احدث العقارات المضافة";
+
+//about
+$lang["more_about_us"] = "المزيد عنا";
+$lang["about_module_head"] = "الكثير من الأسباب لاختيارنا";
+$lang["about_module_subhead"] = "وكالتنا لديها العديد من المجالات المتخصصة ، ولكن عملائنا هم تخصصنا الحقيقي.";
+
+
+$lang["about1_head"] = "سمعة ممتازة";
+$lang["about1_subhead"] = "توفر قاعدة بياناتنا الشاملة للقوائم ومعلومات السوق أدق عرض للسوق وقيمة منزلك.";
+$lang["about2_head"] = "أفضل الوكلاء المحليين";
+$lang["about2_subhead"] = "أنت على بعد دقائق فقط من الانضمام إلى أفضل الوكلاء المتحمسين لمساعدتك في الشراء أو البيع.";
+$lang["about3_head"] = "راحة البال";
+$lang["about3_subhead"] = "كن مطمئنًا أن وكيلك وفريق الخبراء التابع له يتعاملون مع كل تفاصيل معاملتك من البداية إلى النهاية.";
+$lang["about4_head"] = "طن من الخيارات";
+$lang["about4_subhead"] = "اكتشف مكانًا ستحب العيش فيه. اختر من بين مخزوننا الهائل واختر المنزل الذي تريده.";
+
+//footer
+$lang["footer_about"] = "ساعدنا الآلاف من العملاء في العثور على العقار المناسب لاحتياجاتهم.";
+$lang["useful_links"] = "روابط مهمة";
+$lang["subscribe_with_us"] = "اشترك معنا";
+$lang["newsletter_text"] = "اشترك في النشرة الإخبارية لدينا للحصول على آخر الأخبار والعروض.";
+$lang["newsletter_button"] = "اشترك الان";

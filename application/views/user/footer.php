@@ -5,8 +5,8 @@ footer-->
     <div class="row">
       <div class="col-lg-3 col-md-6">
         <div class="footer-contact-info">
-          <h5 class="text-primary mb-4">About real villa</h5>
-          <p class="text-white mb-4">Real Villa helped thousands of clients to find the right property for their needs.</p>
+          <h5 class="text-primary mb-4"><?php echo $this->lang->line('about_us') ?></h5>
+          <p class="text-white mb-4"><?php echo $this->lang->line('footer_about') ?></p>
           <ul class="list-unstyled mb-0">
             <li> <b> <i class="fas fa-map-marker-alt"></i></b><span>
             <?php if($this->session->userdata('site_lang') == 'english'){?>
@@ -25,7 +25,7 @@ footer-->
       </div>
       <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
         <div class="footer-link">
-          <h5 class="text-primary mb-4">Useful links</h5>
+          <h5 class="text-primary mb-4"><?php echo $this->lang->line('useful_links') ?></h5>
           <ul class="list-unstyled mb-0">
 
           <?php foreach (payment_method() as $key => $value) : ?>
@@ -42,7 +42,7 @@ footer-->
       </div>
       <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
         <div class="footer-recent-List">
-          <h5 class="text-primary mb-4">Recently listed properties</h5>
+          <h5 class="text-primary mb-4"><?php echo $this->lang->line('recently_listed_properties') ?></h5>
           <ul class="list-unstyled mb-0">
 
           <?php      $fotter_restaurants = $this->db->query("SELECT * FROM restaurants WHERE approved = '1'   ORDER BY res_id DESC LIMIT 0, 2")->result_array();?>
@@ -87,14 +87,14 @@ footer-->
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-        <h5 class="text-primary mb-4">Subscribe us</h5>
+        <h5 class="text-primary mb-4"><?php echo $this->lang->line('subscribe_with_us') ?></h5>
         <div class="footer-subscribe">
-          <p class="text-white">Sign up to our newsletter to get the latest news and offers.</p>
+          <p class="text-white"><?php echo $this->lang->line('newsletter_text') ?></p>
           <form>
             <div class="mb-3">
-              <input type="email"  name="mail" id="contact_mail" class="form-control" placeholder="Enter email">
+              <input type="email"  name="mail" id="contact_mail" class="form-control" placeholder="<?php echo $this->lang->line('email') ?>">
             </div>
-            <button type="submit" onclick="subscriebe_mail()" class="btn btn-primary btn-sm">Get notified</button>
+            <button type="submit" onclick="subscriebe_mail()" class="btn btn-primary btn-sm"><?php echo $this->lang->line('newsletter_button') ?></button>
           </form>
         </div>
       </div>

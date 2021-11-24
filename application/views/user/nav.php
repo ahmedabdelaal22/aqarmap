@@ -13,13 +13,13 @@ header -->
               <a href="tel:<?=appSettings('Whatsapp')?>"><i class="fa fa-phone me-2 fa fa-flip-horizontal"></i><?=appSettings('Whatsapp')?> </a>
             </div>
             <div class="me-auto d-inline-block">
-              <span class="me-2 text-white">Get App:</span>
+              <span class="me-2 text-white"><?php echo $this->lang->line('get_app') ?></span>
               <a class="pe-1" href="<?=appSettings('googleplay')?>"><i class="fab fa-android"></i></a>
               <a href="<?=appSettings('appstore')?>"><i class="fab fa-apple"></i></a>
             </div>
             <div class="dropdown d-inline-block ps-2 ps-md-0">
               <a class="dropdown-toggle" href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Choose location<i class="fas fa-chevron-down ps-2"></i>
+                <?php echo $this->lang->line('choose_location') ?><i class="fas fa-chevron-down ps-2"></i>
               </a>
               <div class="dropdown-menu mt-0" aria-labelledby="dropdownMenuButton">
 	    	    <?php  foreach ($regions as $row) {?>
@@ -54,7 +54,7 @@ header -->
               <a  href="<?=base_url('/profile')?>"><?=$this->session->userdata('user_name')?><i class="fa fa-user ps-2"></i></a>
 			  <a href="<?=base_url('logout')?>">logout</a>
 			  <?php } else{?>
-				<a  href="<?=base_url('/login')?>">Hello sign in<i class="fa fa-user ps-2"></i></a>
+				<a  href="<?=base_url('/login')?>"><?php echo $this->lang->line('hello_sign') ?> <i class="fa fa-user ps-2"></i></a>
 
 				<?php } ?>
             </div>
@@ -133,7 +133,7 @@ header -->
 	</ul>    
     </div>
     <div class="add-listing d-none d-sm-block">
-      <a class="btn btn-primary btn-md" href="<?=base_url('add-listing')?>"> <i class="fa fa-plus-circle"></i>Add listing </a>
+      <a class="btn btn-primary btn-md" href="<?=base_url('add-listing')?>"> <i class="fa fa-plus-circle"></i><?php echo $this->lang->line('add_listing') ?> </a>
     </div>
     </div>
   </nav>

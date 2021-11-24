@@ -78,6 +78,9 @@ $lang['whatsapp'] = 'Whatsapp';
 $lang['instegram'] = 'Instegram';
 $lang['name_ar'] = 'Name (ar)';
 
+// banners search section
+$lang['banners_head'] = 'Create Lasting Wealth Through Real Villa';
+$lang['banners_subhead'] = 'Take a step to realizing your dream. #TimeToMove';
 $lang['property_type'] = 'Property type';
 $lang['status'] = 'Status';
 $lang['location'] = 'Location';
@@ -88,5 +91,88 @@ $lang['floor'] = 'Floor';
 $lang['min_area'] = 'Min Area';
 $lang['max_area'] = 'Max Area';
 $lang['select_price_range'] = 'Select Price Range';
+$lang['all_types'] = 'All Types';
+$lang['all_locations'] = 'All Locations';
+$lang['select_floor'] = 'Select Floor';
+
+// nav
+$lang['get_app'] = 'Get App: ';
+$lang['choose_location'] = 'Choose Location';
+$lang['add_listing'] = 'Add Listing';
+$lang['hello_sign'] = 'Sign In';
+
+// categories module
+$lang['categories_head'] = 'Browse by category';
+$lang['categories_subhead'] = 'To browse and buy in your areas of interest, look for properties by category.';
+
+// new listed module
+$lang['new_listed_head'] = 'Newly Listed Properties';
+$lang['new_listed_subhead'] = 'Find your dream home from our Newly added properties';
+$lang['view_all_listings'] = 'View All Listings';
+
+// best deals module
+$lang['best_deals_head'] = 'Discover Our Best Deals';
+$lang['best_deals_subhead'] = 'Check the listings of the best dealer and contact the agency or its agent by phone or contact form.';
+
+// property strings
+$lang['see_details'] = 'See Details';
+$lang['property_video'] = 'Property Video';
+$lang['similar_properties'] = 'Similar Properties';
+$lang['leave_review'] = 'Leave a Review';
+$lang['rating'] = 'Rating';
+$lang['rating_comment'] = 'Rating comment';
+$lang['add_review'] = 'Add a review';
+$lang['login'] = 'Login';
+$lang['login_to_leave_review'] = 'to leave a review';
+$lang['property_details'] = 'Property Details';
+
+$lang['property_id'] = 'Property ID';
+$lang['price'] = 'Price';
+$lang['property_size'] = 'Property Size';
+$lang['rooms'] = 'rooms';
+$lang['bathrooms'] = 'Bathrooms';
+$lang['garage'] = 'Garage';
+$lang['garage_size'] = 'Garage Size';
+$lang['year_built'] = 'Year Built';
+$lang['property_status'] = 'Property Status';
+$lang['additional_details'] = 'Additional details';
+$lang['overlooking'] = 'overlooking';
+$lang['real_compound'] = 'Real Compound';
+$lang['real_estate_directly'] = 'Real Estate Directly From The Owner';
+$lang['request_info'] = 'Request info';
+$lang['view_listings'] = 'View listings';
+$lang["Whats_nearby"] = "What's nearby";
+$lang["pool_size"] = "Pool Size";
+
+$lang['rooms_label'] = 'Rooms';
+$lang['bath_label'] = 'Bathrooms';
+$lang['sqft_label'] = 'sqft';
+
+// search
+$lang["results"] = "Results";
+$lang["all"] = "All";
+$lang["filter"] = "Filter";
+$lang["advanced_filter"] = "Advanced Filter";
+$lang["recently_listed_properties"] = "Recently Listed Properties";
+
+//about
+$lang["more_about_us"] = "More About Us";
+$lang["about_module_head"] = "Plenty of reasons to choose us";
+$lang["about_module_subhead"] = "Our agency has many specialized areas, but our CUSTOMERS are our real specialty.";
+
+$lang["about1_head"] = "Excellent Reputation";
+$lang["about1_subhead"] = "Our comprehensive database of listings and market info give the most accurate view of the market and your home value.";
+$lang["about2_head"] = "Best Local Agents";
+$lang["about2_subhead"] = "You are just minutes from joining with the best agents who are fired up about helping you Buy or sell.";
+$lang["about3_head"] = "Peace Of Mind";
+$lang["about3_subhead"] = "Rest guaranteed that your agent and their expert team are handling every detail of your transaction from start to end.";
+$lang["about4_head"] = "Tons Of Options";
+$lang["about4_subhead"] = "Discover a place you’ll love to live in. Choose from our vast inventory and choose your desired house.";
 
 
+//footer
+$lang["footer_about"] = "We helped thousands of clients to find the right property for their needs.";
+$lang["useful_links"] = "Useful Links";
+$lang["subscribe_with_us"] = "Subscribe With Us";
+$lang["newsletter_text"] = "Sign up to our newsletter to get the latest news and offers.";
+$lang["newsletter_button"] = "Subscribe Now";
