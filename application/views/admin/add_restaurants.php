@@ -190,7 +190,7 @@ $profile = $this->admin_model->get_admin($id);
 									</div>
 									<div class="form-group">
 										<label>Price</label>
-										<input type="text" id="discount" name="discount" class="form-control" id="exampleInputEmail1" placeholder="Enter discount" required>
+										<input type="text"  name="discount" class="form-control" id="exampleInputEmail1" placeholder="Enter discount" required>
 									</div>
 									<div class="form-group">
 										<label>Space</label>

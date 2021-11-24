@@ -1,7 +1,7 @@
 <?php
 // $id = $this->uri->segment(3);
 // $id = $this->session->userdata('aid');
-  $contacts = $this->admin_model->get_all_requestReal Estates();
+  $contacts = $this->admin_model->get_all_requeststore();
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -39,8 +39,8 @@
                        <th>Sr no</th>
                        <th> Name</th>
                        <th> Phone</th>
-                       <th> Category name</th>
-                       <th> Brand name</th>
+                       <th> Real Estates name</th>
+                       <th> email</th>
                        <th>message</th>
              
                      </tr>
@@ -55,7 +55,7 @@
                        <td><?php echo $row->name; ?></td>
                        <td><?php echo $row->phone; ?></td>
                        <td><?php echo $row->rest_name; ?></td>
-                       <td><?php echo $row->brand; ?></td>
+                       <td><?php echo $row->email; ?></td>
                        <td><?php echo $row->description; ?></td>
                      </tr>                  
                      <?php } ?>    
