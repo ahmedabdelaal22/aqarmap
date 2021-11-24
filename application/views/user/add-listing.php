@@ -169,10 +169,11 @@ Submit Property -->
                       </select>
                     </div>
                     <div class="radio mb-3 col-md-6">
-											<label>
+                      <label class="form-label">Choose properties within a compound </label>
+											<div>
 												<input type="checkbox" id="optionsrealcom" name="real_compound" value="1">
-											</label>
-											عقارات داخل كمبوند 
+                        properties within a compound
+											</div>
 										</div>
                   </div>
 
@@ -180,23 +181,26 @@ Submit Property -->
            
               </div>
               <div class="tab-pane fade" id="tab-02" role="tabpanel" aria-labelledby="tab-02-tab">
-                     <div class="mb-3 col-md-12">
+              <div class="mb-3 col-md-12">
                       <label class="form-label">Embed Video on Yotube </label>
                       <input type="text"  name="video" value="<?=  set_value('video')?>"  focusable="false"  class="form-control" placeholder="Enter Video">
                       <?php echo form_error('video'); ?>
                     </div>
-              
+              <div class="mb-3 col-md-12">
                 <div class="input-group file-upload">
                   <input type="file" name="logo" class="form-control" id="customFile">
                   <label class="input-group-text" for="customFile">Real Estates Logo</label>
                   <?php echo form_error('logo'); ?>
                   <br>
                 </div>
+              </div>
+              <div class="mb-3 col-md-12">
                 <div class="input-group file-upload">
                   <input type="file"  name="res_image[]" focusable="false" class="form-control"  multiple>
                   <label class="input-group-text" for="customFile">Real Estates Images</label>
                   <?php echo form_error('res_image'); ?>
                 </div>
+              </div>
               </div>
               <div class="tab-pane fade" id="tab-03" role="tabpanel" aria-labelledby="tab-03-tab">
                   <div class="row mt-4">
@@ -251,7 +255,9 @@ Submit Property -->
                       <?=  set_value('transportation_a')?>
                       </textarea>
                     </div>
-                   
+                             <div class="col-md-12">
+                      <button class="btn btn-primary" type="submit">Save</button>
+          </div>
                   </div>
               
               </div>
@@ -259,9 +265,7 @@ Submit Property -->
      
             
           </div>
-          <div class="col-md-12">
-                      <button class="btn btn-primary" type="submit">Save</button>
-                    </div>
+
         </div>
         </form>
       </div>
