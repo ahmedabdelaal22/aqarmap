@@ -248,9 +248,9 @@ class Admin_model extends CI_model
 	}
 
 	public function get_all_requeststore(){
-		$this->db->select('R.*,p.c_name as rest_name');
+		$this->db->select('R.*,p.res_name as rest_name');
 		$this->db->from('subscribe_resturant as R');
-		$this->db->join('categories as p', 'p.id = R.category_id', 'left');
+		$this->db->join('restaurants as p', 'p.res_id = R.store_id', 'left');
 		$query = $this->db->get();
 		return $query->result();	
 	}

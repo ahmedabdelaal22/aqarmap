@@ -156,7 +156,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/request_Real Estates'); ?>">
+            <a class="nav-link" href="<?php echo base_url('admin/request_store'); ?>">
               <i class="nav-icon fa fa-heart"></i>
               <p>
               Request Real Estates

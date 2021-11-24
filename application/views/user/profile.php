@@ -42,7 +42,12 @@ My profile -->
         </div>
       </div>
       <div class="tab-content" id="pills-tabContent">
-
+        <?php if($this->session->flashdata('add_success')){?>
+      <div class="alert alert-primary" role="alert">
+      <?=$this->session->flashdata('add_success');?>
+        </div>
+        <?php }?>
+           
           <div class="tab-pane fade show active " id="edit-profile" role="tabpanel" aria-labelledby="overview-tab">
             <div class="row">
 

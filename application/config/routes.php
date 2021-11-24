@@ -116,6 +116,9 @@ $route['admin/edit-restaurants/(:any)'] = 'AdminController/edit_restaurants/$1';
 $route['admin/update-restaurants'] = 'AdminController/update_restaurants';
 $route['admin/trash-restaurants'] = 'AdminController/trash_restaurants';
 
+
+
+
 $route['admin/approved-restaurants/(:any)'] = 'AdminController/approved_restaurants/$1';
 $route['admin/note-approved-restaurants/(:any)'] = 'AdminController/note_approved_restaurants/$1';
 
@@ -216,6 +219,9 @@ $route['categories/(:any)'] = 'CategoryController/show/$1';
 
 $route['agents'] = 'AgentsController/index';
 $route['add-listing'] = 'AddListingController/add_listing';
+$route['user/add-realestates'] = 'AddListingController/add_realestates';
+
+
 
 $route['agents/(:any)'] = 'AgentsController/index';
 $route['agent/(:any)'] = 'AgentsController/show/$1';
