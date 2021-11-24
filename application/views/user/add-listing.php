@@ -77,9 +77,16 @@ Submit Property -->
                     <div class="mb-3 col-md-6 select-border">
                       <label class="form-label">Categories</label>
                       <select class="form-control basic-select" name="cat_id" >
-                      <?php $category = $this->admin_model->get_all_cat_with_child(); ?>
+                      <?php $category = $this->admin_model->get_category();?>
                       <?php foreach ($category as $listing) : ?>
-												<?php getallsub($listing) ?>
+                        <option value="<?php echo $listing['id']; ?>" >
+                   
+                   <?php if($this->session->userdata('site_lang') == 'english'){?>
+                     <?php echo $listing['c_name']; ?>       
+                 <?php }else{?>
+                   <?php echo $listing['c_name_a']; ?>      
+                 <?php }?>
+                 </option>
 											<?php endforeach; ?>
                       </select>
                     </div>
@@ -88,7 +95,14 @@ Submit Property -->
                       <select class="form-control basic-select" name="region_id"  >
                       <?php $regions = $this->admin_model->get_regions(); ?>
 											<?php foreach ($regions as $listing) : ?>
-												<option value="<?php echo $listing['id']; ?>" ><?php echo $listing['name_ar']; ?></option>
+												<option value="<?php echo $listing['id']; ?>" >
+                        <?php if($this->session->userdata('site_lang') == 'english'){?>
+                        <?php echo $listing['name_en']; ?>
+                        <?php }else{?>
+                          <?php echo $listing['name_ar']; ?>
+                          <?php }?>
+                      
+                      </option>
 											<?php endforeach; ?>
                       </select>
                     </div>
