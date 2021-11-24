@@ -190,21 +190,34 @@ if (!function_exists('getallsub'))
 {
 function getallsub($listing,$name='')
 {
+  $CI =&get_instance();
    
      $html='';
     if(count($listing->shildren)){
-        $name.='>'.$listing->c_name;
+      if($CI->session->userdata('site_lang') == 'english'){
+        $name.=''.$listing->c_name;
+      }else{
+        $name.=''.$listing->c_name_a;
+      }
       //  $html.= " <option value=".$listing->id.">". $listing->c_name."</option>";
       foreach($listing->shildren as $row){
        
         if(count($row->shildren)){
-            $name.='>'.$listing->c_name;
+          if($CI->session->userdata('site_lang') == 'english'){
+            $name.=''.$listing->c_name;
+          }else{
+            $name.=''.$listing->c_name_a;
+          }
            // $html.= " <option value=".$row->id.">". $name."</option>";
            $html.= getallsub($row, $name);
           // die($html);
         }else{
             if(@$row->id){
-                $name.='>'.$row->c_name;
+              if($CI->session->userdata('site_lang') == 'english'){
+                $name.=''.$listing->c_name;
+              }else{
+                $name.=''.$listing->c_name_a;
+              }
             $html.= " <option value=".$row->id.">". $name."</option>";
             $name='';
             }
@@ -212,7 +225,12 @@ function getallsub($listing,$name='')
        }
       } else {
           if(@$listing->id){
-            $name.='>'.$listing->c_name;
+
+            if($CI->session->userdata('site_lang') == 'english'){
+              $name.=''.$listing->c_name;
+            }else{
+              $name.=''.$listing->c_name_a;
+            }
             $html.= " <option value=".$listing->id.">". $name."</option>";
             $name='';
           }

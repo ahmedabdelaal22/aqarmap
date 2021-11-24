@@ -3,7 +3,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-
+$lang['fax'] = 'Fax';
+$lang['linkedin'] = 'linkedin';
 $lang['for_sale'] = 'للبيع';
 $lang['for_rent'] = 'للإيجار';
 $lang['sale_or_rent'] = 'بيع أو إيجار';

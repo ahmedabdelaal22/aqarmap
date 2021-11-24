@@ -132,9 +132,11 @@ header -->
 
 	</ul>    
     </div>
+	<?php if($this->session->userdata('UserId')){?>
     <div class="add-listing d-none d-sm-block">
       <a class="btn btn-primary btn-md" href="<?=base_url('add-listing')?>"> <i class="fa fa-plus-circle"></i><?php echo $this->lang->line('add_listing') ?> </a>
     </div>
+	<?php }?>
     </div>
   </nav>
 </header>
