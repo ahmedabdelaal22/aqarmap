@@ -75,10 +75,10 @@ $profile = $this->admin_model->get_admin($id);
 
 									<div class="form-group">
 										<label>
-									        	القسم
+										النوع
                                          </label>
 										<select class="form-control" name="type" required>
-											<option value="">القسم</option>
+											<option value="">النوع</option>
 										
 											<?php foreach (types() as $key => $value) : ?>
 												<option value="<?php echo $key; ?>" ><?php echo $value ?></option>
@@ -88,19 +88,16 @@ $profile = $this->admin_model->get_admin($id);
 
 
 									<div class="form-group">
-										<label>النوع</label>
+										<label>القسم</label>
 										<select class="form-control" name="cat_id" required>
-											<?php $category = $this->admin_model->	get_all_cat_with_child(); 
-											
-											
-											?>
+											<?php $category = $this->admin_model->get_all_cat_with_child(); ?>
 
 
-											<option value=""> النوع</option>
+											<option value=""> القسم</option>
 										
 											<?php foreach ($category as $listing) : ?>
 												<?php getallsub($listing) ?>
-										
+
 											<?php endforeach; ?>
 										</select>
 									</div>

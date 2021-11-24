@@ -143,9 +143,11 @@ if (!function_exists('advertiser_type'))
 
 function advertiser_type(){
   $CI =&get_instance();
-  $type[1]=$CI->lang->line('installment');'Mediator';//'وسيط';
-  $type[2]=$CI->lang->line('installment');'The Owner Of Real Estate';//مالك العقار
-   return $type;
+  $vendore_type[0]=$CI->lang->line('private_owner');
+  $vendore_type[1]=$CI->lang->line('freelancer');
+  $vendore_type[2]=$CI->lang->line('compound_developer');
+  $vendore_type[3]=$CI->lang->line('exclusive');
+   return $vendore_type;
   }
 }
 if (!function_exists('advertiser_type_value'))
@@ -153,9 +155,11 @@ if (!function_exists('advertiser_type_value'))
 
 function advertiser_type_value($value){
   $CI =&get_instance();
-  $type[1]=$CI->lang->line('moderate');
-  $type[2]=$CI->lang->line('property_owner');
-   return $type[$value];
+  $vendore_type[0]=$CI->lang->line('private_owner');
+  $vendore_type[1]=$CI->lang->line('freelancer');
+  $vendore_type[2]=$CI->lang->line('compound_developer');
+  $vendore_type[3]=$CI->lang->line('exclusive');
+   return $vendore_type[$value];
   }
 }
 if (!function_exists('payment_method'))
@@ -182,4 +186,39 @@ function payment_method_value($value){
   }
 }
 
+if (!function_exists('getallsub'))
+{
+function getallsub($listing,$name='')
+{
+   
+     $html='';
+    if(count($listing->shildren)){
+        $name.='>'.$listing->c_name;
+      //  $html.= " <option value=".$listing->id.">". $listing->c_name."</option>";
+      foreach($listing->shildren as $row){
+       
+        if(count($row->shildren)){
+            $name.='>'.$listing->c_name;
+           // $html.= " <option value=".$row->id.">". $name."</option>";
+           $html.= getallsub($row, $name);
+          // die($html);
+        }else{
+            if(@$row->id){
+                $name.='>'.$row->c_name;
+            $html.= " <option value=".$row->id.">". $name."</option>";
+            $name='';
+            }
+        }
+       }
+      } else {
+          if(@$listing->id){
+            $name.='>'.$listing->c_name;
+            $html.= " <option value=".$listing->id.">". $name."</option>";
+            $name='';
+          }
+      
 
+       }
+       echo  $html;
+ }
+}

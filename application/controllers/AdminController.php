@@ -12,6 +12,9 @@ class AdminController extends CI_Controller
 		$this->load->library('form_validation');
 		
 		$this->load->model('firebase_model');
+		$ci =& get_instance();
+		$ci->load->helper('language');
+		$ci->lang->load('content','english');
     }
 
 
