@@ -130,13 +130,17 @@ header -->
 			<a class="nav-link" href="<?=base_url('/contact')?>"><?php echo $this->lang->line('contact_us') ?></a>
 		</li>
 
-	</ul>    
+	</ul> 
     </div>
 	<?php if($this->session->userdata('UserId')){?>
     <div class="add-listing d-none d-sm-block">
       <a class="btn btn-primary btn-md" href="<?=base_url('add-listing')?>"> <i class="fa fa-plus-circle"></i><?php echo $this->lang->line('add_listing') ?> </a>
     </div>
-	<?php }?>
+	<?php }else{?>
+		<div class="add-listing d-none d-sm-block">
+      <button class="btn btn-primary btn-md" id="addreview"> <i class="fa fa-plus-circle"></i><?php echo $this->lang->line('add_listing') ?> </button>
+    </div>
+		<?php }?>
     </div>
   </nav>
 </header>

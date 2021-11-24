@@ -347,7 +347,12 @@ var like = $("#"+res_id+"like").val();
       }
      }
 
- 
+     $("#addreview").click(function (e) {
+   e.preventDefault();
+
+        alert("please login");
+      
+});
 </script>
 
 </body>
