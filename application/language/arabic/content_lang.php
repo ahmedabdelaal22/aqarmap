@@ -215,3 +215,45 @@ $lang["useful_links"] = "روابط مهمة";
 $lang["subscribe_with_us"] = "اشترك معنا";
 $lang["newsletter_text"] = "اشترك في النشرة الإخبارية لدينا للحصول على آخر الأخبار والعروض.";
 $lang["newsletter_button"] = "اشترك الان";
+
+//add listing
+$lang["next"] = "التالي";
+$lang["prev"] = "السابق";
+$lang["save"] = "حفظ";
+
+$lang["basic_information"] = "معلومات اساسية";
+$lang["gallery"] = "جاليري";
+$lang["detailed_information"] = "معلومات اضافية";
+
+$lang["property_name_en"] = "اسم العقار - انجليزي";
+$lang["property_name_ar"] = "اسم العقار - عربي";
+
+$lang["description_en"] = "الوصف - انجليزي";
+$lang["description_ar"] = "الوصف - عربي";
+
+$lang["address_en"] = "العنوان - انجليزي";
+$lang["address_ar"] = "العنوان - عربي";
+
+$lang["regions"] = "المناطق";
+
+$lang["overlooking_en"] = "الاطلالة - انجليزي";
+$lang["overlooking_ar"] = "الاطلالة - عربي";
+
+$lang["payment_method"] = "طريقة الدفع";
+
+$lang["properties_within_compound"] = "اختر عقارات داخل كمبوند";
+$lang["embed_video"] = "تضمين الفيديو على يوتيوب";
+$lang["embed_video_link"] = "رابط فيديو يوتيوب";
+
+$lang["property_logo"] = "لوجو العقار";
+$lang["property_images"] = "صور العقار";
+
+$lang["latitude"] = "خط العرض";
+$lang["longitude"] = "خط الطول";
+
+$lang["education_en"] = "التعليم - انجليزي";
+$lang["education_ar"] = "التعليم - عربي";
+$lang["health_care_en"] = "الخدمات الطبية - انجليزي";
+$lang["health_care_ar"] = "الخدمات الطبية - عربي";
+$lang["transportation_en"] = "المواصلات - انجليزي";
+$lang["transportation_ar"] = "المواصلات - عربي";
