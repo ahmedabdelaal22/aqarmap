@@ -9,7 +9,7 @@ class UserController extends CI_Controller
      	$this->load->library('session');
 		 $siteLang = $this->session->userdata('site_lang');
 		 if ($siteLang =='arabic') {
-			$this->session->set_userdata('locale','ar');;
+			$this->session->set_userdata('locale','ar');
 		 } else {
 			$this->session->set_userdata('locale','en');
 		 }

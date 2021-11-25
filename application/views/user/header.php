@@ -8,6 +8,8 @@
 
 <?php if($this->session->userdata('site_lang')== 'english'|| $this->session->userdata('site_lang') == ''){
 	$direction = 'ltr';
+	$this->session->set_userdata('site_lang','english');
+	
 }else{
 	$direction = 'rtl';
 }
