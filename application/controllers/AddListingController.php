@@ -34,7 +34,10 @@ class AddListingController extends CI_Controller
 
 	
     public function add_listing(){	
-
+		if($this->session->userdata('UserId')=="")
+	  {
+		  redirect(base_url('login'));
+	  }	
 
 		$data['page'] = 'add-listing';
 	
