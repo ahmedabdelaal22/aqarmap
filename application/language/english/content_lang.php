@@ -177,3 +177,48 @@ $lang["useful_links"] = "Useful Links";
 $lang["subscribe_with_us"] = "Subscribe With Us";
 $lang["newsletter_text"] = "Sign up to our newsletter to get the latest news and offers.";
 $lang["newsletter_button"] = "Subscribe Now";
+
+//add listing
+$lang["next"] = "Next";
+$lang["prev"] = "Previous";
+$lang["save"] = "Save";
+
+$lang["basic_information"] = "Basic Information";
+$lang["gallery"] = "Gallery";
+$lang["detailed_information"] = "Detailed Information";
+
+$lang["property_name_en"] = "Property Name - En";
+$lang["property_name_ar"] = "Property Name - Ar";
+
+$lang["description_en"] = "Description - En";
+$lang["description_ar"] = "Description - Ar";
+
+
+$lang["address_en"] = "Address - En";
+$lang["address_ar"] = "Address - Ar";
+
+$lang["regions"] = "Regions";
+
+$lang["overlooking_en"] = "Overlooking - En";
+$lang["overlooking_ar"] = "Overlooking - Ar";
+
+$lang["payment_method"] = "Payment Method";
+
+
+$lang["properties_within_compound"] = "Choose properties within a compound";
+
+$lang["embed_video"] = "Embed Video on Yotube";
+$lang["embed_video_link"] = "Youtube Video Link";
+
+$lang["property_logo"] = "Property Logo";
+$lang["property_images"] = "Property Images";
+
+$lang["latitude"] = "Latitude";
+$lang["longitude"] = "Longitude";
+
+$lang["education_en"] = "Education - En";
+$lang["education_ar"] = "Education - Ar";
+$lang["health_care_en"] = "Health Medical - En";
+$lang["health_care_ar"] = "Health Medical - Ar";
+$lang["transportation_en"] = "Transportation - En";
+$lang["transportation_ar"] = "Transportation - Ar";
