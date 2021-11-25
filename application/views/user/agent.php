@@ -1,5 +1,18 @@
 <!--=================================
 Listing – grid view -->
+<div class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="<?=base_url('/')?>"> <i class="fas fa-home"></i> </a></li>
+          <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="<?=base_url('/agents')?>">agents</a></li>
+          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> <?=$agent->uname?></span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
 <section class="space-ptb">
   <div class="container">
     <div class="row">
