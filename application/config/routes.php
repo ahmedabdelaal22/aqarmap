@@ -219,8 +219,11 @@ $route['categories/(:any)'] = 'CategoryController/show/$1';
 
 $route['agents'] = 'AgentsController/index';
 $route['add-listing'] = 'AddListingController/add_listing';
+$route['edit-listing/(:any)'] = 'AddListingController/edit_listing/$1';
+
 $route['user/add-realestates'] = 'AddListingController/add_realestates';
 
+$route['user/update-realestates'] = 'AddListingController/update_restaurants';
 
 
 $route['agents/(:any)'] = 'AgentsController/index';
