@@ -18,7 +18,7 @@ Listing – list view -->
     <div class="row">
       <div class="col-md-6">
         <div class="section-title mb-3 mb-lg-4">
-          <h2><span class="text-primary">156</span> Results</h2>
+          <h2><span class="text-primary">156</span> <?php echo $this->lang->line('results') ?></h2>
         </div>
       </div>
       <div class="col-md-6">
@@ -49,7 +49,7 @@ Listing – list view -->
                   <?php } ?>
                 </div>
                 <div class="agent-listing text-center mt-auto">
-                  <a href="#"><strong class="text-primary me-2 d-inline-block"><?=countby_agent($row->id)?></strong>Listed Properties </a>
+                  <a href="#"><strong class="text-primary me-2 d-inline-block"><?=countby_agent($row->id)?></strong><?php echo $this->lang->line('listed_properties') ?> </a>
                 </div>
               </div>
             </div>
@@ -70,18 +70,18 @@ Listing – list view -->
                   <?php $this->load->helper('text');?>
                     <p class="mt-3 mb-3"><?= word_limiter($row->desc,10);?></p>
                     <ul class="list-unstyled mb-0">
-                      <li><strong>Office: </strong><?=$row->office_phone?></li>
-                      <li><strong>Fax: </strong><?=$row->fax?></li>
-                      <li><strong>Email: </strong><?=$row->email?></li>
+                      <li><strong><?php echo $this->lang->line('office_phone') ?>: </strong><?=$row->office_phone?></li>
+                      <li><strong><?php echo $this->lang->line('fax') ?>: </strong><?=$row->fax?></li>
+                      <li><strong><?php echo $this->lang->line('email') ?>: </strong><?=$row->email?></li>
                     </ul>
                     <ul class="list-unstyled mb-0">
-                      <li><strong>Mobile: </strong><?=$row->phone?></li>
-                      <li><strong>WhatsApp: </strong><?=$row->whatsapp?></li>
+                      <li><strong><?php echo $this->lang->line('phone_label') ?>: </strong><?=$row->phone?></li>
+                      <li><strong><?php echo $this->lang->line('whatsapp') ?>: </strong><?=$row->whatsapp?></li>
                     </ul>
                   </div>
                 </div>
                 <div class="agent-button">
-                  <a class="btn btn-light btn-lg d-grid" href="<?php echo base_url('agent/' .$row->id); ?>">View Profile</a>
+                  <a class="btn btn-light btn-lg d-grid" href="<?php echo base_url('agent/' .$row->id); ?>"><?php echo $this->lang->line('view_profile') ?></a>
                 </div>
               </div>
             </div>

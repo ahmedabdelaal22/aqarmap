@@ -257,3 +257,30 @@ $lang["health_care_en"] = "الخدمات الطبية - انجليزي";
 $lang["health_care_ar"] = "الخدمات الطبية - عربي";
 $lang["transportation_en"] = "المواصلات - انجليزي";
 $lang["transportation_ar"] = "المواصلات - عربي";
+
+$lang["details_btn"] = "تفاصيل";
+$lang["edit_btn"] = "تعديل";
+$lang["delete_btn"] = "حذف";
+
+$lang["edit_profile"] = "تعديل البروفايل";
+$lang["my_properties"] = "عقاراتي";
+$lang["saved_homes"] = "العقارات المفضلة";
+$lang["view_profile"] = "مشاهدة البروفايل";
+
+
+$lang["user_name"] = "اسم المستخدم";
+$lang["office_phone"] = "هاتف المكتب";
+$lang["fax"] = "فاكس";
+$lang["website"] = "ويبسايت";
+$lang["company"] = "الشركة";
+
+$lang["utype"] = "نوع المستخدم ";
+$lang["u_ur_id"] = "تحميل صورة البطاقة";
+$lang["u_ur_id_desc"] = "لضمان سلامة الوكلاء ، نحتاج منك تقديم هويتك قبل أن نأخذك في جولة على العقارات.";
+$lang["choose_file"] = "اختار ملف";
+$lang["about_me"] = "معلومات شخصية";
+$lang["password"] = "الباسورد";
+$lang["save_changes"] = "حفظ التغيرات";
+
+$lang["whatsapp"] = "وتساب";
+$lang["listed_properties"] = "عقارات مضافة";
