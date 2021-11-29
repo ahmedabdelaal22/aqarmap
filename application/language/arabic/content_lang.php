@@ -310,3 +310,12 @@ $lang["delete_confirmation"] = "تأكيد الحذف";
 $lang["delete_confirmation_text"] = "هل أنت متأكد أنك تريد حذف؟";
 $lang["close"] = "اغلاق";
 $lang["yes_delete"] = "حذف";
+
+$lang["dont_have_account"] = "ليس لديك حساب؟ سجل الان";
+
+$lang["create_account"] = "انشاء حساب";
+
+$lang["sign_up"] = "تسجيل حساب";
+$lang["already_registered"] = "مستخدم مسجل بالفعل؟ اضغط هنا لتسجيل الدخول";
+
+$lang["logout"] = "خروج";

@@ -275,3 +275,12 @@ $lang["delete_confirmation"] = "Delete Confirmation";
 $lang["delete_confirmation_text"] = "Are you sure you want to delete?";
 $lang["close"] = "Close";
 $lang["yes_delete"] = "Delete";
+
+$lang["dont_have_account"] = "Don't have an account yet? Register Now";
+
+$lang["create_account"] = "Create An Account";
+
+$lang["sign_up"] = "Sign Up";
+$lang["already_registered"] = "Already Registered User? Click here to login";
+
+$lang["logout"] = "Logout";
