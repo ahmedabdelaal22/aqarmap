@@ -100,6 +100,7 @@ $lang['select_floor'] = 'Select Floor';
 $lang['get_app'] = 'Get App: ';
 $lang['choose_location'] = 'Choose Location';
 $lang['add_listing'] = 'Add Listing';
+$lang['edit_listing'] = 'Edit Listing';
 $lang['hello_sign'] = 'Sign In';
 
 // categories module

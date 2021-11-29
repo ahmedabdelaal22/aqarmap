@@ -5,7 +5,7 @@ Submit Property -->
     <div class="row">
       <div class="col-md-12">
         <div class="section-title d-flex align-items-center">
-          <h2><?php echo $this->lang->line('add_listing') ?></h2>
+          <h2><?php echo $this->lang->line('edit_listing') ?></h2>
         </div>
         <form method="POST" enctype="multipart/form-data" action="<?php echo base_url('user/update-realestates'); ?>">
 

@@ -137,6 +137,7 @@ $lang['select_floor'] = 'اختار الطابق';
 $lang['get_app'] = 'التطبيق: ';
 $lang['choose_location'] = 'اختار الموقع';
 $lang['add_listing'] = 'اضف عقار';
+$lang['edit_listing'] = 'تعديل عقار';
 $lang['hello_sign'] = 'تسجيل الدخول';
 
 // categories module

@@ -6,8 +6,8 @@ about -->
       <div class="col-12">
         <ol class="breadcrumb mb-0">
           <li class="breadcrumb-item"><a href="<?=base_url('/')?>"> <i class="fas fa-home"></i> </a></li>
-          <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="<?=base_url('/')?>">Home</a></li>
-          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> about Us</span></li>
+          <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="<?=base_url('/')?>"><?php echo $this->lang->line('home') ?></a></li>
+          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> <?php echo $this->lang->line('about_us') ?></span></li>
         </ol>
       </div>
     </div>
