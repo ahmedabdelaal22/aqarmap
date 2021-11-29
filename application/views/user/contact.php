@@ -18,7 +18,7 @@ Contact -->
     <div class="row">
       <div class="col-12">
         <div class="section-title">
-          <h2>Contact Us</h2>
+          <h2><?php echo $this->lang->line('contact_us') ?></h2>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@ Contact -->
               <i class="flaticon-map text-primary font-xlll"></i>
             </div>
             <div class="ms-3">
-              <h6>Address</h6>
+              <h6><?php echo $this->lang->line('address') ?></h6>
               <p><?=appSettings('address_en')?></p>
             </div>
           </div>
@@ -39,7 +39,7 @@ Contact -->
               <i class="flaticon-email text-primary font-xlll"></i>
             </div>
             <div class="ms-3">
-              <h6>Email</h6>
+              <h6><?php echo $this->lang->line('email') ?></h6>
               <p><?=appSettings('email')?></p>
             </div>
           </div>
@@ -48,7 +48,7 @@ Contact -->
               <i class="flaticon-call text-primary font-xlll"></i>
             </div>
             <div class="ms-3">
-              <h6>Phone Number</h6>
+              <h6><?php echo $this->lang->line('phone_label') ?></h6>
               <p><?=appSettings('whatsapp')?></p>
             </div>
           </div>
@@ -57,13 +57,13 @@ Contact -->
               <i class="flaticon-fax text-primary font-xlll"></i>
             </div>
             <div class="ms-3">
-              <h6>Fax</h6>
+              <h6><?php echo $this->lang->line('fax') ?></h6>
               <p><?=appSettings('fax')?></p>
             </div>
           </div>
           <div class="social-icon-02">
             <div class="d-flex align-items-center">
-              <h6 class="me-3">Social:</h6>
+              <h6 class="me-3"><?php echo $this->lang->line('social') ?>:</h6>
               <ul class="list-unstyled mb-0 list-inline">
                 <li><a href="<?=appSettings('facebook')?>"> <i class="fab fa-facebook-f"></i> </a></li>
                 <li><a href="<?=appSettings('twitter')?>"> <i class="fab fa-twitter"></i> </a></li>
@@ -77,34 +77,34 @@ Contact -->
       </div>
       <div class="col-lg-7 mt-4 mt-lg-0">
         <div class="contact-form">
-          <h4 class="mb-4">Need assistance? Please complete the contact form</h4>
+          <h4 class="mb-4"><?php echo $this->lang->line('need_assistance') ?></h4>
           <form id="cform1">
             <div class="row">
               <div class="mb-3 col-md-6">
-                <input type="text" class="form-control" name="name" id="nameid" placeholder="Your name">
+                <input type="text" class="form-control" name="name" id="nameid" placeholder="<?php echo $this->lang->line('full_name') ?>">
               </div>
               <div class="mb-3 col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your email">
+                <input type="email" class="form-control" name="email" id="email" placeholder="<?php echo $this->lang->line('email') ?>">
               </div>
               <div class="mb-3 col-md-6">
-                <input type="text" class="form-control" name="phone" id="phone" placeholder="Your phone">
+                <input type="text" class="form-control" name="phone" id="phone" placeholder="<?php echo $this->lang->line('phone_label') ?>">
               </div>
               <div class="mb-3 col-md-6">
-                <input type="text" class="form-control"  name="title" id="title"  placeholder="Subject">
+                <input type="text" class="form-control"  name="title" id="title"  placeholder="<?php echo $this->lang->line('subject') ?>">
               </div>
               <div class="mb-3 col-md-12">
-                <textarea class="form-control" rows="4" name="message" id="message" placeholder="Your message"></textarea>
+                <textarea class="form-control" rows="4" name="message" id="message" placeholder="<?php echo $this->lang->line('message_label') ?>"></textarea>
               </div>
               <div class="mb-3 col-md-12">
                 <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label pe-5" for="flexCheckDefault">
-                 I consent to having this website store my submitted information so they can respond to my inquiry.
+                 <?php echo $this->lang->line('contact_accept') ?>
                 </label>
               </div>
               </div>
               <div class="col-md-12">
-              <button type="button" class="btn btn-primary" id="contact_form" >Send message</button>
+              <button type="button" class="btn btn-primary" id="contact_form" ><?php echo $this->lang->line('send_message') ?></button>
               </div>
             </div>
           </form>

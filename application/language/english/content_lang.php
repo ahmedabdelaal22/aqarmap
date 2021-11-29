@@ -250,3 +250,23 @@ $lang["save_changes"] = "Save Changes";
 
 $lang["whatsapp"] = "WhatsApp";
 $lang["listed_properties"] = "Listed Properties";
+
+$lang["contact_details"] = "Contact Details";
+$lang["send_message"] = "Send Message";
+
+$lang["overview"] = "Overview";
+$lang["listing"] = "Listing";
+
+$lang["locations"] = "Locations";
+$lang["rentals"] = "Rentals";
+$lang["sales"] = "Sales";
+
+$lang["need_assistance"] = "Need Assistance? Please Complete The Contact Form";
+
+$lang["contact_accept"] = "I consent to having this website store my submitted information so they can respond to my inquiry.";
+
+
+$lang["social"] = "Social";
+
+$lang["about_page_title"] = "We Are Changing The Real Estate Industry With Progression And Passion.";
+$lang["about_page_subtitle"] = "We attempt to be the leading self-governing estate agency in the locations we cover, offering an entirely personal and dedicated service.";

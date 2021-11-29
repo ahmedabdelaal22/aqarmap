@@ -29,7 +29,7 @@ Listing – grid view -->
                   <?php } ?>
                 </div>
                 <div class="agent-listing text-center mt-auto">
-                  <a href="#"><strong class="text-primary me-2 d-inline-block"><?=countby_agent($agent->id)?></strong>Listed Properties </a>
+                  <a href="#"><strong class="text-primary me-2 d-inline-block"><?=countby_agent($agent->id)?></strong><?php echo $this->lang->line('listed_properties') ?> </a>
                 </div>
               </div>
             </div>
@@ -66,45 +66,45 @@ Listing – grid view -->
       <div class="col-md-4 mt-sm-5">
         <div class="p-4 bg-light">
           <div class="section-title mb-4">
-            <h4>Contact Detail</h4>
+            <h4><?php echo $this->lang->line('contact_details') ?></h4>
           </div>
           <ul class="list-unstyled mb-0">
-            <li class="mb-2"><strong class="text-dark d-inline-block me-2">Email:</strong><?=$agent->email?></li>
+            <li class="mb-2"><strong class="text-dark d-inline-block me-2"><?php echo $this->lang->line('email') ?>:</strong><?=$agent->email?></li>
             <?php if(!empty($agent->website)){?>
-            <li class="mb-2"><strong class="text-dark d-inline-block me-2">Website:</strong><?=$agent->website?></li>
+            <li class="mb-2"><strong class="text-dark d-inline-block me-2"><?php echo $this->lang->line('website') ?>:</strong><?=$agent->website?></li>
             <?php }?>
             <?php if(!empty($agent->phone)){?>
-            <li class="mb-2"><strong class="text-dark d-inline-block me-2">Phone:</strong><?=$agent->phone?></li>
+            <li class="mb-2"><strong class="text-dark d-inline-block me-2"><?php echo $this->lang->line('phone') ?>:</strong><?=$agent->phone?></li>
             <?php }?>
             <?php if(!empty($agent->company)){?>
-            <li class="mb-2"><strong class="text-dark d-inline-block me-2">Company:</strong><?=$agent->company?></li>
+            <li class="mb-2"><strong class="text-dark d-inline-block me-2"><?php echo $this->lang->line('company') ?>:</strong><?=$agent->company?></li>
             <?php }?>
             <?php if(!empty($agent->office_phone)){?>
-            <li><strong class="text-dark d-inline-block me-2">Office Number:</strong><?=$agent->office_phone?></li>
+            <li><strong class="text-dark d-inline-block me-2"><?php echo $this->lang->line('office_phone') ?>:</strong><?=$agent->office_phone?></li>
             <?php } ?>
           </ul>
         </div>
       </div>
       <div class="col-md-8 mt-5">
         <div class="section-title mb-4">
-          <h4>Contact pomegranate real estates</h4>
+          <h4><?php echo $this->lang->line('contact_us') ?> <?=$agent->uname?></h4>
         </div>
         <form>
           <div class="row">
             <div class="form-group col-md-4 mb-3">
-              <input type="text" class="form-control" id="name" placeholder="Your name">
+              <input type="text" class="form-control" id="name" placeholder="<?php echo $this->lang->line('full_name') ?>">
             </div>
             <div class="form-group col-md-4 mb-3">
-              <input type="text" class="form-control" id="phone" placeholder="Your phone">
+              <input type="text" class="form-control" id="phone" placeholder="<?php echo $this->lang->line('phone_label') ?>">
             </div>
             <div class="form-group col-md-4 mb-3">
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Your email">
+              <input type="email" class="form-control" id="inputEmail4" placeholder="<?php echo $this->lang->line('email') ?>">
             </div>
             <div class="form-group col-md-12 mb-3">
-              <textarea class="form-control" rows="4" placeholder="Your message"></textarea>
+              <textarea class="form-control" rows="4" placeholder="<?php echo $this->lang->line('message_label') ?>"></textarea>
             </div>
             <div class="col-md-12">
-              <a class="btn btn-primary" href="#">Send message</a>
+              <a class="btn btn-primary" href="#"><?php echo $this->lang->line('send_message') ?></a>
             </div>
           </div>
         </form>
@@ -123,10 +123,10 @@ review -->
       <div class="col-12">
         <ul class="nav nav-tabs mb-4" id="pills-tab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link " id="overview-tab" data-bs-toggle="pill" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
+            <a class="nav-link " id="overview-tab" data-bs-toggle="pill" href="#overview" role="tab" aria-controls="overview" aria-selected="true"><?php echo $this->lang->line('overview') ?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" id="listing-tab" data-bs-toggle="pill" href="#listing" role="tab" aria-controls="listing" aria-selected="false">Listing</a>
+            <a class="nav-link active" id="listing-tab" data-bs-toggle="pill" href="#listing" role="tab" aria-controls="listing" aria-selected="false"><?php echo $this->lang->line('listing') ?></a>
           </li>
     <?php if(!empty($agent->lat)){?>
           <li class="nav-item">
