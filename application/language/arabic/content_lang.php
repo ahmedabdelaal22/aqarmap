@@ -284,3 +284,24 @@ $lang["save_changes"] = "حفظ التغيرات";
 
 $lang["whatsapp"] = "وتساب";
 $lang["listed_properties"] = "عقارات مضافة";
+
+$lang["contact_details"] = "تفاصيل الاتصال";
+$lang["send_message"] = "ارسال الرسالة";
+
+$lang["overview"] = "نظرة عامة";
+$lang["listing"] = "قائمة العقارات";
+
+$lang["locations"] = "اماكن";
+$lang["rentals"] = "ايجارات";
+$lang["sales"] = "مبيعات";
+
+$lang["need_assistance"] = "تحتاج مساعدة؟ يرجى استكمال نموذج الاتصال";
+
+$lang['subject'] = 'الموضوع';
+
+$lang["contact_accept"] = "أوافق على تخزين هذا الموقع لمعلوماتي المقدمة حتى يتمكنوا من الرد على استفساري.";
+
+$lang["social"] = "سوشيال ";
+
+$lang["about_page_title"] = "نحن نغير صناعة العقارات بالتقدم والشغف.";
+$lang["about_page_subtitle"] = "نحاول أن نكون الوكالة العقارية الرائدة في المواقع التي نغطيها ، ونقدم خدمة شخصية ومخصصة تمامًا.";
