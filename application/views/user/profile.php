@@ -23,19 +23,19 @@ My profile -->
               <b class="text-white"><?=@$vendor->email?></b>
             </div>
             <div class="ms-auto my-4 mt-sm-0">
-              <a class="btn btn-white btn-md" href="submit-property.html"> <i class="fa fa-plus-circle"></i>Add listing </a>
+              <a class="btn btn-white btn-md" href="<?=base_url('add-listing')?>"> <i class="fa fa-plus-circle"></i><?php echo $this->lang->line('add_listing') ?> </a>
             </div>
           </div>
           <div class="profile-nav">
             <ul class="nav" id="pills-tab" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" id="edit-profile-tab" data-bs-toggle="pill" href="#edit-profile" role="tab" aria-controls="listing" aria-selected="false"><i class="far fa-user"></i> Edit Profile</a>
+                <a class="nav-link active" id="edit-profile-tab" data-bs-toggle="pill" href="#edit-profile" role="tab" aria-controls="listing" aria-selected="false"><i class="far fa-user"></i> <?php echo $this->lang->line('edit_profile') ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="my-properties-tab" data-bs-toggle="pill" href="#my-properties" role="tab" aria-controls="agents" aria-selected="false"><i class="far fa-bell"></i>My properties</a>
+                <a class="nav-link" id="my-properties-tab" data-bs-toggle="pill" href="#my-properties" role="tab" aria-controls="agents" aria-selected="false"><i class="far fa-bell"></i><?php echo $this->lang->line('my_properties') ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="saved-homes-tab" data-bs-toggle="pill" href="#saved-homes" role="tab" aria-controls="agents" aria-selected="false"><i class="fas fa-home"></i> Saved Homes</a>
+                <a class="nav-link" id="saved-homes-tab" data-bs-toggle="pill" href="#saved-homes" role="tab" aria-controls="agents" aria-selected="false"><i class="fas fa-home"></i> <?php echo $this->lang->line('saved_homes') ?></a>
               </li>
             </ul>
           </div>
@@ -53,26 +53,26 @@ My profile -->
 
               <div class="col-12">
                 <div class="section-title d-flex align-items-center">
-                  <h2>Edit profile </h2>
+                  <h2><?php echo $this->lang->line('edit_profile') ?> </h2>
                   <span class="ms-auto">Joined Mar 18, 2019</span>
                 </div>
                 <form method="POST" enctype="multipart/form-data" action="<?php echo base_url('user/update-vendor'); ?>">
                   <div class="row">
                   <input type="hidden" name="id" value="<?php echo $vendor->id; ?>">
                     <div class="form-group col-md-6 mb-3">
-                      <label class="mb-2">User name</label>
+                      <label class="mb-2"><?php echo $this->lang->line('user_name') ?></label>
                       <input type="text" class="form-control" name="uname" value="<?php echo $vendor->uname; ?>">
 
                       <?php echo form_error('uname'); ?>
                     </div>
                     <div class="form-group col-md-6 mb-3">
-                      <label class="mb-2">Email address</label>
+                      <label class="mb-2"><?php echo $this->lang->line('email_address') ?></label>
                       <input type="text" class="form-control" name="email" value="<?php echo $vendor->email; ?>">
 
                       <?php echo form_error('email'); ?>
                     </div>
                     <div class="form-group col-md-6 mb-3">
-                      <label class="mb-2">Phone number</label>
+                      <label class="mb-2"><?php echo $this->lang->line('phone_label') ?></label>
                       <input type="text" class="form-control"name="phone" value="<?php echo $vendor->phone; ?>">
                       <?php echo form_error('phone'); ?>
                     </div>
@@ -84,13 +84,13 @@ My profile -->
                     </div>
 
                     <div class="form-group col-md-6 mb-3">
-                      <label class="mb-2">Office Phone</label>
+                      <label class="mb-2"><?php echo $this->lang->line('office_phone') ?></label>
                       <input type="text" class="form-control"name="office_phone" value="<?php echo $vendor->office_phone; ?>">
                       <?php echo form_error('office_phone'); ?>
                     </div>
 
                     <div class="form-group col-md-6 mb-3">
-                      <label class="mb-2">fax</label>
+                      <label class="mb-2"><?php echo $this->lang->line('fax') ?></label>
                       <input type="text" class="form-control"name="fax" value="<?php echo $vendor->fax; ?>">
                       <?php echo form_error('fax'); ?>
                     </div>
@@ -110,28 +110,28 @@ My profile -->
                       <?php echo form_error('twitter'); ?>
                     </div>
                     <div class="form-group col-md-6 mb-3">
-                      <label class="mb-2">website</label>
+                      <label class="mb-2"><?php echo $this->lang->line('website') ?></label>
                       <input type="text" class="form-control" name="website" value="<?php echo $vendor->website; ?>">
                       <?php echo form_error('website'); ?>
                     </div>
              
                     <div class="form-group col-md-6 mb-3">
-                      <label class="mb-2">lat</label>
+                      <label class="mb-2"><?php echo $this->lang->line('latitude') ?></label>
                       <input type="text" class="form-control" name="lat" value="<?php echo $vendor->lat; ?>">
                       <?php echo form_error('lat'); ?>
                     </div>
                     <div class="form-group col-md-6 mb-3">
-                      <label class="mb-2">lon</label>
+                      <label class="mb-2"><?php echo $this->lang->line('longitude') ?></label>
                       <input type="text" class="form-control" name="lon" value="<?php echo $vendor->lon; ?>">
                       <?php echo form_error('lon'); ?>
                     </div>
                     <div class="form-group col-md-6 mb-3">
-                      <label class="mb-2">company</label>
+                      <label class="mb-2"><?php echo $this->lang->line('company') ?></label>
                       <input type="text" class="form-control" name="company" value="<?php echo $vendor->company; ?>">
                       <?php echo form_error('company'); ?>
                     </div>
                     <div class="form-group col-md-6 mb-3 select-border">
-                      <label class="mb-2">User type</label>
+                      <label class="mb-2"><?php echo $this->lang->line('utype') ?></label>
                       <select class="form-control basic-select">
                       <?php foreach (get_vendore_type() as $key => $value) : ?>
 												<option value="<?php echo $key; ?>"  <?php if ($key == $vendor->type) echo "selected='selected'"; ?>><?php echo $value ?></option>
@@ -140,16 +140,16 @@ My profile -->
                     </div>
                     <hr class="my-5" />
                 <div class="mb-5">
-                  <h6>Upload your ID</h6>
-                  <p>To ensure the safety of agents, we need you to provide your identity before we can take you on a home tour.</p>
+                  <h6><?php echo $this->lang->line('u_ur_id') ?></h6>
+                  <p><?php echo $this->lang->line('u_ur_id_desc') ?></p>
                   <div class="input-group file-upload">
                     <input type="file" class="form-control"name="profile_image" id="customFile">
-                    <label class="input-group-text" for="customFile">Choose file</label>
+                    <label class="input-group-text" for="customFile"><?php echo $this->lang->line('choose_file') ?></label>
                   </div>
                 </div>
                    
                     <div class="form-group col-md-12 mb-3">
-                      <label class="mb-2">About Me</label>
+                      <label class="mb-2"><?php echo $this->lang->line('about_me') ?></label>
                       <textarea class="form-control" name="desc" rows="4" >
                       <?php echo $vendor->desc; ?>
                       </textarea>
@@ -157,14 +157,14 @@ My profile -->
 
                     <div class="form-group col-md-6 mb-3">
                       <div class="d-flex align-items-center">
-                        <label class="mb-2">Password</label>
+                        <label class="mb-2"><?php echo $this->lang->line('password') ?></label>
                     
                       </div>
                       <input type="password" name="password" class="form-control" placeholder="Enter Password" autocomplete="off"><?php echo form_error('password'); ?>
 
                     </div>
                     <div class="col-md-12">
-                      <button class="btn btn-primary" type="submit">Save Changes</button>
+                    <button class="btn btn-primary" type="submit"><?php echo $this->lang->line('save_changes') ?></button>
                     </div>
                   </div>
                 </form>
@@ -182,7 +182,7 @@ My Properties -->
 
       <div class="col-12">
         <div class="section-title d-flex align-items-center">
-          <h2>My Properties</h2>
+          <h2><?php echo $this->lang->line('my_properties') ?></h2>
         </div>
         <div class="row">
         <?php      $restaurants = $this->db->query("SELECT * FROM restaurants WHERE approved = '1' and vid = $vendor->id   ORDER BY res_ratings DESC LIMIT 0, 15")->result_array();?>
@@ -250,9 +250,9 @@ My Properties -->
               ?></span>
               <div class="property-price"><?=$listing['discount']?><span> EGP</span> </div>
               <ul class="property-info list-unstyled d-flex">
-                <li class="flex-fill property-bed"><i class="fas fa-bed"></i>rooms<span><?=$listing['rooms']?></span></li>
-                <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span><?=$listing['baths']?></span></li>
-                <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span><?=$listing['space']?>m</span></li>
+                <li class="flex-fill property-bed"><i class="fas fa-bed"></i><?php echo $this->lang->line('rooms_label') ?><span><?=$listing['rooms']?></span></li>
+                <li class="flex-fill property-bath"><i class="fas fa-bath"></i><?php echo $this->lang->line('bath_label') ?><span><?=$listing['baths']?></span></li>
+                <li class="flex-fill property-m-sqft"><i class="far fa-square"></i><?php echo $this->lang->line('sqft_label') ?><span><?=$listing['space']?>m</span></li>
               </ul>
             </div>
             <div class="property-btn">
@@ -300,7 +300,7 @@ Saved Homes -->
 
       <div class="col-12">
         <div class="section-title d-flex align-items-center">
-          <h2>Saved Homes</h2>
+          <h2><?php echo $this->lang->line('saved_homes') ?></h2>
         </div>
         <div class="row">
           <?php 
@@ -376,13 +376,13 @@ Saved Homes -->
               ?></span>
               <div class="property-price"><?=$listing['discount']?><span> EGP</span> </div>
               <ul class="property-info list-unstyled d-flex">
-                <li class="flex-fill property-bed"><i class="fas fa-bed"></i>rooms<span><?=$listing['rooms']?></span></li>
-                <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span><?=$listing['baths']?></span></li>
-                <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span><?=$listing['space']?>m</span></li>
+                <li class="flex-fill property-bed"><i class="fas fa-bed"></i>?php echo $this->lang->line('rooms_label') ?><span><?=$listing['rooms']?></span></li>
+                <li class="flex-fill property-bath"><i class="fas fa-bath"></i><?php echo $this->lang->line('bath_label') ?><span><?=$listing['baths']?></span></li>
+                <li class="flex-fill property-m-sqft"><i class="far fa-square"></i><?php echo $this->lang->line('sqft_label') ?><span><?=$listing['space']?>m</span></li>
               </ul>
             </div>
             <div class="property-btn">
-              <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>">See Details</a>
+              <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?php echo $this->lang->line('see_details') ?></a>
               <ul class="property-listing-actions list-unstyled mb-0">
        
                 <li class="property-favourites"><a data-bs-toggle="tooltip" data-bs-placement="top" title="Favourite" href="#"><i class="fas fa-heart text-danger"></i></a></li>

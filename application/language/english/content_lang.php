@@ -227,3 +227,26 @@ $lang["transportation_ar"] = "Transportation - Ar";
 $lang["details_btn"] = "Details";
 $lang["edit_btn"] = "Edit";
 $lang["delete_btn"] = "Delete";
+
+$lang["edit_profile"] = "Edit Profile";
+$lang["my_properties"] = "My properties";
+$lang["saved_homes"] = "Saved properties";
+$lang["view_profile"] = "View Profile";
+
+
+$lang["user_name"] = "User name";
+$lang["office_phone"] = "Office Phone";
+$lang["fax"] = "Fax";
+$lang["website"] = "Website";
+$lang["company"] = "Company";
+
+$lang["utype"] = "User Type";
+$lang["u_ur_id"] = "Upload Your ID";
+$lang["u_ur_id_desc"] = "To ensure the safety of agents, we need you to provide your identity before we can take you on a properties tour.";
+$lang["choose_file"] = "Choose File";
+$lang["about_me"] = "About Me";
+$lang["password"] = "Password";
+$lang["save_changes"] = "Save Changes";
+
+$lang["whatsapp"] = "WhatsApp";
+$lang["listed_properties"] = "Listed Properties";
