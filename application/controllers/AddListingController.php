@@ -439,5 +439,24 @@ class AddListingController extends CI_Controller
 	  $data['restaurant'] = $this->admin_model->get_restaurants_by_id($id); 
 	  $this->load->view('user/template',$data);
 	}
+	public function trash_restaurants()
+	{ //die("jj");
 
+	  
+		if($this->session->userdata('UserId')=="")
+		{
+			redirect(base_url('login'));
+		}	
+
+		if(!empty($_REQUEST['id']))
+		{
+			$id = $_REQUEST['id'];
+			
+			$this->db->where('res_id', $id);
+			$this->db->delete("restaurants");
+
+			$this->session->set_flashdata('add_success', 'Real Estates has been successfully Deleted. ');
+			redirect('profile');
+		}
+	}
 }

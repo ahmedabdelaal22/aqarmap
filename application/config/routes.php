@@ -224,6 +224,7 @@ $route['edit-listing/(:any)'] = 'AddListingController/edit_listing/$1';
 $route['user/add-realestates'] = 'AddListingController/add_realestates';
 
 $route['user/update-realestates'] = 'AddListingController/update_restaurants';
+$route['user/trash-restaurants'] = 'AddListingController/trash_restaurants';
 
 
 $route['agents/(:any)'] = 'AgentsController/index';

@@ -257,8 +257,9 @@ My Properties -->
             </div>
             <div class="property-btn">
             <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?php echo $this->lang->line('details_btn') ?></a>
-              <a class="property-link" href="#"><?php echo $this->lang->line('edit_btn') ?></a>
-              <a class="property-link" href="#"><?php echo $this->lang->line('delete_btn') ?></a>
+              <a class="property-link" href="<?php echo base_url('edit-listing/' . $listing['res_id']); ?>"><?php echo $this->lang->line('edit_btn') ?></a>
+              <button class="property-link delete"  data-i="<?php echo $listing['res_id']; ?>" ><i class="fa fa-trash"></i></button>
+              
               <ul class="property-listing-actions list-unstyled mb-0">
               <li class="property-favourites">
                             <?php  
@@ -406,5 +407,38 @@ Saved Homes -->
     </div>
   </div>
 </section>
+<div class="modal fade in" id="modalDel">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Delete Confirmation</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span></button>
+			</div>
+			<form method="post" action="<?php echo base_url('user/trash-restaurants'); ?>" id="frmDel">
+				<div class="modal-body">
+					<p>Are you sure you want to delete?</p>
+				</div>
+				<div class="modal-footer">
+					<input type="hidden" name="id" value="">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<input type="submit" class="btn btn-primary btnclass" value="Yes Delete!">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(document).on('click', '.delete', function() {
+			var i = $(this).data('i');
+			$("#frmDel input[name='id']").val(i);
+			$("#modalDel").modal('show');
+		});
+	});
+</script>
 <!--=================================
 My profile -->
