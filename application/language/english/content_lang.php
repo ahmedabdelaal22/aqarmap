@@ -222,3 +222,8 @@ $lang["health_care_en"] = "Health Medical - En";
 $lang["health_care_ar"] = "Health Medical - Ar";
 $lang["transportation_en"] = "Transportation - En";
 $lang["transportation_ar"] = "Transportation - Ar";
+
+
+$lang["details_btn"] = "Details";
+$lang["edit_btn"] = "Edit";
+$lang["delete_btn"] = "Delete";

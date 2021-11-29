@@ -256,7 +256,9 @@ My Properties -->
               </ul>
             </div>
             <div class="property-btn">
-              <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>">See Details</a>
+            <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?php echo $this->lang->line('details_btn') ?></a>
+              <a class="property-link" href="#"><?php echo $this->lang->line('edit_btn') ?></a>
+              <a class="property-link" href="#"><?php echo $this->lang->line('delete_btn') ?></a>
               <ul class="property-listing-actions list-unstyled mb-0">
               <li class="property-favourites">
                             <?php  

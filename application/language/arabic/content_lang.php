@@ -257,3 +257,7 @@ $lang["health_care_en"] = "الخدمات الطبية - انجليزي";
 $lang["health_care_ar"] = "الخدمات الطبية - عربي";
 $lang["transportation_en"] = "المواصلات - انجليزي";
 $lang["transportation_ar"] = "المواصلات - عربي";
+
+$lang["details_btn"] = "تفاصيل";
+$lang["edit_btn"] = "تعديل";
+$lang["delete_btn"] = "حذف";
