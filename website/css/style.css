@@ -5244,3 +5244,6 @@ ul li:last-child {
     font-size: 16px;
     font-weight: 500;
 }
+a.property-link.delete {
+    cursor: pointer;
+}

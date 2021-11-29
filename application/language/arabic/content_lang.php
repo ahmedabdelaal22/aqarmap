@@ -305,3 +305,8 @@ $lang["social"] = "سوشيال ";
 
 $lang["about_page_title"] = "نحن نغير صناعة العقارات بالتقدم والشغف.";
 $lang["about_page_subtitle"] = "نحاول أن نكون الوكالة العقارية الرائدة في المواقع التي نغطيها ، ونقدم خدمة شخصية ومخصصة تمامًا.";
+
+$lang["delete_confirmation"] = "تأكيد الحذف";
+$lang["delete_confirmation_text"] = "هل أنت متأكد أنك تريد حذف؟";
+$lang["close"] = "اغلاق";
+$lang["yes_delete"] = "حذف";

@@ -124,3 +124,10 @@ h6 {
     left: 10px;
     right: auto;
 }
+
+@media (max-width: 991px){
+.navbar .navbar-nav .nav-link i {
+    margin-right: auto;
+    margin-left: 0;
+}
+}

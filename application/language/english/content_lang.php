@@ -270,3 +270,8 @@ $lang["social"] = "Social";
 
 $lang["about_page_title"] = "We Are Changing The Real Estate Industry With Progression And Passion.";
 $lang["about_page_subtitle"] = "We attempt to be the leading self-governing estate agency in the locations we cover, offering an entirely personal and dedicated service.";
+
+$lang["delete_confirmation"] = "Delete Confirmation";
+$lang["delete_confirmation_text"] = "Are you sure you want to delete?";
+$lang["close"] = "Close";
+$lang["yes_delete"] = "Delete";
