@@ -64,6 +64,7 @@ public function neweslater(){
 						$this->upload->initialize($configVideo);
 			  
 						if (!$this->upload->do_upload($key)) {}else{
+						
 							$upload_data = $this->upload->data();
 							$recordValue= $upload_data['file_name'];
 							$this->db->where('id', $record->id);
@@ -83,7 +84,63 @@ public function neweslater(){
 				}
 			}
     	}
-      //  die("test");
+
+
+		foreach ( $_FILES as $key1 => $value1) {
+		
+		
+			
+			$query = $this->db->get_where('settings', array('name' => $key1));
+			$record =$query->row();
+		
+			if ($record) {
+	
+				if ($record->option_type == "file" && !empty($_FILES[$key1]['name'][$record->id] ) ) {
+			
+					if ($_FILES[$key1]['error'][$record->id]  === UPLOAD_ERR_OK)
+					{
+					  // get details of the uploaded file
+					  $fileTmpPath = $_FILES[$key1]['tmp_name'][$record->id] ;
+					  $fileName = $_FILES[$key1]['name'][$record->id];
+					  $fileSize = $_FILES[$key1]['size'][$record->id];
+					  $fileType = $_FILES[$key1]['type'][$record->id];
+					  $fileNameCmps = explode(".", $fileName);
+					  $fileExtension = strtolower(end($fileNameCmps));
+				   
+					  // sanitize file-name
+					  $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
+				   
+					  // check if file has one of the following extensions
+					  $allowedfileExtensions = array('jpg', 'gif', 'png', 'zip', 'txt', 'xls', 'doc');
+				   
+					  if (in_array($fileExtension, $allowedfileExtensions))
+					  {
+						// directory in which the uploaded file will be moved
+						$uploadFileDir = './uploads/';
+						$dest_path = $uploadFileDir . $newFileName;
+				   
+						if(move_uploaded_file($fileTmpPath, $dest_path)) 
+						{
+							$this->db->where('id', $record->id);
+							$data['value']= $newFileName;
+							$this->db->update('settings', $data);
+						}
+						else
+						{
+						  $message = 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';
+						}
+					  }
+					  else
+					  {
+						$message = 'Upload failed. Allowed file types: ' . implode(',', $allowedfileExtensions);
+					  }
+					}
+				
+				}
+			}
+		
+	}
+//  die("test");
 		redirect('admin/settings');
   
 

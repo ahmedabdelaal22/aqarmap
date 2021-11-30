@@ -104,7 +104,7 @@ footer-->
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-4 text-center text-md-start">
-          <a href="index.html"><img class="img-fluid footer-logo" src="<?=base_url('website')?>/images/logo/logo_v.png" alt=""> </a>
+          <a href="index.html"><img class="img-fluid footer-logo" src="<?=base_url('uploads/')?><?=appSettings('logo_footer')?>" alt=""> </a>
         </div>
         <div class="col-md-4 text-center my-3 mt-md-0 mb-md-0">
           <a id="back-to-top" class="back-to-top" href="#"><i class="fas fa-angle-double-up"></i> </a>

@@ -10,6 +10,9 @@ $lang['linkedin'] = 'linkedin';
 $lang['for_sale'] = 'For Sale';
 $lang['for_rent'] = 'For Rent';
 $lang['sale_or_rent'] = 'Sale or Rent';
+$lang['logo_footer'] = 'LOGO FooTer';
+$lang['phones'] = 'Phones';
+
 
 
 $lang['private_owner'] = 'Private Owner';

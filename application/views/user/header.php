@@ -35,7 +35,7 @@
    <?php }?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link rel="shortcut icon" type="image/x-icon" href="<?=base_url('website')?>/images/logo/favicon.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="<?=base_url('uploads/')?><?=appSettings('favicon')?>" />
 	
 	    <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300,500,600,700%7CRoboto:300,400,500,700">

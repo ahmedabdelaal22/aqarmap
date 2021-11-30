@@ -74,6 +74,9 @@ $lang['welcome'] = 'Welcome to our website';
 $lang['name_ar'] = 'Name (Ar)';
 $lang['name_en'] = 'Name (EN)';
 $lang['logo'] = 'LOGO';
+$lang['logo_footer'] = 'LOGO Footer';
+$lang['phones'] = 'Phones';
+
 $lang['email'] = 'الايميل';
 $lang['name_ar'] = 'Name (ar)';
 $lang['favicon'] = 'Favicon';

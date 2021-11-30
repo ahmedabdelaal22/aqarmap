@@ -88,7 +88,7 @@ header -->
         <div class="container-fluid">
           <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"><i class="fas fa-align-left"></i></button>
 		<a href="<?=base_url('/')?>" class="navbar-brand">
-			<img class="img-fluid" src="<?=base_url('website')?>/images/logo/logofinal.png" alt="logo">
+			<img class="img-fluid" src="<?=base_url('uploads/')?><?=appSettings('logo')?>" alt="logo">
 		</a>
 		<?php $locale=$this->session->userdata('locale');?>
           <div class="navbar-collapse collapse justify-content-center">
