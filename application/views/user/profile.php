@@ -1,7 +1,7 @@
 <!--=================================
 My profile -->
 
-<?php 	$userid=	$this->session->userdata('UserId');
+<?php   $userid=  $this->session->userdata('UserId');
     $vendor= $this->db->query("SELECT * FROM vendor WHERE id = $userid ")->row();
 ?>
 <section class="space-ptb">
@@ -134,8 +134,8 @@ My profile -->
                       <label class="mb-2"><?php echo $this->lang->line('utype') ?></label>
                       <select class="form-control basic-select">
                       <?php foreach (get_vendore_type() as $key => $value) : ?>
-												<option value="<?php echo $key; ?>"  <?php if ($key == $vendor->type) echo "selected='selected'"; ?>><?php echo $value ?></option>
-											<?php endforeach; ?>
+                        <option value="<?php echo $key; ?>"  <?php if ($key == $vendor->type) echo "selected='selected'"; ?>><?php echo $value ?></option>
+                      <?php endforeach; ?>
                       </select>
                     </div>
                     <hr class="my-5" />
@@ -226,7 +226,7 @@ My Properties -->
           </div>
         <?php $this->load->helper('text');?>
           <div class="property-details">
-            <div class="property-details-inner">
+          <div class="property-details-inner">
               <h5 class="property-title"><a href="<?php echo base_url('store/' . $listing['res_id']); ?>">
               <?php if($this->session->userdata('site_lang') == 'english'){?>
 
@@ -256,9 +256,9 @@ My Properties -->
               </ul>
             </div>
             <div class="property-btn">
-            <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>"><?php echo $this->lang->line('details_btn') ?></a>
-              <a class="property-link" href="<?php echo base_url('edit-listing/' . $listing['res_id']); ?>"><?php echo $this->lang->line('edit_btn') ?></a>
-              <button class="property-link delete"  data-i="<?php echo $listing['res_id']; ?>" ><i class="fa fa-trash"></i></button>
+            <a class="property-link" href="<?php echo base_url('store/' . $listing['res_id']); ?>"><i class="fa fa-info"></i><?php echo $this->lang->line('details_btn') ?></a>
+              <a class="property-link" href="<?php echo base_url('edit-listing/' . $listing['res_id']); ?>"><i class="fa fa-edit"></i> <?php echo $this->lang->line('edit_btn') ?></a>
+              <a class="property-link delete" data-bs-toggle="modal" data-bs-target="#modalDel"  data-i="<?php echo $listing['res_id']; ?>" ><i class="fa fa-trash"></i> <?php echo $this->lang->line('delete_btn') ?></a>
               
               <ul class="property-listing-actions list-unstyled mb-0">
               <li class="property-favourites">
@@ -313,7 +313,7 @@ Saved Homes -->
           ->where('likes.user_id', $vendor->id)
           ->get();
           
-          $favorites=$query->result_array();	
+          $favorites=$query->result_array();  
           ?>
    <?php if (isset($favorites)) {
                   $cnt = 1; ?>
@@ -407,38 +407,39 @@ Saved Homes -->
     </div>
   </div>
 </section>
-<div class="modal fade in" id="modalDel">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h4 class="modal-title">Delete Confirmation</h4>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">×</span></button>
-			</div>
-			<form method="post" action="<?php echo base_url('user/trash-restaurants'); ?>" id="frmDel">
-				<div class="modal-body">
-					<p>Are you sure you want to delete?</p>
-				</div>
-				<div class="modal-footer">
-					<input type="hidden" name="id" value="">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<input type="submit" class="btn btn-primary btnclass" value="Yes Delete!">
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		$(document).on('click', '.delete', function() {
-			var i = $(this).data('i');
-			$("#frmDel input[name='id']").val(i);
-			$("#modalDel").modal('show');
-		});
-	});
-</script>
+<!-- Modal -->
+<div class="modal hide fade modalDel" id="modalDel" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><?php echo $this->lang->line('delete_confirmation') ?></h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="post" action="<?php echo base_url('user/trash-restaurants'); ?>" id="frmDel">
+        <div class="modal-body">
+          <p><?php echo $this->lang->line('delete_confirmation_text') ?></p>
+        </div>
+        <div class="modal-footer">
+          <input type="hidden" name="id" value="">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" ><?php echo $this->lang->line('close') ?></button>
+          <input type="submit" class="btn btn-primary btnclass" value="<?php echo $this->lang->line('yes_delete') ?>">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <!--=================================
 My profile -->
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(document).on('click', '.delete', function() {
+      var i = $(this).data('i');
+      $("#frmDel input[name='id']").val(i);
+      $("#modalDel").modal('show');
+    });
+  });
+</script>

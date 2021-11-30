@@ -5,7 +5,7 @@ Submit Property -->
     <div class="row">
       <div class="col-md-12">
         <div class="section-title d-flex align-items-center">
-          <h2><?php echo $this->lang->line('add_listing') ?></h2>
+          <h2><?php echo $this->lang->line('edit_listing') ?></h2>
         </div>
         <form method="POST" enctype="multipart/form-data" action="<?php echo base_url('user/update-realestates'); ?>">
 
@@ -189,8 +189,9 @@ Submit Property -->
               <div class="mb-3 col-md-12">
                       <label class="form-label"><?php echo $this->lang->line('embed_video') ?> </label>
                       <input type="text"  name="video" value="<?php echo $restaurant->video; ?>"  focusable="false"  class="form-control" placeholder="<?php echo $this->lang->line('embed_video_link') ?>">
-                      <div class="embed-responsive embed-responsive-16by9">
-                  <iframe width="546" height="315" src="https://www.youtube.com/embed/<?=$restaurant->video?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <br>
+                      <div class="embed-responsive embed-responsive-16by9" style="width: 250px;">
+                    <iframe src="https://www.youtube.com/embed/<?=$restaurant->video?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    
                 </div>
 
                       <?php echo form_error('video'); ?>
@@ -200,22 +201,23 @@ Submit Property -->
                   <input type="file" name="logo" class="form-control" id="customFile">
                   <label class="input-group-text" for="customFile"><?php echo $this->lang->line('property_logo') ?></label>
                   <?php echo form_error('logo'); ?>
-                  <?php if ($restaurant->logo) { ?>
-											<img src="<?php echo base_url('uploads/') . $restaurant->logo; ?>" class="res_image" height="70" width="70">
-										<?php } ?>
                   <br>
                 </div>
+                  <?php if ($restaurant->logo) { ?>
+                      <img src="<?php echo base_url('uploads/') . $restaurant->logo; ?>" class="res_image" height="70" width="70">
+                    <?php } ?>                
               </div>
               <div class="mb-3 col-md-12">
                 <div class="input-group file-upload">
                   <input type="file"  name="res_image[]" focusable="false" class="form-control"  multiple>
                   <label class="input-group-text" for="customFile"><?php echo $this->lang->line('property_images') ?></label>
                   <?php echo form_error('res_image'); ?>
-                  <?php $images = explode("::::", $restaurant->res_image); ?>
-										<?php foreach ($images as $key => $image) { ?>
-											<img src="<?php echo base_url('uploads/') . $image ?>" class="res_image" height="70" width="70">
-										<?php } ?>
+
                 </div>
+                  <?php $images = explode("::::", $restaurant->res_image); ?>
+                    <?php foreach ($images as $key => $image) { ?>
+                      <img src="<?php echo base_url('uploads/') . $image ?>" class="res_image" height="70" width="70">
+                    <?php } ?>                
               </div>
               <a class="btn btn-primary btnPrevious" ><?php echo $this->lang->line('prev') ?></a>
              <a class="btn btn-primary btnNext" ><?php echo $this->lang->line('next') ?></a>

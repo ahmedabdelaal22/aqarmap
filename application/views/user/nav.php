@@ -52,7 +52,7 @@ header -->
 			?>
 			<!-- data-bs-toggle="modal" data-bs-target="#loginModal" -->
               <a  href="<?=base_url('/profile')?>"><?=$this->session->userdata('user_name')?><i class="fa fa-user ps-2"></i></a>
-			  <a href="<?=base_url('logout')?>">logout</a>
+			  <a href="<?=base_url('logout')?>"><?php echo $this->lang->line('logout') ?></a>
 			  <?php } else{?>
 				<a  href="<?=base_url('/login')?>"><?php echo $this->lang->line('hello_sign') ?> <i class="fa fa-user ps-2"></i></a>
 

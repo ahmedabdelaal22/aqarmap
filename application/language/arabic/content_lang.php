@@ -140,6 +140,7 @@ $lang['select_floor'] = 'اختار الطابق';
 $lang['get_app'] = 'التطبيق: ';
 $lang['choose_location'] = 'اختار الموقع';
 $lang['add_listing'] = 'اضف عقار';
+$lang['edit_listing'] = 'تعديل عقار';
 $lang['hello_sign'] = 'تسجيل الدخول';
 
 // categories module
@@ -308,3 +309,17 @@ $lang["social"] = "سوشيال ";
 
 $lang["about_page_title"] = "نحن نغير صناعة العقارات بالتقدم والشغف.";
 $lang["about_page_subtitle"] = "نحاول أن نكون الوكالة العقارية الرائدة في المواقع التي نغطيها ، ونقدم خدمة شخصية ومخصصة تمامًا.";
+
+$lang["delete_confirmation"] = "تأكيد الحذف";
+$lang["delete_confirmation_text"] = "هل أنت متأكد أنك تريد حذف؟";
+$lang["close"] = "اغلاق";
+$lang["yes_delete"] = "حذف";
+
+$lang["dont_have_account"] = "ليس لديك حساب؟ سجل الان";
+
+$lang["create_account"] = "انشاء حساب";
+
+$lang["sign_up"] = "تسجيل حساب";
+$lang["already_registered"] = "مستخدم مسجل بالفعل؟ اضغط هنا لتسجيل الدخول";
+
+$lang["logout"] = "خروج";

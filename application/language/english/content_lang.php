@@ -103,6 +103,7 @@ $lang['select_floor'] = 'Select Floor';
 $lang['get_app'] = 'Get App: ';
 $lang['choose_location'] = 'Choose Location';
 $lang['add_listing'] = 'Add Listing';
+$lang['edit_listing'] = 'Edit Listing';
 $lang['hello_sign'] = 'Sign In';
 
 // categories module
@@ -273,3 +274,17 @@ $lang["social"] = "Social";
 
 $lang["about_page_title"] = "We Are Changing The Real Estate Industry With Progression And Passion.";
 $lang["about_page_subtitle"] = "We attempt to be the leading self-governing estate agency in the locations we cover, offering an entirely personal and dedicated service.";
+
+$lang["delete_confirmation"] = "Delete Confirmation";
+$lang["delete_confirmation_text"] = "Are you sure you want to delete?";
+$lang["close"] = "Close";
+$lang["yes_delete"] = "Delete";
+
+$lang["dont_have_account"] = "Don't have an account yet? Register Now";
+
+$lang["create_account"] = "Create An Account";
+
+$lang["sign_up"] = "Sign Up";
+$lang["already_registered"] = "Already Registered User? Click here to login";
+
+$lang["logout"] = "Logout";
